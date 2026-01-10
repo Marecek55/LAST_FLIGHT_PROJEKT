@@ -1,3 +1,6 @@
+package Zaklad;
+
+import Command.Command;
 
 import java.util.HashMap;
 

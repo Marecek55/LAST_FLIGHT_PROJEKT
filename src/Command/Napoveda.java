@@ -8,8 +8,5 @@ public class Napoveda implements Command {
 
     }
 
-    @Override
-    public void opustit() {
 
-    }
 }

@@ -8,8 +8,5 @@ public class Poloz implements Command {
 
     }
 
-    @Override
-    public void opustit() {
 
-    }
 }

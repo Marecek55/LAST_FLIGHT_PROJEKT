@@ -8,8 +8,5 @@ public class Uhni implements Command {
 
     }
 
-    @Override
-    public void opustit() {
 
-    }
 }

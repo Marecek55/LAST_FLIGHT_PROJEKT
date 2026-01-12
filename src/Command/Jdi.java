@@ -8,8 +8,4 @@ public class Jdi implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

@@ -8,8 +8,4 @@ public class Utok implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

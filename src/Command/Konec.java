@@ -8,8 +8,5 @@ public class Konec implements Command {
 
     }
 
-    @Override
-    public void opustit() {
 
-    }
 }

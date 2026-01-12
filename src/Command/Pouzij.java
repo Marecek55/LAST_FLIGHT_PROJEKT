@@ -8,8 +8,4 @@ public class Pouzij implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

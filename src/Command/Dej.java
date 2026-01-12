@@ -8,8 +8,5 @@ public class Dej implements Command {
 
     }
 
-    @Override
-    public void opustit() {
 
-    }
 }

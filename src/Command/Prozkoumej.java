@@ -8,8 +8,4 @@ public class Prozkoumej implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

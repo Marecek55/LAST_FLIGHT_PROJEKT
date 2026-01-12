@@ -8,8 +8,5 @@ public class Inventar implements Command {
 
     }
 
-    @Override
-    public void opustit() {
 
-    }
 }

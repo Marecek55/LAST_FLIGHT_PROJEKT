@@ -8,8 +8,4 @@ public class Vezmi implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

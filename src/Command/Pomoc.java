@@ -8,8 +8,4 @@ public class Pomoc implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

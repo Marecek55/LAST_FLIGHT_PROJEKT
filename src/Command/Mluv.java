@@ -8,8 +8,4 @@ public class Mluv implements Command {
 
     }
 
-    @Override
-    public void opustit() {
-
-    }
 }

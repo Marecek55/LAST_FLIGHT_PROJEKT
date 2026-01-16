@@ -1,0 +1,68 @@
+{
+  "start": "hlavni_hala",
+
+  "mistnosti": {
+    "hlavni_hala": {
+      "dostupneVychody": {
+        "schodiste": "schodiste",
+        "sluzebni_chodba": "sluzebni_chodba"
+      }
+    },
+    "schodiste": {
+      "dostupneVychody": {
+        "hlavni_hala": "hlavni_hala",
+        "garaze": "garaze"
+      }
+    },
+    "garaze": {
+      "dostupneVychody": {
+        "schodiste": "schodiste"
+      }
+    },
+    "sluzebni_chodba": {
+      "dostupneVychody": {
+        "hlavni_hala": "hlavni_hala",
+        "technicka_mistnost": "technicka_mistnost",
+        "lekarna": "lekarna",
+        "duty_free": "duty_free",
+        "checkpoint": "checkpoint"
+      }
+    },
+    "technicka_mistnost": {
+      "dostupneVychody": {
+        "sluzebni_chodba": "sluzebni_chodba"
+      }
+    },
+    "lekarna": {
+      "dostupneVychody": {
+        "sluzebni_chodba": "sluzebni_chodba",
+        "sklad": "sklad"
+      }
+    },
+    "sklad": {
+      "dostupneVychody": {
+        "lekarna": "lekarna"
+      }
+    },
+    "duty_free": {
+      "dostupneVychody": {
+        "sluzebni_chodba": "sluzebni_chodba"
+      }
+    },
+    "checkpoint": {
+      "dostupneVychody": {
+        "sluzebni_chodba": "sluzebni_chodba",
+        "tridirna_zavazadel": "tridirna_zavazadel"
+      }
+    },
+    "tridirna_zavazadel": {
+      "dostupneVychody": {
+        "checkpoint": "checkpoint",
+        "gate_4": "gate_4"
+      }
+    },
+    "gate_4": {
+      "dostupneVychody": {}
+    }
+  }
+}

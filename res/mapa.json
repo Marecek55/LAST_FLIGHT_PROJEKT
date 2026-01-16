@@ -1,68 +1,108 @@
 {
-  "start": "hlavni_hala",
-
-  "mistnosti": {
-    "hlavni_hala": {
-      "dostupneVychody": {
-        "schodiste": "schodiste",
-        "sluzebni_chodba": "sluzebni_chodba"
-      }
+  "hlavni_hala": {
+    "predmetyVMistnosti": ["pasy", "cokolada"],
+    "dostupneVychody": {
+      "schodiste": "schodiste",
+      "sluzebni_chodba": "sluzebni_chodba"
     },
-    "schodiste": {
-      "dostupneVychody": {
-        "hlavni_hala": "hlavni_hala",
-        "garaze": "garaze"
-      }
+    "jeTamTma": false,
+    "pribeh": "Zde začíná hra, únosce bere Tobiho.",
+    "jeZamcena": false
+  },
+  "schodiste": {
+    "predmetyVMistnosti": ["kleste"],
+    "dostupneVychody": {
+      "hlavni_hala": "hlavni_hala",
+      "garaze": "garaze"
     },
-    "garaze": {
-      "dostupneVychody": {
-        "schodiste": "schodiste"
-      }
+    "jeTamTma": false,
+    "pribeh": "Spojuje hlavní halu s garážemi.",
+    "jeZamcena": false
+  },
+  "garaze": {
+    "predmetyVMistnosti": ["pacidlo"],
+    "dostupneVychody": {
+      "schodiste": "schodiste"
     },
-    "sluzebni_chodba": {
-      "dostupneVychody": {
-        "hlavni_hala": "hlavni_hala",
-        "technicka_mistnost": "technicka_mistnost",
-        "lekarna": "lekarna",
-        "duty_free": "duty_free",
-        "checkpoint": "checkpoint"
-      }
+    "jeTamTma": false,
+    "pribeh": "Podzemní garáže, kde je páčidlo.",
+    "jeZamcena": false
+  },
+  "sluzebni_chodba": {
+    "predmetyVMistnosti": [],
+    "dostupneVychody": {
+      "hlavni_hala": "hlavni_hala",
+      "technicka_mistnost": "technicka_mistnost",
+      "lekarna": "lekarna",
+      "duty_free": "duty_free",
+      "checkpoint": "checkpoint"
     },
-    "technicka_mistnost": {
-      "dostupneVychody": {
-        "sluzebni_chodba": "sluzebni_chodba"
-      }
+    "jeTamTma": false,
+    "pribeh": "Chodba spojující různé části letiště.",
+    "jeZamcena": true
+  },
+  "technicka_mistnost": {
+    "predmetyVMistnosti": ["baterka"],
+    "dostupneVychody": {
+      "sluzebni_chodba": "sluzebni_chodba"
     },
-    "lekarna": {
-      "dostupneVychody": {
-        "sluzebni_chodba": "sluzebni_chodba",
-        "sklad": "sklad"
-      }
+    "jeTamTma": true,
+    "pribeh": "Mechanik opravuje světla, musí dostat kleště.",
+    "jeZamcena": false
+  },
+  "lekarna": {
+    "predmetyVMistnosti": ["voda"],
+    "dostupneVychody": {
+      "sluzebni_chodba": "sluzebni_chodba",
+      "sklad": "sklad"
     },
-    "sklad": {
-      "dostupneVychody": {
-        "lekarna": "lekarna"
-      }
+    "jeTamTma": false,
+    "pribeh": "Prodavačka je v šoku, může otevřít sklad.",
+    "jeZamcena": false
+  },
+  "sklad": {
+    "predmetyVMistnosti": ["lekarnicka"],
+    "dostupneVychody": {
+      "lekarna": "lekarna"
     },
-    "duty_free": {
-      "dostupneVychody": {
-        "sluzebni_chodba": "sluzebni_chodba"
-      }
+    "jeTamTma": false,
+    "pribeh": "Sklad s lékárničkou.",
+    "jeZamcena": true
+  },
+  "duty_free": {
+    "predmetyVMistnosti": [],
+    "dostupneVychody": {
+      "sluzebni_chodba": "sluzebni_chodba"
     },
-    "checkpoint": {
-      "dostupneVychody": {
-        "sluzebni_chodba": "sluzebni_chodba",
-        "tridirna_zavazadel": "tridirna_zavazadel"
-      }
+    "jeTamTma": true,
+    "pribeh": "Obchod, ve tmě je zloděj.",
+    "jeZamcena": false
+  },
+  "checkpoint": {
+    "predmetyVMistnosti": [],
+    "dostupneVychody": {
+      "sluzebni_chodba": "sluzebni_chodba",
+      "tridirna_zavazadel": "tridirna_zavazadel"
     },
-    "tridirna_zavazadel": {
-      "dostupneVychody": {
-        "checkpoint": "checkpoint",
-        "gate_4": "gate_4"
-      }
+    "jeTamTma": false,
+    "pribeh": "Kontrola pasů vojákem.",
+    "jeZamcena": true
+  },
+  "tridirna_zavazadel": {
+    "predmetyVMistnosti": [],
+    "dostupneVychody": {
+      "checkpoint": "checkpoint",
+      "gate_4": "gate_4"
     },
-    "gate_4": {
-      "dostupneVychody": {}
-    }
+    "jeTamTma": false,
+    "pribeh": "Bludiště mezi checkpointem a Gate 4.",
+    "jeZamcena": false
+  },
+  "gate_4": {
+    "predmetyVMistnosti": ["inzulin"],
+    "dostupneVychody": {},
+    "jeTamTma": false,
+    "pribeh": "Konec hry, souboj s únoscem.",
+    "jeZamcena": false
   }
 }

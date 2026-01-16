@@ -1,108 +1,164 @@
 {
-  "hlavni_hala": {
-    "predmetyVMistnosti": ["pasy", "cokolada"],
-    "dostupneVychody": {
-      "schodiste": "schodiste",
-      "sluzebni_chodba": "sluzebni_chodba"
-    },
+  "hlavniHala":{
+    "nazev":"hlavniHala",
+    "pribeh": "hlavnihala.txt",
     "jeTamTma": false,
-    "pribeh": "Zde začíná hra, únosce bere Tobiho.",
-    "jeZamcena": false
+    "jeZamcena":false,
+    "predmetyvmistnosti": [
+      {"nazev":"pasy","jdeVyhodit":true,"jeDulezity":true},
+      {"nazev":"inzulin","jdeVyhodit":false,"jeDulezity":true}
+    ],
+    "npcvmistnosti":[
+      {
+        "jmeno": "sara",
+        "typMluveni":"prijemne",
+        "dialog":"sara.txt",
+        "chceMluvit":true,
+        "dostalToCoChtel": false
+      },
+      {
+        "jmeno":"stariManzele",
+        "typMluveni": "smutne",
+        "dialog": "manzele.txt",
+        "chceMluvit": true,
+        "dostalToCoChtel": false
+      }
+    ],
+    "dostupneVychody": {
+      "schodiste":"schodiste",
+      "sluzebniChodba": "sluzebniChodba"
+    }
   },
+
   "schodiste": {
-    "predmetyVMistnosti": ["kleste"],
-    "dostupneVychody": {
-      "hlavni_hala": "hlavni_hala",
-      "garaze": "garaze"
-    },
-    "jeTamTma": false,
-    "pribeh": "Spojuje hlavní halu s garážemi.",
-    "jeZamcena": false
+    "nazev": "schodiste",
+    "pribeh":"schodiste.txt",
+    "jeTamTma":false,
+    "jeZamcena": false,
+    "predmetyvmistnosti": [
+      { "nazev": "kleste","jdeVyhodit": true,"jeDulezity":false }
+    ],
+    "npcvmistnosti": [],
+    "dostupneVychody":
+    {"hlavniHala":"hlavniHala","garaze":"garaze"}
   },
+
   "garaze": {
-    "predmetyVMistnosti": ["pacidlo"],
-    "dostupneVychody": {
-      "schodiste": "schodiste"
-    },
+    "nazev": "garaze",
+    "pribeh": "garaze.txt",
     "jeTamTma": false,
-    "pribeh": "Podzemní garáže, kde je páčidlo.",
-    "jeZamcena": false
+    "jeZamcena": false,
+    "predmetyvmistnosti": [
+      {"nazev": "pacidlo","jdeVyhodit": true, "jeDulezity": true}
+    ],
+    "npcvmistnosti": [],
+    "dostupneVychody": { "schodiste": "schodiste" }
   },
-  "sluzebni_chodba": {
-    "predmetyVMistnosti": [],
+
+  "sluzebniChodba": {
+    "nazev": "sluzebniChodba",
+    "pribeh": "sluzebnichodba.txt",
+    "jeTamTma": false,
+    "jeZamcena": true,
+    "predmetyvmistnosti": [],
+    "npcvmistnosti": [],
     "dostupneVychody": {
-      "hlavni_hala": "hlavni_hala",
-      "technicka_mistnost": "technicka_mistnost",
+      "hlavniHala": "hlavniHala",
+      "technickaMistnost": "technickaMistnost",
       "lekarna": "lekarna",
-      "duty_free": "duty_free",
-      "checkpoint": "checkpoint"
-    },
+      "dutyFreeShop": "dutyFreeShop"
+    }
+  },
+
+  "technickaMistnost": {
+    "nazev": "technickaMistnost",
+    "pribeh": "technickamistnost.txt",
     "jeTamTma": false,
-    "pribeh": "Chodba spojující různé části letiště.",
-    "jeZamcena": true
+    "jeZamcena": false,
+    "predmetyvmistnosti": [{"nazev": "baterka", "jdeVyhodit": true, "jeDulezity": false}],
+    "npcvmistnosti": [
+      {
+        "jmeno": "mechanik",
+        "typMluveni": "smutne",
+        "dialog": "mechanik.txt",
+        "chceMluvit": true,
+        "dostalToCoChtel": false
+      }
+    ],
+    "dostupneVychody": { "sluzebniChodba": "sluzebniChodba" }
   },
-  "technicka_mistnost": {
-    "predmetyVMistnosti": ["baterka"],
-    "dostupneVychody": {
-      "sluzebni_chodba": "sluzebni_chodba"
-    },
-    "jeTamTma": true,
-    "pribeh": "Mechanik opravuje světla, musí dostat kleště.",
-    "jeZamcena": false
-  },
+
   "lekarna": {
-    "predmetyVMistnosti": ["voda"],
-    "dostupneVychody": {
-      "sluzebni_chodba": "sluzebni_chodba",
-      "sklad": "sklad"
-    },
+    "nazev": "lekarna",
+    "pribeh": "lekarna.txt",
     "jeTamTma": false,
-    "pribeh": "Prodavačka je v šoku, může otevřít sklad.",
-    "jeZamcena": false
+    "jeZamcena": false,
+    "predmetyvmistnosti": [
+      {"nazev": "voda", "jdeVyhodit": true, "jeDulezity": false}
+    ],
+    "npcvmistnosti": [
+      {
+        "jmeno": "prodavacka",
+        "typMluveni": "nastvane",
+        "dialog": "prodavacka.txt",
+        "chceMluvit": false,
+        "dostalToCoChtel": false
+      }
+    ],
+    "dostupneVychody": { "sklad": "sklad", "sluzebniChodba": "sluzebniChodba" }
   },
+
   "sklad": {
-    "predmetyVMistnosti": ["lekarnicka"],
-    "dostupneVychody": {
-      "lekarna": "lekarna"
-    },
+    "nazev": "sklad",
+    "pribeh": "sklad.txt",
     "jeTamTma": false,
-    "pribeh": "Sklad s lékárničkou.",
-    "jeZamcena": true
+    "jeZamcena": true,
+    "predmetyvmistnosti": [{"nazev": "lekarnicka", "jdeVyhodit": true, "jeDulezity": true}],
+    "npcvmistnosti": [],
+    "dostupneVychody": { "lekarna": "lekarna" }
   },
-  "duty_free": {
-    "predmetyVMistnosti": [],
-    "dostupneVychody": {
-      "sluzebni_chodba": "sluzebni_chodba"
-    },
+
+  "dutyFreeShop": {
+    "nazev": "dutyFreeShop",
+    "pribeh": "dutyfreeshop.txt",
     "jeTamTma": true,
-    "pribeh": "Obchod, ve tmě je zloděj.",
-    "jeZamcena": false
+    "jeZamcena": false,
+    "predmetyvmistnosti": [{"nazev": "plysak", "jdeVyhodit": true, "jeDulezity": false}],
+    "npcvmistnosti": [{ "jmeno": "zlodej", "typMluveni": "nastvane", "dialog": "zlodej.txt", "chceMluvit": true, "dostalToCoChtel": false }],
+    "dostupneVychody": { "checkpoint": "checkpoint", "sluzebniChodba": "sluzebniChodba" }
   },
+
   "checkpoint": {
-    "predmetyVMistnosti": [],
-    "dostupneVychody": {
-      "sluzebni_chodba": "sluzebni_chodba",
-      "tridirna_zavazadel": "tridirna_zavazadel"
-    },
+    "nazev": "checkpoint",
+    "pribeh": "checkpoint.txt",
     "jeTamTma": false,
-    "pribeh": "Kontrola pasů vojákem.",
-    "jeZamcena": true
+    "jeZamcena": false,
+    "predmetyvmistnosti": [],
+    "npcvmistnosti": [
+      {"jmeno": "vojak", "typMluveni": "nastvane", "dialog": "vojak.txt", "chceMluvit": true, "dostalToCoChtel": false}
+    ],
+    "dostupneVychody": { "tridirnaZavazadel": "tridirnaZavazadel", "dutyFreeShop": "dutyFreeShop" }
   },
-  "tridirna_zavazadel": {
-    "predmetyVMistnosti": [],
-    "dostupneVychody": {
-      "checkpoint": "checkpoint",
-      "gate_4": "gate_4"
-    },
+
+  "tridirnaZavazadel": {
+    "nazev": "tridirnaZavazadel",
+    "pribeh": "tridirnazavazadel.txt",
     "jeTamTma": false,
-    "pribeh": "Bludiště mezi checkpointem a Gate 4.",
-    "jeZamcena": false
+    "jeZamcena": false,
+    "predmetyvmistnosti": [],
+    "npcvmistnosti": [],
+    "dostupneVychody": { "gate4": "gate4", "checkpoint": "checkpoint" }
   },
-  "gate_4": {
-    "predmetyVMistnosti": ["inzulin"],
-    "dostupneVychody": {},
+
+  "gate4": {
+    "nazev": "gate4",
+    "pribeh": "gate4.txt",
     "jeTamTma": false,
-    "pribeh": "Konec hry, souboj s únoscem.",
-    "jeZamcena": false
+    "jeZamcena": false,
+    "predmetyvmistnosti": [],
+    "npcvmistnosti": [
+      { "jmeno": "unosce", "typMluveni": "nastvane", "dialog": "unosce.txt", "chceMluvit": true, "dostalToCoChtel": false }
+    ],
+    "dostupneVychody": { "tridirnaZavazadel": "tridirnaZavazadel" }
   }
 }

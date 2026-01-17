@@ -1,32 +1,31 @@
 package Zaklad;
 
+import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class NacitaniZeSouboru {
-    private ObjectMapper parser = new ObjectMapper();
-
-
-    public HashMap<String, Mistnost> nactiSvet() {
+    /**
+     * Nacte mapa.json do mapy kde je uplne vse
+     * @return
+     */
+    public static HashMap<String, Mistnost> nactiSouborHry() {
         try {
-            InputStream input = new FileInputStream("res/mapa.json");
-            HashMap<String, Mistnost> mistnosti = parser.readValue(input, new TypeReference<HashMap<String, Mistnost>>() {});
-
-            for (Mistnost m : mistnosti.values()) {
-                m.propojVychody(mistnosti);
-            }
-            //TODO
-
-            return mistnosti;
-        } catch (Exception e) {
+            ObjectMapper parser = new ObjectMapper();
+            File soubor = new File("res/mapa.json");
+            return parser.readValue(soubor, new TypeReference<HashMap<String, Mistnost>>() {} );
+        } catch (StreamReadException e) {
+            throw new RuntimeException(e);
+        } catch (DatabindException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
 
+    }
 }

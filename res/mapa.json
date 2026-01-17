@@ -1,23 +1,23 @@
 {
-  "hlavniHala":{
-    "nazev":"hlavniHala",
+  "hlavniHala": {
+    "nazev": "hlavniHala",
     "pribeh": "hlavnihala.txt",
     "jeTamTma": false,
-    "jeZamcena":false,
-    "predmetyvmistnosti": [
-      {"nazev":"pasy","jdeVyhodit":true,"jeDulezity":true},
-      {"nazev":"inzulin","jdeVyhodit":false,"jeDulezity":true}
+    "jeZamcena": false,
+    "predmetyVMistnosti": [
+      {"nazev": "pasy", "jdeVyhodit": true, "jeDulezity": true},
+      {"nazev": "inzulin", "jdeVyhodit": false, "jeDulezity": true}
     ],
-    "npcvmistnosti":[
+    "npcVMistnosti": [
       {
         "jmeno": "sara",
-        "typMluveni":"prijemne",
-        "dialog":"sara.txt",
-        "chceMluvit":true,
+        "typMluveni": "prijemne",
+        "dialog": "sara.txt",
+        "chceMluvit": true,
         "dostalToCoChtel": false
       },
       {
-        "jmeno":"stariManzele",
+        "jmeno": "stariManzele",
         "typMluveni": "smutne",
         "dialog": "manzele.txt",
         "chceMluvit": true,
@@ -25,43 +25,44 @@
       }
     ],
     "dostupneVychody": {
-      "schodiste":"schodiste",
+      "schodiste": "schodiste",
       "sluzebniChodba": "sluzebniChodba"
     }
   },
-
   "schodiste": {
     "nazev": "schodiste",
-    "pribeh":"schodiste.txt",
-    "jeTamTma":false,
+    "pribeh": "schodiste.txt",
+    "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [
-      { "nazev": "kleste","jdeVyhodit": true,"jeDulezity":false }
+    "predmetyVMistnosti": [
+      {"nazev": "kleste", "jdeVyhodit": true, "jeDulezity": false}
     ],
-    "npcvmistnosti": [],
-    "dostupneVychody":
-    {"hlavniHala":"hlavniHala","garaze":"garaze"}
+    "npcVMistnosti": [],
+    "dostupneVychody": {
+      "hlavniHala": "hlavniHala",
+      "garaze": "garaze"
+    }
   },
-
   "garaze": {
     "nazev": "garaze",
     "pribeh": "garaze.txt",
     "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [
-      {"nazev": "pacidlo","jdeVyhodit": true, "jeDulezity": true}
+    "predmetyVMistnosti": [
+      {"nazev": "pacidlo", "jdeVyhodit": true, "jeDulezity": true}
     ],
-    "npcvmistnosti": [],
-    "dostupneVychody": { "schodiste": "schodiste" }
+    "npcVMistnosti": [],
+    "dostupneVychody": {
+      "schodiste": "schodiste"
+    }
   },
-
   "sluzebniChodba": {
     "nazev": "sluzebniChodba",
     "pribeh": "sluzebnichodba.txt",
     "jeTamTma": false,
     "jeZamcena": true,
-    "predmetyvmistnosti": [],
-    "npcvmistnosti": [],
+    "predmetyVMistnosti": [],
+    "npcVMistnosti": [],
     "dostupneVychody": {
       "hlavniHala": "hlavniHala",
       "technickaMistnost": "technickaMistnost",
@@ -69,14 +70,15 @@
       "dutyFreeShop": "dutyFreeShop"
     }
   },
-
   "technickaMistnost": {
     "nazev": "technickaMistnost",
     "pribeh": "technickamistnost.txt",
     "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [{"nazev": "baterka", "jdeVyhodit": true, "jeDulezity": false}],
-    "npcvmistnosti": [
+    "predmetyVMistnosti": [
+      {"nazev": "baterka", "jdeVyhodit": true, "jeDulezity": false}
+    ],
+    "npcVMistnosti": [
       {
         "jmeno": "mechanik",
         "typMluveni": "smutne",
@@ -85,18 +87,19 @@
         "dostalToCoChtel": false
       }
     ],
-    "dostupneVychody": { "sluzebniChodba": "sluzebniChodba" }
+    "dostupneVychody": {
+      "sluzebniChodba": "sluzebniChodba"
+    }
   },
-
   "lekarna": {
     "nazev": "lekarna",
     "pribeh": "lekarna.txt",
     "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [
+    "predmetyVMistnosti": [
       {"nazev": "voda", "jdeVyhodit": true, "jeDulezity": false}
     ],
-    "npcvmistnosti": [
+    "npcVMistnosti": [
       {
         "jmeno": "prodavacka",
         "typMluveni": "nastvane",
@@ -105,60 +108,95 @@
         "dostalToCoChtel": false
       }
     ],
-    "dostupneVychody": { "sklad": "sklad", "sluzebniChodba": "sluzebniChodba" }
+    "dostupneVychody": {
+      "sklad": "sklad",
+      "sluzebniChodba": "sluzebniChodba"
+    }
   },
-
   "sklad": {
     "nazev": "sklad",
     "pribeh": "sklad.txt",
     "jeTamTma": false,
     "jeZamcena": true,
-    "predmetyvmistnosti": [{"nazev": "lekarnicka", "jdeVyhodit": true, "jeDulezity": true}],
-    "npcvmistnosti": [],
-    "dostupneVychody": { "lekarna": "lekarna" }
+    "predmetyVMistnosti": [
+      {"nazev": "lekarnicka", "jdeVyhodit": true, "jeDulezity": true}
+    ],
+    "npcVMistnosti": [],
+    "dostupneVychody": {
+      "lekarna": "lekarna"
+    }
   },
-
   "dutyFreeShop": {
     "nazev": "dutyFreeShop",
     "pribeh": "dutyfreeshop.txt",
     "jeTamTma": true,
     "jeZamcena": false,
-    "predmetyvmistnosti": [{"nazev": "plysak", "jdeVyhodit": true, "jeDulezity": false}],
-    "npcvmistnosti": [{ "jmeno": "zlodej", "typMluveni": "nastvane", "dialog": "zlodej.txt", "chceMluvit": true, "dostalToCoChtel": false }],
-    "dostupneVychody": { "checkpoint": "checkpoint", "sluzebniChodba": "sluzebniChodba" }
+    "predmetyVMistnosti": [
+      {"nazev": "plysak", "jdeVyhodit": true, "jeDulezity": false}
+    ],
+    "npcVMistnosti": [
+      {
+        "jmeno": "zlodej",
+        "typMluveni": "nastvane",
+        "dialog": "zlodej.txt",
+        "chceMluvit": true,
+        "dostalToCoChtel": false
+      }
+    ],
+    "dostupneVychody": {
+      "checkpoint": "checkpoint",
+      "sluzebniChodba": "sluzebniChodba"
+    }
   },
-
   "checkpoint": {
     "nazev": "checkpoint",
     "pribeh": "checkpoint.txt",
     "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [],
-    "npcvmistnosti": [
-      {"jmeno": "vojak", "typMluveni": "nastvane", "dialog": "vojak.txt", "chceMluvit": true, "dostalToCoChtel": false}
+    "predmetyVMistnosti": [],
+    "npcVMistnosti": [
+      {
+        "jmeno": "vojak",
+        "typMluveni": "nastvane",
+        "dialog": "vojak.txt",
+        "chceMluvit": true,
+        "dostalToCoChtel": false
+      }
     ],
-    "dostupneVychody": { "tridirnaZavazadel": "tridirnaZavazadel", "dutyFreeShop": "dutyFreeShop" }
+    "dostupneVychody": {
+      "tridirnaZavazadel": "tridirnaZavazadel",
+      "dutyFreeShop": "dutyFreeShop"
+    }
   },
-
   "tridirnaZavazadel": {
     "nazev": "tridirnaZavazadel",
     "pribeh": "tridirnazavazadel.txt",
     "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [],
-    "npcvmistnosti": [],
-    "dostupneVychody": { "gate4": "gate4", "checkpoint": "checkpoint" }
+    "predmetyVMistnosti": [],
+    "npcVMistnosti": [],
+    "dostupneVychody": {
+      "gate4": "gate4",
+      "checkpoint": "checkpoint"
+    }
   },
-
   "gate4": {
     "nazev": "gate4",
     "pribeh": "gate4.txt",
     "jeTamTma": false,
     "jeZamcena": false,
-    "predmetyvmistnosti": [],
-    "npcvmistnosti": [
-      { "jmeno": "unosce", "typMluveni": "nastvane", "dialog": "unosce.txt", "chceMluvit": true, "dostalToCoChtel": false }
+    "predmetyVMistnosti": [],
+    "npcVMistnosti": [
+      {
+        "jmeno": "unosce",
+        "typMluveni": "nastvane",
+        "dialog": "unosce.txt",
+        "chceMluvit": true,
+        "dostalToCoChtel": false
+      }
     ],
-    "dostupneVychody": { "tridirnaZavazadel": "tridirnaZavazadel" }
+    "dostupneVychody": {
+      "tridirnaZavazadel": "tridirnaZavazadel"
+    }
   }
 }

@@ -8,36 +8,39 @@ import java.util.Map;
 
 public  class Mistnost {
     private String nazev;
-    private ArrayList<Predmet> predmetyvmistnosti;//TODO
-    private ArrayList<NPC> npcvmistnosti;//TODO
+    private ArrayList<Predmet> predmetyVMistnosti;
+    private ArrayList<NPC> npcVMistnosti;
+    /**
+     * dostupneVychody json tam hodi data mistnsoti kam muze jit z nej jen jako text
+     */
     private HashMap<String,String> dostupneVychody;
     private boolean jeTamTma;
     private String pribeh;
     private boolean jeZamcena;
-    private HashMap<String, Mistnost> propojeneVychody = new HashMap<>();
-//    public Mistnost vstupDoDalsiMistnosti(String nazev) {
-//        return Hra;
-//    }
-public void propojVychody(HashMap<String, Mistnost> celySvet) {
-    for (String klic : dostupneVychody.keySet()) {
-        String nazevCile = dostupneVychody.get(klic);
-        Mistnost cil = celySvet.get(nazevCile);
-        if (cil != null) {
-            propojeneVychody.put(klic, cil);
-        }
+    /**
+     * propojeneVychody jsou prevedene string z dostupneVychody na objekty Mistnost
+     */
+    private HashMap<String, Mistnost> propojeneMistnosti = new HashMap<>();
+    /**
+     * vstupDoDalsiMistnosti podiva se do propojeneMistnosti a najde nazev a mistnosti jestli je soused a vrati ji
+     */
+    public Mistnost vstupDoDalsiMistnosti(String nazev) {
+        Mistnost cilova  = propojeneMistnosti.get(nazev) ;
+        return cilova;
     }
-    //TODO
+
+
+    /**
+     * propojeniMistnosti prevedou string na mistnost a ulozi se do propojenych vychodu
+     */
+public void propojeniMistnosti(HashMap<String, Mistnost> celaHra) {
+    for (String nazev : dostupneVychody.keySet()) {
+        String cil = dostupneVychody.get(nazev);
+        Mistnost cilova = celaHra.get(cil);
+        propojeneMistnosti.put(nazev, cilova);
+    }
+
 }
-
-
-    public ArrayList<NPC> getnpcvmistnosti() {
-        return npcvmistnosti;
-    }
-
-    public void setnpcvmistnosti(ArrayList<NPC> npcvmistnosti) {
-        this.npcvmistnosti = npcvmistnosti;
-    }
-
     public Mistnost() {
     }
 
@@ -48,13 +51,29 @@ public void propojVychody(HashMap<String, Mistnost> celySvet) {
     public void setNazev(String nazev) {
         this.nazev = nazev;
     }
-
-    public ArrayList<Predmet> getpredmetyvmistnosti() {
-        return predmetyvmistnosti;
+    public HashMap<String, Mistnost> getPropojeneMistnosti() {
+        return propojeneMistnosti;
     }
 
-    public void setpredmetyvmistnosti(ArrayList<Predmet> predmetyvmistnosti) {
-        this.predmetyvmistnosti = predmetyvmistnosti;
+    public void setPropojeneMistnosti(HashMap<String, Mistnost> propojeneMistnosti) {
+        this.propojeneMistnosti = propojeneMistnosti;
+    }
+
+
+    public ArrayList<Predmet> getPredmetyVMistnosti() {
+        return predmetyVMistnosti;
+    }
+
+    public void setPredmetyVMistnosti(ArrayList<Predmet> predmetyVMistnosti) {
+        this.predmetyVMistnosti = predmetyVMistnosti;
+    }
+
+    public ArrayList<NPC> getNpcVMistnosti() {
+        return npcVMistnosti;
+    }
+
+    public void setNpcVMistnosti(ArrayList<NPC> npcVMistnosti) {
+        this.npcVMistnosti = npcVMistnosti;
     }
 
     public HashMap<String, String> getDostupneVychody() {

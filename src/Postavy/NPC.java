@@ -6,25 +6,29 @@ import Mluveni.StrategieMluveni;
 import Zaklad.Predmet;
 
 public class  NPC extends Postava {
-    private StrategieMluveni typMluveni;
+    private  transient StrategieMluveni typMluveni;
     private String dialog;
     private boolean chceMluvit;
     private boolean dostalToCoChtel;
     private Predmet ocekavanyPredmet;
-    public String mluv(){
+    private String mluv(){
         return "";
     }
+    public String typMluveniText;
 
     public NPC() {
         super("");
+
     }
     public void prijmutiPredmetu(){}
 
     public NPC(String jmeno) {
         super("");
+
     }
     public void setJmeno(String jmeno) {
         this.jmeno = jmeno;
+
     }
 
     public String getJmeno() {
@@ -33,13 +37,30 @@ public class  NPC extends Postava {
 
 
     public StrategieMluveni getTypMluveni() {
+        if (typMluveni == null) {
+            setTypMluveni(this.typMluveniText);
+        }
         return typMluveni;
     }
 
-    public void setTypMluveni(String typMluveni) {
-        if (typMluveni.equals("nastvane")) {
+    public void setTypMluveni(StrategieMluveni typMluveni) {
+        this.typMluveni = typMluveni;
+    }
+
+    public String getTypMluveniText() {
+        return typMluveniText;
+    }
+
+    public void setTypMluveniText(String typMluveniText) {
+        setTypMluveni(typMluveniText);
+        this.typMluveniText = typMluveniText;
+
+    }
+
+    public void setTypMluveni(String typMluveniText) {
+        if (typMluveniText.equals("nastvane")) {
             this.typMluveni = new NastvaneMluveni();
-        } else if (typMluveni.equals("smutne")) {
+        } else if (typMluveniText.equals("smutne")) {
             this.typMluveni = new SmutneMluveni();
         } else {
             this.typMluveni = new PrijemneMluveni();

@@ -1,47 +1,16 @@
 package Zaklad;
-
 import Postavy.NPC;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public  class Mistnost {
     private String nazev;
     private ArrayList<Predmet> predmetyVMistnosti;
     private ArrayList<NPC> npcVMistnosti;
-    /**
-     * dostupneVychody json tam hodi data mistnsoti kam muze jit z nej jen jako text
-     */
     private ArrayList<String> dostupneVychody;
-//    private HashMap<String,String> dostupneVychody;
     private boolean jeTamTma;
     private String pribeh;
     private boolean jeZamcena;
-//    /**
-//     * propojeneVychody jsou prevedene string z dostupneVychody na objekty Mistnost
-//     */
-//    private HashMap<String, Mistnost> propojeneMistnosti = new HashMap<>();
-//    /**
-//     * vstupDoDalsiMistnosti podiva se do propojeneMistnosti a najde nazev a mistnosti jestli je soused a vrati ji
-//     */
-//    public Mistnost vstupDoDalsiMistnosti(String nazev) {
-//        Mistnost cilova  = propojeneMistnosti.get(nazev) ;
-//        return cilova;
-//    }
-//
-//
-//    /**
-//     * propojeniMistnosti prevedou string na mistnost a ulozi se do propojenych vychodu
-//     */
-//public void propojeniMistnosti(HashMap<String, Mistnost> celaHra) {
-//    for (String nazev : dostupneVychody.keySet()) {
-//        String cil = dostupneVychody.get(nazev);
-//        Mistnost cilova = celaHra.get(cil);
-//        propojeneMistnosti.put(nazev, cilova);
-//    }
-//
-//}
+
     public Mistnost() {
     }
 
@@ -56,14 +25,6 @@ public  class Mistnost {
     public ArrayList<String> getDostupneVychody() {
         return dostupneVychody;
     }
-    //    public HashMap<String, Mistnost> getPropojeneMistnosti() {
-//        return propojeneMistnosti;
-//    }
-//
-//    public void setPropojeneMistnosti(HashMap<String, Mistnost> propojeneMistnosti) {
-//        this.propojeneMistnosti = propojeneMistnosti;
-//    }
-
 
     public void setDostupneVychody(ArrayList<String> dostupneVychody) {
         this.dostupneVychody = dostupneVychody;
@@ -84,14 +45,6 @@ public  class Mistnost {
     public void setNpcVMistnosti(ArrayList<NPC> npcVMistnosti) {
         this.npcVMistnosti = npcVMistnosti;
     }
-
-//    public HashMap<String, String> getDostupneVychody() {
-//        return dostupneVychody;
-//    }
-//
-//    public void setDostupneVychody(HashMap<String, String> dostupneVychody) {
-//        this.dostupneVychody = dostupneVychody;
-//    }
 
     public boolean isJeTamTma() {
         return jeTamTma;

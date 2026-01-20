@@ -31,4 +31,13 @@ public class Predmet {
     public void setJeDulezity(boolean jeDulezity) {
         this.jeDulezity = jeDulezity;
     }
+
+    @Override
+    public String toString() {
+        return "Predmet{" +
+                "nazev='" + nazev + '\'' +
+                ", jdeVyhodit=" + jdeVyhodit +
+                ", jeDulezity=" + jeDulezity +
+                '}';
+    }
 }

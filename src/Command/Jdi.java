@@ -9,8 +9,13 @@ public class Jdi implements Command {
     public void vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().getDostupneVychody().contains(s)){
             Mistnost cilova = hra.getData().najdiMistnost(s);
-            hra.setAktualniMistnost(cilova);
-            System.out.println(cilova.getPribeh());
+            if (!cilova.isJeZamcena()){
+                hra.setAktualniMistnost(cilova);
+                System.out.println(cilova.getPribeh());
+            }else {
+                System.out.println("Mistnost je zamcena");
+            }
+
             }else {
             System.out.println("Mistnost neni sousedni");
         }

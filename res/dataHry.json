@@ -7,7 +7,7 @@
     { "nazev": "baterka", "jdeVyhodit": true, "jeDulezity": false },
     { "nazev": "voda", "jdeVyhodit": true, "jeDulezity": false },
     { "nazev": "lekarnicka", "jdeVyhodit": true, "jeDulezity": true },
-    { "nazev": "plysak", "jdeVyhodit": true, "jeDulezity": false }
+    { "nazev": "cokolada", "jdeVyhodit": true, "jeDulezity": false }
   ],
 
   "npc": [

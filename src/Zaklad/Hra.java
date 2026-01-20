@@ -1,10 +1,10 @@
 package Zaklad;
 
 import Command.Command;
-import Postavy.NPC;
 import Command.Jdi;
+import Postavy.NPC;
+
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Hra {
     private StavKonce stavKonce;
@@ -12,23 +12,34 @@ public class Hra {
     private Mistnost aktualniMistnost;
     private HashMap<String, Command> prikazy;
     private NacitaniZeSouboru data;
-//    private HashMap<String, Mistnost> celaHra;
 
     public Hra() {
-//        celaHra = NacitaniZeSouboru.nactiSouborHry();
-//            for (Mistnost mistnost : celaHra.values()) {
-//                mistnost.propojeniMistnosti(celaHra);
-//            }
-//            aktualniMistnost = celaHra.get("hlavniHala");
-//            this.prikazy = new HashMap<>();
-//            pridaniPrikazu();
-        //Zkouška, zdali načtení proběhlo v pořádku
+
         this.prikazy = new HashMap<>();
         data = NacitaniZeSouboru.nactiDataZeSlozky("/dataHry.json");
         aktualniMistnost = data.najdiMistnost("hlavniHala");
+        for (int i = 0; i < data.npc.size(); i++) {
+            data.npc.get(i).setTypMluveni(data.npc.get(i).getTypMluveniText());
+        }
+        data.nactiPozadovanyPredmet("mechanik", "kleste");
+        data.nactiPozadovanyPredmet("vojak", "pasy");
+        data.nactiPozadovanyPredmet("prodavacka", "voda");
+        data.nasypDoMistnostiPredmety(new String[] {"pasy", "cokolada", "inzulin"}, new String[] {"stariManzele" , "sara"}, "hlavniHala" );
+        data.nasypDoMistnostiPredmety(new String[] {"kleste"}, new String[] {}, "schodiste" );
+        data.nasypDoMistnostiPredmety(new String[] {"pacidlo"}, new String[] {}, "garaze" );
+        data.nasypDoMistnostiPredmety(new String[] {}, new String[] {}, "sluzebniChodba" );
+        data.nasypDoMistnostiPredmety(new String[] {"baterka"}, new String[] {"mechanik"}, "technickaMistnost" );
+        data.nasypDoMistnostiPredmety(new String[] {"voda"}, new String[] {"prodavacka"}, "lekarna" );
+        data.nasypDoMistnostiPredmety(new String[] {"lekarnicka"}, new String[] {}, "sklad" );
+        data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
+        data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
         System.out.println("Items: " + data.predmety.size());
         System.out.println("Characters: " + data.npc.size());
         System.out.println("Locations: " + data.mistnosti.size());
+        for (int i = 0; i < data.mistnosti.size(); i++) {
+            System.out.println(data.mistnosti.get(i).getNpcVMistnosti());
+            System.out.println(data.mistnosti.get(i).getPredmetyVMistnosti());
+        };
         pridaniPrikazu();
     }
     public void pridaniPrikazu() {

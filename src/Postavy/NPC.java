@@ -16,10 +16,6 @@ public class  NPC extends Postava {
     }
     public String typMluveniText;
 
-    public NPC() {
-        super("");
-
-    }
     public void prijmutiPredmetu(){}
 
     public NPC(String jmeno) {
@@ -97,5 +93,18 @@ public class  NPC extends Postava {
 
     public void setOcekavanyPredmet(Predmet ocekavanyPredmet) {
         this.ocekavanyPredmet = ocekavanyPredmet;
+    }
+
+    @Override
+    public String toString() {
+        return "NPC{" +
+                "typMluveni=" + typMluveni+
+                ", dialog='" + dialog + '\'' +
+                ", chceMluvit=" + chceMluvit +
+                ", dostalToCoChtel=" + dostalToCoChtel +
+                ", ocekavanyPredmet=" + ocekavanyPredmet +
+                ", typMluveniText='" + typMluveniText + '\'' +
+                ", jmeno='" + jmeno + '\'' +
+                '}';
     }
 }

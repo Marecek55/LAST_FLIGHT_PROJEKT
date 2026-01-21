@@ -1,22 +1,90 @@
 {
   "predmety": [
-    {"nazev": "pasy", "jdeVyhodit": true, "jeDulezity": true},
-    {"nazev": "inzulin", "jdeVyhodit": false, "jeDulezity": true},
-    {"nazev": "kleste", "jdeVyhodit": true, "jeDulezity": false},
-    {"nazev": "pacidlo", "jdeVyhodit": true, "jeDulezity": true},
-    {"nazev": "baterka", "jdeVyhodit": true, "jeDulezity": false},
-    {"nazev": "voda", "jdeVyhodit": true, "jeDulezity": false},
-    {"nazev": "lekarnicka", "jdeVyhodit": true, "jeDulezity": true},
-    {"nazev": "cokolada", "jdeVyhodit": true, "jeDulezity": false}
+    {
+      "nazev": "pasy",
+      "jdeVyhodit": true,
+      "jeDulezity": true
+    },
+    {
+      "nazev": "inzulin",
+      "jdeVyhodit": false,
+      "jeDulezity": true
+    },
+    {
+      "nazev": "kleste",
+      "jdeVyhodit": true,
+      "jeDulezity": false
+    },
+    {
+      "nazev": "pacidlo",
+      "jdeVyhodit": true,
+      "jeDulezity": true
+    },
+    {
+      "nazev": "baterka",
+      "jdeVyhodit": true,
+      "jeDulezity": false
+    },
+    {
+      "nazev": "voda",
+      "jdeVyhodit": true,
+      "jeDulezity": false
+    },
+    {
+      "nazev": "lekarnicka",
+      "jdeVyhodit": true,
+      "jeDulezity": true
+    },
+    {
+      "nazev": "cokolada",
+      "jdeVyhodit": true,
+      "jeDulezity": false
+    }
   ],
 
   "npc": [
-    {"jmeno": "sara", "typMluveniText": "prijemne", "dialog": "sara.txt", "chceMluvit": true, "dostalToCoChtel": false},
-    {"jmeno": "stariManzele", "typMluveniText": "smutne", "dialog": "manzele.txt", "chceMluvit": true, "dostalToCoChtel": false},
-    {"jmeno": "mechanik", "typMluveniText": "smutne", "dialog": "mechanik.txt", "chceMluvit": true, "dostalToCoChtel": false},
-    {"jmeno": "prodavacka", "typMluveniText": "nastvane", "dialog": "prodavacka.txt", "chceMluvit": false, "dostalToCoChtel": false},
-    {"jmeno": "zlodej", "typMluveniText": "nastvane", "dialog": "zlodej.txt", "chceMluvit": true, "dostalToCoChtel": false},
-    {"jmeno": "vojak", "typMluveniText": "nastvane", "dialog": "vojak.txt", "chceMluvit": true, "dostalToCoChtel": false}
+    {
+      "jmeno": "sara",
+      "typMluveniText": "prijemne",
+      "dialog": "sara.txt",
+      "chceMluvit": true,
+      "dostalToCoChtel": false
+    },
+    {
+      "jmeno": "stariManzele",
+      "typMluveniText": "smutne",
+      "dialog": "manzele.txt",
+      "chceMluvit": true,
+      "dostalToCoChtel": false
+    },
+    {
+      "jmeno": "mechanik",
+      "typMluveniText": "smutne",
+      "dialog": "mechanik.txt",
+      "chceMluvit": true,
+      "dostalToCoChtel": false
+    },
+    {
+      "jmeno": "prodavacka",
+      "typMluveniText": "nastvane",
+      "dialog": "prodavacka.txt",
+      "chceMluvit": false,
+      "dostalToCoChtel": false
+    },
+    {
+      "jmeno": "zlodej",
+      "typMluveniText": "nastvane",
+      "dialog": "zlodej.txt",
+      "chceMluvit": true,
+      "dostalToCoChtel": false
+    },
+    {
+      "jmeno": "vojak",
+      "typMluveniText": "nastvane",
+      "dialog": "vojak.txt",
+      "chceMluvit": true,
+      "dostalToCoChtel": false
+    }
   ],
 
   "mistnosti": [

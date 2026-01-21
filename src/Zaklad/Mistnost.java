@@ -10,6 +10,9 @@ public  class Mistnost {
     private boolean jeTamTma;
     private String pribeh;
     private boolean jeZamcena;
+    private boolean bylVNi;
+    private boolean jeCelaHotova;
+
 
     public Mistnost() {
     }
@@ -36,6 +39,22 @@ public  class Mistnost {
 
     public void setPredmetyVMistnosti(ArrayList<Predmet> predmetyVMistnosti) {
         this.predmetyVMistnosti = predmetyVMistnosti;
+    }
+
+    public boolean isJeCelaHotova() {
+        return jeCelaHotova;
+    }
+
+    public void setJeCelaHotova(boolean jeCelaHotova) {
+        this.jeCelaHotova = jeCelaHotova;
+    }
+
+    public boolean isBylVNi() {
+        return bylVNi;
+    }
+
+    public void setBylVNi(boolean bylVNi) {
+        this.bylVNi = bylVNi;
     }
 
     public ArrayList<NPC> getNpcVMistnosti() {
@@ -68,5 +87,14 @@ public  class Mistnost {
 
     public void setJeZamcena(boolean jeZamcena) {
         this.jeZamcena = jeZamcena;
+    }
+
+    @Override
+    public String toString() {
+        return "Mistnost{" +
+                "bylVNi=" + bylVNi +
+                ", jeCelaHotova=" + jeCelaHotova +
+                ", nazev='" + nazev + '\'' +
+                '}';
     }
 }

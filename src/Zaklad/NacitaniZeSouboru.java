@@ -7,36 +7,21 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class NacitaniZeSouboru {
-//    /**
-//     * Nacte dataHry.json do mapy kde je uplne vse
-//     * @return
-//     */
-//    public static HashMap<String, Mistnost> nactiSouborHry() {
-//        try {
-//            ObjectMapper parser = new ObjectMapper();
-//            File soubor = new File("res/dataHry.json");
-//            return parser.readValue(soubor, new TypeReference<HashMap<String, Mistnost>>() {} );
-//        } catch (StreamReadException e) {
-//            throw new RuntimeException(e);
-//        } catch (DatabindException e) {
-//            throw new RuntimeException(e);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        +
-//
-//    }
     public ArrayList<Predmet> predmety;
     public ArrayList<NPC> npc;
     public ArrayList<Mistnost> mistnosti;
 
+    /**
+     * Nacte pomoci cesty do jednotlivych objektu data z json souboru do jednotlivych listu
+     * @param cestaSlozky cesta k jsonu
+     * @return
+     */
+
     public static NacitaniZeSouboru nactiDataZeSlozky(String cestaSlozky) {
         Gson gson = new Gson();
-
-
 
         try (InputStream is = Hra.class.getResourceAsStream(cestaSlozky)) {
 
@@ -54,6 +39,13 @@ public class NacitaniZeSouboru {
         }
 
     }
+
+    /**
+     * Naplni listy predmetu v mistnosti a npc v mistnosti v dane mistnosti protoze se nenaplnuji v jsonu
+     * @param nazevPredmetu nazev predmetu ktery se prida
+     * @param nazevNPC nazev npc ktery se prida
+     * @param nazevMistnosti nazev mistnosti kam se to vse prida
+     */
     public void nasypDoMistnostiPredmety(String[] nazevPredmetu, String[] nazevNPC ,String nazevMistnosti) {
         ArrayList<Predmet> predmetyNaNasypani = new ArrayList<>();
         ArrayList<NPC> npcNaNasypani = new ArrayList<>();
@@ -80,6 +72,12 @@ public class NacitaniZeSouboru {
             }
         }
     }
+
+    /**
+     * Nacte vsem npc jejich ocekavany predmet
+     * @param jmeno jmeno npc
+     * @param jmenoPredmetu  jmeno ocekavaneho predmetu
+     */
     public void nactiPozadovanyPredmet(String jmeno , String jmenoPredmetu){
         Predmet predmetPotrebny = new Predmet();
         for (int i = 0; i < predmety.size(); i++) {
@@ -95,7 +93,11 @@ public class NacitaniZeSouboru {
     }
 
 
-
+    /**
+     * Hleda mistnost v listu nactenych mistnosti
+     * @param nazev nazev mistnosti kterou chceme najit
+     * @return
+     */
     public  Mistnost najdiMistnost(String nazev) {
         for (int i = 0; i < mistnosti.size(); i++) {
             if (mistnosti.get(i).getNazev().equals(nazev)) {

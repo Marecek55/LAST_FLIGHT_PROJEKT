@@ -2,6 +2,7 @@ package Zaklad;
 
 import Command.Command;
 import Command.Jdi;
+import Command.Konec;
 import Postavy.NPC;
 
 import java.util.HashMap;
@@ -12,6 +13,12 @@ public class Hra {
     private Mistnost aktualniMistnost;
     private HashMap<String, Command> prikazy;
     private NacitaniZeSouboru data;
+    private boolean jeKonec;
+
+    /**
+     * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
+     * taky se nactou pomoci metod data do mistnosti
+     */
 
     public Hra() {
 
@@ -33,19 +40,31 @@ public class Hra {
         data.nasypDoMistnostiPredmety(new String[] {"lekarnicka"}, new String[] {}, "sklad" );
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
         data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
-        System.out.println("Items: " + data.predmety.size());
-        System.out.println("Characters: " + data.npc.size());
-        System.out.println("Locations: " + data.mistnosti.size());
-        for (int i = 0; i < data.mistnosti.size(); i++) {
-            System.out.println(data.mistnosti.get(i).getNpcVMistnosti());
-            System.out.println(data.mistnosti.get(i).getPredmetyVMistnosti());
-        };
+        System.out.println("Predmetu je : " + data.predmety.size());
+        System.out.println("NPC je nactenych: " + data.npc.size());
+        System.out.println("Mistnosti je : " + data.mistnosti.size());
         pridaniPrikazu();
     }
+
+    /**
+     * pridaji se prikazy ktere muze hrac napsat do mapy prikazu
+     */
     public void pridaniPrikazu() {
         prikazy.put("jdi" ,new Jdi());
+        prikazy.put("konec", new Konec());
     }
 
+    public void setData(NacitaniZeSouboru data) {
+        this.data = data;
+    }
+
+    public boolean isJeKonec() {
+        return jeKonec;
+    }
+
+    public void setJeKonec(boolean jeKonec) {
+        this.jeKonec = jeKonec;
+    }
 
     public NacitaniZeSouboru getData() {
         return data;

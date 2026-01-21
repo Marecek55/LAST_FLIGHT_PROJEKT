@@ -33,25 +33,23 @@ public class  NPC extends Postava {
 
 
     public StrategieMluveni getTypMluveni() {
-        if (typMluveni == null) {
-            setTypMluveni(this.typMluveniText);
-        }
         return typMluveni;
     }
 
-    public void setTypMluveni(StrategieMluveni typMluveni) {
-        this.typMluveni = typMluveni;
-    }
 
     public String getTypMluveniText() {
         return typMluveniText;
     }
 
     public void setTypMluveniText(String typMluveniText) {
-        setTypMluveni(typMluveniText);
         this.typMluveniText = typMluveniText;
 
     }
+
+    /**
+     * Nastavi pomoci textu z jsonu interface typ mluveni
+     * @param typMluveniText je text z jsonu ktery sedi s nazvem typu mluveni
+     */
 
     public void setTypMluveni(String typMluveniText) {
         if (typMluveniText.equals("nastvane")) {

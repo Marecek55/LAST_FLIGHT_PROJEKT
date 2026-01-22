@@ -99,7 +99,7 @@ public class NacitaniZeSouboru {
      */
     public  Mistnost najdiMistnost(String nazev) {
         for (int i = 0; i < mistnosti.size(); i++) {
-            if (mistnosti.get(i).getNazev().equals(nazev)) {
+            if (mistnosti.get(i).getNazev().equalsIgnoreCase(nazev)) {
                 return mistnosti.get(i);
             }
         }
@@ -107,7 +107,7 @@ public class NacitaniZeSouboru {
     }
     public NPC najdiNPC(String nazev) {
         for (int i = 0; i < npc.size(); i++) {
-            if (npc.get(i).getJmeno().equals(nazev)) {
+            if (npc.get(i).getJmeno().equalsIgnoreCase(nazev)) {
                 return npc.get(i);
             }
         }

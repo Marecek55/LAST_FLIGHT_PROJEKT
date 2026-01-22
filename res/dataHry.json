@@ -51,9 +51,9 @@
       "dostalToCoChtel": false
     },
     {
-      "jmeno": "starimanzele",
+      "jmeno": "stariManzele",
       "typMluveniText": "smutne",
-      "dialog": "starimanzele.txt",
+      "dialog": "stariManzele.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
     },
@@ -89,8 +89,8 @@
 
   "mistnosti": [
     {
-      "nazev": "hlavnihala",
-      "pribeh": "hlavnihala.txt",
+      "nazev": "hlavniHala",
+      "pribeh": "hlavniHala.txt",
       "jeTamTma": false,
       "jeZamcena": false,
       "dostupneVychody": ["schodiste", "sluzebnichodba"],
@@ -116,8 +116,8 @@
       "npcVMistnosti": []
     },
     {
-      "nazev": "sluzebnichodba",
-      "pribeh": "sluzebnichodba.txt",
+      "nazev": "sluzebniChodba",
+      "pribeh": "sluzebniChodba.txt",
       "jeTamTma": false,
       "jeZamcena": true,
       "dostupneVychody": ["hlavnihala", "technickamistnost", "lekarna", "dutyfreeshop"],
@@ -125,8 +125,8 @@
       "npcVMistnosti": []
     },
     {
-      "nazev": "technickamistnost",
-      "pribeh": "technickamistnost.txt",
+      "nazev": "technickaMistnost",
+      "pribeh": "technickaMistnost.txt",
       "jeTamTma": false,
       "jeZamcena": false,
       "dostupneVychody": ["sluzebnichodba"],
@@ -152,8 +152,8 @@
       "npcVMistnosti": []
     },
     {
-      "nazev": "dutyfreeshop",
-      "pribeh": "dutyfreeshop.txt",
+      "nazev": "dutyFreeShop",
+      "pribeh": "dutyFreeShop.txt",
       "jeTamTma": true,
       "jeZamcena": false,
       "dostupneVychody": ["checkpoint", "sluzebnichodba"],
@@ -170,8 +170,8 @@
       "npcVMistnosti": []
     },
     {
-      "nazev": "tridirnazavazadel",
-      "pribeh": "tridirnazavazadel.txt",
+      "nazev": "tridirnaZavazadel",
+      "pribeh": "tridirnaZavazadel.txt",
       "jeTamTma": false,
       "jeZamcena": true,
       "dostupneVychody": ["gate4", "checkpoint"],

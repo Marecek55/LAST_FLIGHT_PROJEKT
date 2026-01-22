@@ -20,6 +20,10 @@ public class Jdi implements Command {
                         hra.setAktualniMistnost(cilova);
                         cilova.setBylVNi(true);
                         System.out.println(hra.getAktualniMistnost().getPribeh());
+                        for (int i = 0; i < hra.getAktualniMistnost().getNpcVMistnosti().size(); i++) {
+                            System.out.println(hra.getAktualniMistnost().getNpcVMistnosti().get(i).getDialog());
+                        }
+
                     }else {
                         System.out.println("V mistnosti uz nic neni muzes jit dal");
                         hra.setAktualniMistnost(cilova);

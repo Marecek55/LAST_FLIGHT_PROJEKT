@@ -3,8 +3,7 @@ package Zaklad;
 import Postavy.NPC;
 import com.google.gson.Gson;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -104,7 +103,48 @@ public class NacitaniZeSouboru {
                 return mistnosti.get(i);
             }
         }
-        throw new IllegalArgumentException("Neexistuje lokace s id: " + nazev);
+        throw new IllegalArgumentException("Neexistuje lokace s nazvem: " + nazev);
+    }
+    public NPC najdiNPC(String nazev) {
+        for (int i = 0; i < npc.size(); i++) {
+            if (npc.get(i).getJmeno().equals(nazev)) {
+                return npc.get(i);
+            }
+        }
+        throw new IllegalArgumentException("Neexistuje npc s nazvem: " + nazev);
+    }
+
+    /**
+     * Nacte pribeh mistnosti ze souboru a taky nacte dialogy npc
+     * @param nazev nazev mistnosti nebo npc
+     * @param jeToProNpc urci jestli jde o npc nebo ne aby se dobre pridal soubor
+     */
+    public void nacteniPribehuPostavAMistnosti(String nazev , boolean jeToProNpc) {
+        String nazevSouboru;
+        if (jeToProNpc) {
+            nazevSouboru = najdiNPC(nazev).getDialog();
+        }else {
+            nazevSouboru =  najdiMistnost(nazev).getPribeh();
+        }
+        String text = "";
+        try {
+            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazevSouboru)));
+            String line = "";
+            while ((line = br.readLine())!= null){
+                text = text +  line + "\n";
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if (jeToProNpc) {
+            najdiNPC(nazev).setDialog(text);
+        }else {
+            najdiMistnost(nazev).setPribeh(text);
+        }
+
+
     }
 
 

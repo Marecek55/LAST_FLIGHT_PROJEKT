@@ -51,9 +51,9 @@
       "dostalToCoChtel": false
     },
     {
-      "jmeno": "stariManzele",
+      "jmeno": "starimanzele",
       "typMluveniText": "smutne",
-      "dialog": "manzele.txt",
+      "dialog": "starimanzele.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
     },
@@ -89,11 +89,11 @@
 
   "mistnosti": [
     {
-      "nazev": "hlavniHala",
+      "nazev": "hlavnihala",
       "pribeh": "hlavnihala.txt",
       "jeTamTma": false,
       "jeZamcena": false,
-      "dostupneVychody": ["schodiste", "sluzebniChodba"],
+      "dostupneVychody": ["schodiste", "sluzebnichodba"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
@@ -102,7 +102,7 @@
       "pribeh": "schodiste.txt",
       "jeTamTma": false,
       "jeZamcena": false,
-      "dostupneVychody": ["hlavniHala", "garaze"],
+      "dostupneVychody": ["hlavnihala", "garaze"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
@@ -116,20 +116,20 @@
       "npcVMistnosti": []
     },
     {
-      "nazev": "sluzebniChodba",
+      "nazev": "sluzebnichodba",
       "pribeh": "sluzebnichodba.txt",
       "jeTamTma": false,
       "jeZamcena": true,
-      "dostupneVychody": ["hlavniHala", "technickaMistnost", "lekarna", "dutyFreeShop"],
+      "dostupneVychody": ["hlavnihala", "technickamistnost", "lekarna", "dutyfreeshop"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
     {
-      "nazev": "technickaMistnost",
+      "nazev": "technickamistnost",
       "pribeh": "technickamistnost.txt",
       "jeTamTma": false,
       "jeZamcena": false,
-      "dostupneVychody": ["sluzebniChodba"],
+      "dostupneVychody": ["sluzebnichodba"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
@@ -138,7 +138,7 @@
       "pribeh": "lekarna.txt",
       "jeTamTma": false,
       "jeZamcena": false,
-      "dostupneVychody": ["sklad", "sluzebniChodba"],
+      "dostupneVychody": ["sklad", "sluzebnichodba"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
@@ -152,11 +152,11 @@
       "npcVMistnosti": []
     },
     {
-      "nazev": "dutyFreeShop",
+      "nazev": "dutyfreeshop",
       "pribeh": "dutyfreeshop.txt",
       "jeTamTma": true,
       "jeZamcena": false,
-      "dostupneVychody": ["checkpoint", "sluzebniChodba"],
+      "dostupneVychody": ["checkpoint", "sluzebnichodba"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
@@ -165,12 +165,12 @@
       "pribeh": "checkpoint.txt",
       "jeTamTma": false,
       "jeZamcena": false,
-      "dostupneVychody": ["tridirnaZavazadel", "dutyFreeShop"],
+      "dostupneVychody": ["tridirnazavazadel", "dutyfreeshop"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     },
     {
-      "nazev": "tridirnaZavazadel",
+      "nazev": "tridirnazavazadel",
       "pribeh": "tridirnazavazadel.txt",
       "jeTamTma": false,
       "jeZamcena": true,
@@ -183,7 +183,7 @@
       "pribeh": "gate4.txt",
       "jeTamTma": false,
       "jeZamcena": false,
-      "dostupneVychody": ["tridirnaZavazadel"],
+      "dostupneVychody": ["tridirnazavazadel"],
       "predmetyVMistnosti": [],
       "npcVMistnosti": []
     }

@@ -13,13 +13,13 @@ public class Jdi implements Command {
      */
     @Override
     public void vykonat(Hra hra, String s) {
-        if (hra.getAktualniMistnost().getDostupneVychody().contains(s)){
-            Mistnost cilova = hra.getData().najdiMistnost(s);
+        if (hra.getAktualniMistnost().getDostupneVychody().contains(s.toLowerCase())){
+            Mistnost cilova = hra.getData().najdiMistnost(s.toLowerCase());
                 if (!cilova.isJeZamcena()){
                     if (!cilova.isBylVNi()||!cilova.isJeCelaHotova()){
                         hra.setAktualniMistnost(cilova);
                         cilova.setBylVNi(true);
-                        System.out.println(hra.getAktualniMistnost());
+                        System.out.println(hra.getAktualniMistnost().getPribeh());
                     }else {
                         System.out.println("V mistnosti uz nic neni muzes jit dal");
                         hra.setAktualniMistnost(cilova);

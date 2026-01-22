@@ -17,14 +17,14 @@ public class Hra {
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
-     * taky se nactou pomoci metod data do mistnosti
+     * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc
      */
 
     public Hra() {
 
         this.prikazy = new HashMap<>();
         data = NacitaniZeSouboru.nactiDataZeSlozky("/dataHry.json");
-        aktualniMistnost = data.najdiMistnost("hlavniHala");
+        aktualniMistnost = data.najdiMistnost("hlavnihala");
         for (int i = 0; i < data.npc.size(); i++) {
             data.npc.get(i).setTypMluveni(data.npc.get(i).getTypMluveniText());
         }
@@ -40,6 +40,13 @@ public class Hra {
         data.nasypDoMistnostiPredmety(new String[] {"lekarnicka"}, new String[] {}, "sklad" );
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
         data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
+        for (int i = 0; i < data.npc.size(); i++) {
+            data.nacteniPribehuPostavAMistnosti(data.npc.get(i).getJmeno(), true );
+        }
+        for (int i = 0; i < data.mistnosti.size(); i++) {
+            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev(), false);
+        }
+
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());
         System.out.println("Mistnosti je : " + data.mistnosti.size());

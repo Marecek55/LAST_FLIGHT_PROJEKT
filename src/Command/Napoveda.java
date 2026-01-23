@@ -5,18 +5,27 @@ import Zaklad.Hra;
 import java.util.Scanner;
 
 public class Napoveda implements Command {
-    Scanner sc = new Scanner(System.in);
+
     @Override
     public void vykonat(Hra hra, String s) {
-        System.out.println("Zadej s cim potrebujes pomoct");
-        System.out.println("1: Kam muzu jit?\n2: Co mam delat?\n ");
-        String odpoved = sc.next();
-        switch (odpoved){
+
+        switch (s){
             case "1":
-                System.out.println(hra.getAktualniMistnost().getDostupneVychody());
-
+                System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
+                hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 0, 2);
+                break;
+                case "2":
+                    System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
+                    hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 0, 3);
+                    break;
+                    case "3":
+                        System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
+                        hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 0, 4);
+                        break;
+                        default:
+                            System.out.println("Spatne zadana uroven napovedy");
+                            break;
         }
-
     }
 
 

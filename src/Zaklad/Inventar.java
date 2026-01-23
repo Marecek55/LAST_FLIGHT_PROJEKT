@@ -6,9 +6,13 @@ public class Inventar {
     private int kapacita;
     private boolean jePlny;
     private ArrayList<Predmet> listPredmetu;
-    public void odebratPredmet(Predmet p) {}
+    public void odebratPredmet(Predmet p) {
+        listPredmetu.remove(p);
+        kapacita--;
+    }
     public void pridatPredmet(Predmet p) {
         listPredmetu.add(p);
+        kapacita++;
     }
     public boolean predmetJeVInventari(Predmet predmet){
         if (listPredmetu.contains(predmet)){
@@ -43,7 +47,11 @@ public class Inventar {
         this.listPredmetu = listPredmetu;
     }
 
-    public void zobrazeniInventare(){}
+    public void zobrazeniInventare(){
+        for (Predmet p : listPredmetu) {
+            System.out.println(p.getNazev());
+        }
+    }
 
     public Inventar(int kapacita) {
         this.kapacita = kapacita;

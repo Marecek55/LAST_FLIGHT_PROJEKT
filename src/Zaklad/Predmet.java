@@ -16,6 +16,15 @@ public class Predmet {
         this.nazev = nazev;
     }
 
+    public String isJdeVyhoditText() {
+        if (jdeVyhodit) {
+            return "Ano";
+        }else {
+            return "Ne";
+        }
+
+    }
+
     public boolean isJdeVyhodit() {
         return jdeVyhodit;
     }

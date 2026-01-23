@@ -18,6 +18,7 @@ public class Jdi implements Command {
                 if (!cilova.isJeZamcena()){
                     if (!cilova.isBylVNi()||!cilova.isJeCelaHotova()){
                         hra.setAktualniMistnost(cilova);
+                        hra.getCas().odecteniCasu();
                         cilova.setBylVNi(true);
                         System.out.println(hra.getAktualniMistnost().getPribeh());
                         for (int i = 0; i < hra.getAktualniMistnost().getNpcVMistnosti().size(); i++) {

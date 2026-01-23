@@ -119,8 +119,30 @@ public class NacitaniZeSouboru {
                 return predmety.get(i);
             }
         }
-        throw new IllegalArgumentException("Neexistuje npc s nazvem: " + nazev);
+        throw new IllegalArgumentException("Neexistuje predmet s nazvem: " + nazev);
     }
+    public void nacteniRadkuSouboru(String nazev , int odRadku , int doRadku) {
+        String text = "";
+        int cisloRadku  = 1;
+        try {
+            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazev+ ".txt")));
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                if (cisloRadku>= odRadku && cisloRadku <= doRadku) {
+                    text = text + line + "\n";
+                }
+                cisloRadku++;
+
+            }
+            System.out.println(text);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
     /**
      * Nacte pribeh mistnosti ze souboru a taky nacte dialogy npc
@@ -140,6 +162,7 @@ public class NacitaniZeSouboru {
             String line = "";
             while ((line = br.readLine())!= null){
                 text = text +  line + "\n";
+
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

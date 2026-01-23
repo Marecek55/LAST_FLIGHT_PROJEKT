@@ -1,11 +1,22 @@
 package Zaklad;
 
+import Cas.Cas;
 import Command.Command;
 import Command.Jdi;
 import Command.Konec;
 import Command.Napoveda;
 import Command.Dej;
-import Postavy.NPC;
+import Command.Mluv;
+import Command.Poloz;
+import Command.Pouzij;
+import Command.Prozkoumej;
+import Command.Uhni;
+import Command.Utok;
+import Command.InventarCommand;
+import Command.Vezmi;
+import Cas.NormalniCas;
+import Command.Pomoc;
+
 
 import java.util.HashMap;
 
@@ -16,8 +27,9 @@ public class Hra {
     private HashMap<String, Command> prikazy;
     private NacitaniZeSouboru data;
     private boolean jeKonec;
-    private String jesteVetsiUpresneni;
+    private String tretiCastPrikazu;
     private Inventar inventar;
+    private Cas cas;
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
@@ -35,7 +47,6 @@ public class Hra {
         data.nactiPozadovanyPredmet("mechanik", "kleste");
         data.nactiPozadovanyPredmet("vojak", "pasy");
         data.nactiPozadovanyPredmet("prodavacka", "voda");
-        data.nactiPozadovanyPredmet("stariManzele", "cokolada");
         data.nasypDoMistnostiPredmety(new String[] {"pasy", "cokolada", "inzulin"}, new String[] {"stariManzele" , "sara"}, "hlavniHala" );
         data.nasypDoMistnostiPredmety(new String[] {"kleste"}, new String[] {}, "schodiste" );
         data.nasypDoMistnostiPredmety(new String[] {"pacidlo"}, new String[] {}, "garaze" );
@@ -56,7 +67,7 @@ public class Hra {
         System.out.println("NPC je nactenych: " + data.npc.size());
         System.out.println("Mistnosti je : " + data.mistnosti.size());
         inventar = new Inventar(4);
-        inventar.pridatPredmet(data.najdiPredmet("cokolada"));
+        cas = new Cas(new NormalniCas());
         pridaniPrikazu();
     }
 
@@ -65,9 +76,27 @@ public class Hra {
      */
     public void pridaniPrikazu() {
         prikazy.put("jdi" ,new Jdi());
+        prikazy.put("dej" ,new Dej());
         prikazy.put("konec", new Konec());
         prikazy.put("napoveda" , new Napoveda());
-        prikazy.put("dej", new Dej());
+        prikazy.put("inventar", new InventarCommand());
+        prikazy.put("mluv", new Mluv());
+        prikazy.put("poloz", new Poloz());
+        prikazy.put("pouzij", new Pouzij());
+        prikazy.put("prozkoumej", new Prozkoumej());
+        prikazy.put("uhni", new Uhni());
+        prikazy.put("utok", new Utok());
+        prikazy.put("vezmi", new Vezmi());
+        prikazy.put("pomoc", new Pomoc());
+
+    }
+
+    public Cas getCas() {
+        return cas;
+    }
+
+    public void setCas(Cas cas) {
+        this.cas = cas;
     }
 
     public void setData(NacitaniZeSouboru data) {
@@ -78,12 +107,12 @@ public class Hra {
         return jeKonec;
     }
 
-    public String getJesteVetsiUpresneni() {
-        return jesteVetsiUpresneni;
+    public String getTretiCastPrikazu() {
+        return tretiCastPrikazu;
     }
 
-    public void setJesteVetsiUpresneni(String jesteVetsiUpresneni) {
-        this.jesteVetsiUpresneni = jesteVetsiUpresneni;
+    public void setTretiCastPrikazu(String tretiCastPrikazu) {
+        this.tretiCastPrikazu = tretiCastPrikazu;
     }
 
     public void setJeKonec(boolean jeKonec) {

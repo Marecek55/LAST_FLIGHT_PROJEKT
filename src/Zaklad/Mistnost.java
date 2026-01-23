@@ -16,6 +16,9 @@ public  class Mistnost {
 
     public Mistnost() {
     }
+    public void pridatPredmetDoMistnosti(Predmet p) {
+        predmetyVMistnosti.add(p);
+    }
 
     public String getNazev() {
         return nazev;

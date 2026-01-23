@@ -1,5 +1,7 @@
 package Postavy;
 
+import Zaklad.Inventar;
+
 public class Alex extends Postava {
     private boolean jeZraneny;
 

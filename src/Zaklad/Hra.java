@@ -3,6 +3,8 @@ package Zaklad;
 import Command.Command;
 import Command.Jdi;
 import Command.Konec;
+import Command.Napoveda;
+import Command.Dej;
 import Postavy.NPC;
 
 import java.util.HashMap;
@@ -14,6 +16,8 @@ public class Hra {
     private HashMap<String, Command> prikazy;
     private NacitaniZeSouboru data;
     private boolean jeKonec;
+    private String jesteVetsiUpresneni;
+    private Inventar inventar;
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
@@ -31,6 +35,7 @@ public class Hra {
         data.nactiPozadovanyPredmet("mechanik", "kleste");
         data.nactiPozadovanyPredmet("vojak", "pasy");
         data.nactiPozadovanyPredmet("prodavacka", "voda");
+        data.nactiPozadovanyPredmet("stariManzele", "cokolada");
         data.nasypDoMistnostiPredmety(new String[] {"pasy", "cokolada", "inzulin"}, new String[] {"stariManzele" , "sara"}, "hlavniHala" );
         data.nasypDoMistnostiPredmety(new String[] {"kleste"}, new String[] {}, "schodiste" );
         data.nasypDoMistnostiPredmety(new String[] {"pacidlo"}, new String[] {}, "garaze" );
@@ -50,6 +55,8 @@ public class Hra {
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());
         System.out.println("Mistnosti je : " + data.mistnosti.size());
+        inventar = new Inventar(4);
+        inventar.pridatPredmet(data.najdiPredmet("cokolada"));
         pridaniPrikazu();
     }
 
@@ -59,6 +66,8 @@ public class Hra {
     public void pridaniPrikazu() {
         prikazy.put("jdi" ,new Jdi());
         prikazy.put("konec", new Konec());
+        prikazy.put("napoveda" , new Napoveda());
+        prikazy.put("dej", new Dej());
     }
 
     public void setData(NacitaniZeSouboru data) {
@@ -67,6 +76,14 @@ public class Hra {
 
     public boolean isJeKonec() {
         return jeKonec;
+    }
+
+    public String getJesteVetsiUpresneni() {
+        return jesteVetsiUpresneni;
+    }
+
+    public void setJesteVetsiUpresneni(String jesteVetsiUpresneni) {
+        this.jesteVetsiUpresneni = jesteVetsiUpresneni;
     }
 
     public void setJeKonec(boolean jeKonec) {
@@ -103,6 +120,14 @@ public class Hra {
 
 
     public void konec(StavKonce stavKonce) {
+    }
+
+    public Inventar getInventar() {
+        return inventar;
+    }
+
+    public void setInventar(Inventar inventar) {
+        this.inventar = inventar;
     }
 
     public Mistnost getAktualniMistnost() {

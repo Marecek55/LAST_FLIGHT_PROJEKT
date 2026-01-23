@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Konzole {
     private Hra hra;
 
+
     Scanner sc = new Scanner(System.in);
 
     /**
@@ -19,6 +20,7 @@ public class Konzole {
             String upresneniPrikazu = "";
             if (rozdeleni.length > 1) {
                 upresneniPrikazu = rozdeleni[1];
+                hra.setJesteVetsiUpresneni(rozdeleni[2]);
             }
             if (hra.getPrikazy().containsKey(nazevPrikazu)) {
                 hra.getPrikazy().get(nazevPrikazu).vykonat(hra,upresneniPrikazu);

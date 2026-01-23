@@ -113,6 +113,14 @@ public class NacitaniZeSouboru {
         }
         throw new IllegalArgumentException("Neexistuje npc s nazvem: " + nazev);
     }
+    public Predmet najdiPredmet(String nazev) {
+        for (int i = 0; i < predmety.size(); i++) {
+            if (predmety.get(i).getNazev().equalsIgnoreCase(nazev)) {
+                return predmety.get(i);
+            }
+        }
+        throw new IllegalArgumentException("Neexistuje npc s nazvem: " + nazev);
+    }
 
     /**
      * Nacte pribeh mistnosti ze souboru a taky nacte dialogy npc

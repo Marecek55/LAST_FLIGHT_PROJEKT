@@ -59,16 +59,22 @@ public class Hra {
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
         data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
         for (int i = 0; i < data.npc.size(); i++) {
-            data.nacteniPribehuPostavAMistnosti(data.npc.get(i).getJmeno(), true );
+            data.nacteniPribehuPostavAMistnosti(data.npc.get(i).getJmeno().toLowerCase(), true );
         }
         for (int i = 0; i < data.mistnosti.size(); i++) {
-            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev(), false);
+            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev().toLowerCase(), false);
         }
 
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());
         System.out.println("Mistnosti je : " + data.mistnosti.size());
         inventar = new Inventar(4);
+        data.nactiPozadovanyPredmet("stariManzele", "cokolada");
+        inventar.pridatPredmet(data.najdiPredmet("cokolada"));
+        inventar.pridatPredmet(data.najdiPredmet("voda"));
+
+
+
         cas = new Cas(new NormalniCas());
         pridaniPrikazu();
     }

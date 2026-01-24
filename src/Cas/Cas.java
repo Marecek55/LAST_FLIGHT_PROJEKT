@@ -5,7 +5,7 @@ public class Cas {
     private StrategieCasu tempoCasu;
     public void odecteniCasu() {
         zbyvajiciCas = tempoCasu.spocteniCasu(zbyvajiciCas);
-        System.out.println("Zbyvajici cas: " + zbyvajiciCas + " minut.");
+        System.out.println("Zbyvajici cas je " + zbyvajiciCas + " minut");
     }
 
     public Cas(StrategieCasu tempoCasu) {

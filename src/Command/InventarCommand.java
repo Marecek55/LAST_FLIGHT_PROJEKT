@@ -41,6 +41,7 @@ public class InventarCommand implements Command {
 
                                 }
                                 hra.getAktualniMistnost().pridatPredmetDoMistnosti(p);
+                                hra.getCas().odecteniCasu();
                                 nasel = true;
                             }
                         }

@@ -3,13 +3,14 @@ package Command;
 import Postavy.Unosce;
 import Zaklad.AkceUnosce;
 import Zaklad.Hra;
-/**
- * Pokud unosce utoci uhne utoku
- * @param hra instance hry aby se dala ovladat aktualni mistnost
- * @param s Druha cast inputu uzivatele
- */
 
 public class Uhni implements Command {
+    /**
+     * Pokud unosce utoci uhne utoku
+     * @param hra instance hry aby se dala ovladat aktualni mistnost
+     * @param s Druha cast inputu uzivatele
+     */
+
     @Override
     public void vykonat(Hra hra, String s) {
         if (hra.getUnosce().getAkce().equals(AkceUnosce.UTOCICI)) {

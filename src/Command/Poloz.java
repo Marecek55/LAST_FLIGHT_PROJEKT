@@ -17,6 +17,7 @@ public class Poloz implements Command {
                     System.out.println("Vyhodil jsi "+ hra.getInventar().getListPredmetu().get(i).getNazev() );
                     hra.getAktualniMistnost().pridatPredmetDoMistnosti(hra.getInventar().getListPredmetu().get(i));
                     hra.getInventar().odebratPredmet(hra.getInventar().getListPredmetu().get(i));
+                    hra.getCas().odecteniCasu();
                     nasel = true;
                 }
             }

@@ -16,6 +16,7 @@ public class Prozkoumej implements Command {
             for (int i = 0; i < hra.getAktualniMistnost().getNpcVMistnosti().size(); i++) {
                 System.out.println(hra.getAktualniMistnost().getNpcVMistnosti().get(i).getJmeno());
             }
+            hra.getCas().odecteniCasu();
         }else {
             System.out.println("Nikdo v mistnosti neni");
         }
@@ -24,6 +25,7 @@ public class Prozkoumej implements Command {
             for (int i = 0; i < hra.getAktualniMistnost().getPredmetyVMistnosti().size(); i++) {
                 System.out.println(hra.getAktualniMistnost().getPredmetyVMistnosti().get(i).getNazev());
             }
+            hra.getCas().odecteniCasu();
         }else {
             System.out.println("Zadny predmet v mistnosti neni");
         }

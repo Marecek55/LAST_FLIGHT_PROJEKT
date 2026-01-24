@@ -17,6 +17,7 @@ public class Vezmi implements Command {
                 p = hra.getAktualniMistnost().getPredmetyVMistnosti().get(i);
                 break;
             }
+            hra.getCas().odecteniCasu();
         }
         if (p == null) {
             System.out.println("Predmet neni v mistnosti");

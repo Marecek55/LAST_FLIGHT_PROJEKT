@@ -41,8 +41,9 @@ public class Dej implements Command {
                         cilovaPostava.setDostalToCoChtel(true);
                         hra.getInventar().odebratPredmet(cilovyPredmet);
                         System.out.println("Dal jsi " + cilovyPredmet.getNazev() + " tomuto cloveku " + cilovaPostava.getJmeno());
+                        hra.getCas().odecteniCasu();
                     } else {
-                        System.out.println("Tento predmet " + cilovyPredmet.getNazev() + " dana postava" + cilovaPostava.getJmeno() + " nechce");
+                        System.out.println("Tento predmet " + cilovyPredmet.getNazev() + " dana postava " + cilovaPostava.getJmeno() + " nechce");
                     }
                 } else {
                     System.out.println("Predmet nemas v inventari");

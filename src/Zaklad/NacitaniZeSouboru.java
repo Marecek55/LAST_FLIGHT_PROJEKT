@@ -152,9 +152,9 @@ public class NacitaniZeSouboru {
     public void nacteniPribehuPostavAMistnosti(String nazev , boolean jeToProNpc) {
         String nazevSouboru;
         if (jeToProNpc) {
-            nazevSouboru = najdiNPC(nazev).getDialog();
+            nazevSouboru = najdiNPC(nazev).getJmeno() + ".txt";
         }else {
-            nazevSouboru =  najdiMistnost(nazev).getPribeh();
+            nazevSouboru =  najdiMistnost(nazev).getNazev() + ".txt";
         }
         String text = "";
         try {

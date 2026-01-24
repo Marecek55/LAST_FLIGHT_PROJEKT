@@ -5,6 +5,11 @@ import Postavy.Postava;
 import Zaklad.Hra;
 
 public class Mluv implements Command {
+    /**
+     * Mluvi s postavou v dane mistnosti
+     * @param hra instance hry aby se dala ovladat aktualni mistnost
+     * @param s Druha cast inputu uzivatele
+     */
     @Override
     public void vykonat(Hra hra, String s) {
         NPC p = null;

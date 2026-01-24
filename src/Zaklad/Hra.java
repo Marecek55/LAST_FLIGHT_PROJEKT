@@ -16,6 +16,7 @@ import Command.InventarCommand;
 import Command.Vezmi;
 import Cas.NormalniCas;
 import Command.Pomoc;
+import Postavy.Unosce;
 
 
 import java.util.HashMap;
@@ -30,6 +31,7 @@ public class Hra {
     private String tretiCastPrikazu;
     private Inventar inventar;
     private Cas cas;
+    private Unosce unosce;
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
@@ -165,5 +167,13 @@ public class Hra {
 
     public void setAktualniMistnost(Mistnost novaMistnost) {
         this.aktualniMistnost = novaMistnost;
+    }
+
+    public Unosce getUnosce() {
+        return unosce;
+    }
+
+    public void setUnosce(Unosce unosce) {
+        this.unosce = unosce;
     }
 }

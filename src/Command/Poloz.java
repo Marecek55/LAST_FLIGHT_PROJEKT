@@ -3,6 +3,11 @@ package Command;
 import Zaklad.Hra;
 
 public class Poloz implements Command {
+    /**
+     * Polozi predmet do mistnosti ve ktere je
+     * @param hra instance hry aby se dala ovladat aktualni mistnost
+     * @param s Druha cast inputu uzivatel
+     */
     @Override
     public void vykonat(Hra hra, String s) {
         boolean nasel = false;

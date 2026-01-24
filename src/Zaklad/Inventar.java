@@ -3,16 +3,25 @@ package Zaklad;
 import java.util.ArrayList;
 
 public class Inventar {
-    private int kapacita;
-    private boolean jePlny;
+    private int kapacita = 3;
     private ArrayList<Predmet> listPredmetu;
+    public boolean isJePlny(){
+        return listPredmetu.size() >= kapacita;
+    }
     public void odebratPredmet(Predmet p) {
+        if (!listPredmetu.contains(p)) {
+            System.out.println("NEMAS CO VYHODIT");
+            return;
+        }
         listPredmetu.remove(p);
-        kapacita--;
     }
     public void pridatPredmet(Predmet p) {
-        listPredmetu.add(p);
-        kapacita++;
+        if (!isJePlny()) {
+            listPredmetu.add(p);
+        }else {
+            System.out.println("MAS PLNOU KAPACITU MUSIS POLOZIT PREDMET");
+            return;
+        }
     }
     public boolean predmetJeVInventari(Predmet predmet){
         if (listPredmetu.contains(predmet)){
@@ -23,24 +32,16 @@ public class Inventar {
 
     }
 
+    public ArrayList<Predmet> getListPredmetu() {
+        return listPredmetu;
+    }
+
     public int getKapacita() {
         return kapacita;
     }
 
     public void setKapacita(int kapacita) {
         this.kapacita = kapacita;
-    }
-
-    public boolean isJePlny() {
-        return jePlny;
-    }
-
-    public void setJePlny(boolean jePlny) {
-        this.jePlny = jePlny;
-    }
-
-    public ArrayList<Predmet> getListPredmetu() {
-        return listPredmetu;
     }
 
     public void setListPredmetu(ArrayList<Predmet> listPredmetu) {
@@ -55,8 +56,6 @@ public class Inventar {
 
     public Inventar(int kapacita) {
         this.kapacita = kapacita;
-        this.jePlny = false;
-        this.listPredmetu = null;
         this.listPredmetu = new ArrayList<>();
     }
 }

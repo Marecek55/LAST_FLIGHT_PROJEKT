@@ -40,6 +40,7 @@ public class Konzole {
         hra = new Hra();
             do {
                 provadeniPrikazu();
+
             } while (!hra.isJeKonec());
     }
 

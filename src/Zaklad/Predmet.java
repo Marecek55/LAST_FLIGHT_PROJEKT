@@ -4,6 +4,7 @@ public class Predmet {
     private String nazev;
     private boolean jdeVyhodit;
     private boolean jeDulezity;
+    private boolean jdePouzit;
 
     public Predmet() {
     }
@@ -27,6 +28,14 @@ public class Predmet {
 
     public boolean isJdeVyhodit() {
         return jdeVyhodit;
+    }
+
+    public boolean isJdePouzit() {
+        return jdePouzit;
+    }
+
+    public void setJdePouzit(boolean jdePouzit) {
+        this.jdePouzit = jdePouzit;
     }
 
     public void setJdeVyhodit(boolean jdeVyhodit) {

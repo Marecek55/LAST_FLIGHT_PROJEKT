@@ -6,6 +6,11 @@ import Zaklad.Predmet;
 import java.util.Scanner;
 
 public class InventarCommand implements Command {
+    /**
+     * Da na vyber uzivateli co chce delat s inventarem a bud odstrani nebo zobrazi veci
+     * @param hra instance hry aby se dala ovladat aktualni mistnost
+     * @param s Druha cast inputu uzivatele
+     */
     @Override
     public void vykonat(Hra hra, String s) {
         Scanner sc = new Scanner(System.in);

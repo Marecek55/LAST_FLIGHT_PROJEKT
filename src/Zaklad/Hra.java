@@ -35,7 +35,7 @@ public class Hra {
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
-     * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc
+     * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc a vytvari se instance pro cas inventar unosce atd
      */
 
     public Hra() {
@@ -64,19 +64,11 @@ public class Hra {
         for (int i = 0; i < data.mistnosti.size(); i++) {
             data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev().toLowerCase(), false);
         }
-
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());
         System.out.println("Mistnosti je : " + data.mistnosti.size());
         inventar = new Inventar(4);
         inventar.pridatPredmet(data.najdiPredmet("inzulin"));
-        //TODO
-        data.nactiPozadovanyPredmet("stariManzele", "cokolada");
-        inventar.pridatPredmet(data.najdiPredmet("cokolada"));
-        inventar.pridatPredmet(data.najdiPredmet("voda"));
-
-
-
         cas = new Cas(new NormalniCas());
         unosce  = new Unosce("Unosce", 100);
         pridaniPrikazu();

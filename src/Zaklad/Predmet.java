@@ -17,6 +17,11 @@ public class Predmet {
         this.nazev = nazev;
     }
 
+    /**
+     * prevede true a false na ano ne aby bylo lepe citelne
+     * @return
+     */
+
     public String isJdeVyhoditText() {
         if (jdeVyhodit) {
             return "Ano";

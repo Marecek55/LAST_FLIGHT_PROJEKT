@@ -19,7 +19,9 @@ public class Mluv implements Command {
                 if (hra.getAktualniMistnost().getNpcVMistnosti().get(i).getJmeno().toLowerCase().equals(s.toLowerCase())) {
                     p = hra.getAktualniMistnost().getNpcVMistnosti().get(i);
                     hra.getData().nacteniPribehuPostavAMistnosti(s, true );
+                    System.out.println(p.getTypMluveni().pozdrav());
                     System.out.print(p.getDialog());
+                    System.out.println(p.getTypMluveni().rozlouceni());
                     hra.getCas().odecteniCasu();
                     nasel = true;
                     break;

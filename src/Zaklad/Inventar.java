@@ -5,9 +5,19 @@ import java.util.ArrayList;
 public class Inventar {
     private int kapacita = 4;
     private ArrayList<Predmet> listPredmetu;
+
+    /**
+     * overuje jestli je inventar plny
+     * @return
+     */
     public boolean isJePlny(){
         return listPredmetu.size() >= kapacita;
     }
+
+    /**
+     * odebira predmet
+     * @param p predmet
+     */
     public void odebratPredmet(Predmet p) {
         if (!listPredmetu.contains(p)) {
             System.out.println("NEMAS CO VYHODIT");
@@ -15,6 +25,11 @@ public class Inventar {
         }
         listPredmetu.remove(p);
     }
+
+    /**
+     * pridava predmet
+     * @param p predmet
+     */
     public void pridatPredmet(Predmet p) {
         if (!isJePlny()) {
             listPredmetu.add(p);
@@ -23,6 +38,12 @@ public class Inventar {
             return;
         }
     }
+
+    /**
+     * kontroluje jestli je dany predmet v inventari
+     * @param predmet predmet
+     * @return
+     */
     public boolean predmetJeVInventari(Predmet predmet){
         if (listPredmetu.contains(predmet)){
             return true;
@@ -48,6 +69,9 @@ public class Inventar {
         this.listPredmetu = listPredmetu;
     }
 
+    /**
+     * zobrazi inventar vypise jmena
+     */
     public void zobrazeniInventare(){
         for (Predmet p : listPredmetu) {
             System.out.println(p.getNazev());

@@ -3,6 +3,7 @@ import Mluveni.NastvaneMluveni;
 import Mluveni.PrijemneMluveni;
 import Mluveni.SmutneMluveni;
 import Mluveni.StrategieMluveni;
+import Zaklad.Hra;
 import Zaklad.Predmet;
 
 public class  NPC extends Postava {
@@ -16,7 +17,26 @@ public class  NPC extends Postava {
     }
     public String typMluveniText;
 
-    public void prijmutiPredmetu(){}
+    /**
+     * otestuje u prikazu dej jestli dana postava predmet chce nebo jestli chce vubec neco a kdyz ano tak to vykona
+     * @param p
+     * @param hra
+     */
+    public void prijmutiPredmetu(Predmet p, Hra hra){
+        if (ocekavanyPredmet != null){
+            if (p.getNazev().toLowerCase().equals(ocekavanyPredmet.getNazev().toLowerCase())){
+                dostalToCoChtel = true;
+                hra.getInventar().odebratPredmet(p);
+                System.out.println("Dal jsi "  + jmeno + " predmet " + p.getNazev());
+                hra.getCas().odecteniCasu();
+            }else {
+                System.out.println("Toto dana postava " + jmeno + " nechce " + p.getNazev() );
+            }
+        }else {
+            System.out.println("Toto dana postava " + jmeno + " nechce " + p.getNazev() );
+        }
+
+    }
 
     public NPC(String jmeno) {
         super("");

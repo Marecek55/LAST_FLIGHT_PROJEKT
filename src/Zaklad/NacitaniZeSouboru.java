@@ -105,6 +105,12 @@ public class NacitaniZeSouboru {
         }
         throw new IllegalArgumentException("Neexistuje lokace s nazvem: " + nazev);
     }
+
+    /**
+     * Najde npc podle nazvu z listu nactenych npc
+     * @param nazev
+     * @return
+     */
     public NPC najdiNPC(String nazev) {
         for (int i = 0; i < npc.size(); i++) {
             if (npc.get(i).getJmeno().equalsIgnoreCase(nazev)) {
@@ -113,6 +119,12 @@ public class NacitaniZeSouboru {
         }
         throw new IllegalArgumentException("Neexistuje npc s nazvem: " + nazev);
     }
+
+    /**
+     * najde predmet podle nazvu z listu nactenych predmetu
+     * @param nazev
+     * @return
+     */
     public Predmet najdiPredmet(String nazev) {
         for (int i = 0; i < predmety.size(); i++) {
             if (predmety.get(i).getNazev().equalsIgnoreCase(nazev)) {
@@ -121,6 +133,14 @@ public class NacitaniZeSouboru {
         }
         throw new IllegalArgumentException("Neexistuje predmet s nazvem: " + nazev);
     }
+
+    /**
+     * nacte pozadovany pocet raku z daneho souboru
+     * @param nazev nazev souboru
+     * @param odRadku od jakeho radku se ma nacitat
+     * @param doRadku do jakeho radku se ma nacitat
+     * @return
+     */
     public String nacteniRadkuSouboru(String nazev , int odRadku , int doRadku) {
         String text = "";
         int cisloRadku  = 1;

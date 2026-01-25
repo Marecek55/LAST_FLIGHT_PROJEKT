@@ -16,14 +16,19 @@ public class Jdi implements Command {
         if (hra.getAktualniMistnost().getDostupneVychody().contains(s.toLowerCase())){
             Mistnost cilova = hra.getData().najdiMistnost(s.toLowerCase());
                 if (!cilova.isJeZamcena()){
-                    if (!cilova.isBylVNi()||!cilova.isJeCelaHotova()){
+                    if (!cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                         hra.setAktualniMistnost(cilova);
                         cilova.setBylVNi(true);
                         System.out.print(hra.getAktualniMistnost().getPribeh());
                         hra.getCas().odecteniCasu();
-                    }else {
+                    }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
+                        hra.setAktualniMistnost(cilova);
+                        hra.getCas().odecteniCasu();
+                    }
+                    else {
                         System.out.println("V mistnosti uz nic neni muzes jit dal");
                         hra.setAktualniMistnost(cilova);
+                        hra.getCas().odecteniCasu();
                     }
 
 

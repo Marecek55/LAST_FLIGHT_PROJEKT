@@ -17,6 +17,7 @@ public class  NPC extends Postava {
     }
     public String typMluveniText;
 
+
     /**
      * otestuje u prikazu dej jestli dana postava predmet chce nebo jestli chce vubec neco a kdyz ano tak to vykona
      * @param p

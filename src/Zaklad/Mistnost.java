@@ -12,10 +12,20 @@ public  class Mistnost {
     private boolean jeZamcena;
     private boolean bylVNi;
     private boolean jeCelaHotova;
+    private boolean jeProzkoumana;
 
 
     public Mistnost() {
     }
+
+    public boolean isJeProzkoumana() {
+        return jeProzkoumana;
+    }
+
+    public void setJeProzkoumana(boolean jeProzkoumana) {
+        this.jeProzkoumana = jeProzkoumana;
+    }
+
     public void pridatPredmetDoMistnosti(Predmet p) {
         predmetyVMistnosti.add(p);
     }

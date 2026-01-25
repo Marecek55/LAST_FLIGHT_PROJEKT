@@ -49,7 +49,7 @@ public class Hra {
         data.nactiPozadovanyPredmet("mechanik", "kleste");
         data.nactiPozadovanyPredmet("vojak", "pasy");
         data.nactiPozadovanyPredmet("prodavacka", "voda");
-        data.nasypDoMistnostiPredmety(new String[] {"pasy", "cokolada", "inzulin"}, new String[] {"stariManzele" , "sara"}, "hlavniHala" );
+        data.nasypDoMistnostiPredmety(new String[] {"pasy"}, new String[] {"stariManzele" , "sara"}, "hlavniHala" );
         data.nasypDoMistnostiPredmety(new String[] {"kleste"}, new String[] {}, "schodiste" );
         data.nasypDoMistnostiPredmety(new String[] {"pacidlo"}, new String[] {}, "garaze" );
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {}, "sluzebniChodba" );
@@ -69,6 +69,8 @@ public class Hra {
         System.out.println("NPC je nactenych: " + data.npc.size());
         System.out.println("Mistnosti je : " + data.mistnosti.size());
         inventar = new Inventar(4);
+        inventar.pridatPredmet(data.najdiPredmet("inzulin"));
+        //TODO
         data.nactiPozadovanyPredmet("stariManzele", "cokolada");
         inventar.pridatPredmet(data.najdiPredmet("cokolada"));
         inventar.pridatPredmet(data.najdiPredmet("voda"));
@@ -76,6 +78,7 @@ public class Hra {
 
 
         cas = new Cas(new NormalniCas());
+        unosce  = new Unosce("Unosce", 100);
         pridaniPrikazu();
     }
 

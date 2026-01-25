@@ -3,7 +3,7 @@ package Zaklad;
 import java.util.ArrayList;
 
 public class Inventar {
-    private int kapacita = 3;
+    private int kapacita = 4;
     private ArrayList<Predmet> listPredmetu;
     public boolean isJePlny(){
         return listPredmetu.size() >= kapacita;

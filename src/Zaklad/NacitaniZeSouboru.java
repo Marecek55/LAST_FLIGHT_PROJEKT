@@ -121,7 +121,7 @@ public class NacitaniZeSouboru {
         }
         throw new IllegalArgumentException("Neexistuje predmet s nazvem: " + nazev);
     }
-    public void nacteniRadkuSouboru(String nazev , int odRadku , int doRadku) {
+    public String nacteniRadkuSouboru(String nazev , int odRadku , int doRadku) {
         String text = "";
         int cisloRadku  = 1;
         try {
@@ -134,12 +134,13 @@ public class NacitaniZeSouboru {
                 cisloRadku++;
 
             }
-            System.out.println(text);
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return text;
 
     }
 
@@ -152,16 +153,16 @@ public class NacitaniZeSouboru {
     public void nacteniPribehuPostavAMistnosti(String nazev , boolean jeToProNpc) {
         String nazevSouboru;
         if (jeToProNpc) {
-            nazevSouboru = najdiNPC(nazev).getJmeno() + ".txt";
+            nazevSouboru = najdiNPC(nazev).getJmeno() ;
         }else {
-            nazevSouboru =  najdiMistnost(nazev).getNazev() + ".txt";
+            nazevSouboru =  najdiMistnost(nazev).getNazev();
         }
-        String text = "";
+        int pocetRadku  = 0;
         try {
-            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazevSouboru)));
+            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazevSouboru + ".txt")));
             String line = "";
             while ((line = br.readLine())!= null){
-                text = text +  line + "\n";
+                pocetRadku++;
 
             }
         } catch (FileNotFoundException e) {
@@ -169,6 +170,14 @@ public class NacitaniZeSouboru {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        String text = "";
+        if (!jeToProNpc) {
+           text = nacteniRadkuSouboru(nazevSouboru , 5, pocetRadku);
+        }else {
+            text = nacteniRadkuSouboru(nazevSouboru , 1, pocetRadku);
+        }
+
+
         if (jeToProNpc) {
             najdiNPC(nazev).setDialog(text);
         }else {

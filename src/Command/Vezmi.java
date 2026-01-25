@@ -11,23 +11,31 @@ public class Vezmi implements Command {
      */
     @Override
     public void vykonat(Hra hra, String s) {
-        Predmet p = null;
-        for (int i = 0; i < hra.getAktualniMistnost().getPredmetyVMistnosti().size(); i++) {
-            if (hra.getAktualniMistnost().getPredmetyVMistnosti().get(i).getNazev().toLowerCase().equals(s.toLowerCase())) {
-                p = hra.getAktualniMistnost().getPredmetyVMistnosti().get(i);
-                break;
+        if (hra.getAktualniMistnost().isJeProzkoumana()){
+            Predmet p = null;
+            for (int i = 0; i < hra.getAktualniMistnost().getPredmetyVMistnosti().size(); i++) {
+                if (hra.getAktualniMistnost().getPredmetyVMistnosti().get(i).getNazev().toLowerCase().equals(s.toLowerCase())) {
+                    p = hra.getAktualniMistnost().getPredmetyVMistnosti().get(i);
+                    break;
+                }
+
             }
-            hra.getCas().odecteniCasu();
-        }
-        if (p == null) {
-            System.out.println("Predmet neni v mistnosti");
-            return;
+            if (p == null) {
+                System.out.println("Predmet neni v mistnosti");
+                return;
+            }else {
+                System.out.println("Vzal jsi " + p.getNazev());
+                hra.getInventar().pridatPredmet(p);
+                hra.getCas().odecteniCasu();
+                hra.getAktualniMistnost().getPredmetyVMistnosti().remove(p);
+
+
+            }
         }else {
-            System.out.println("Vzal jsi " + p.getNazev());
-            hra.getInventar().pridatPredmet(p);
-
-
+            System.out.println("Nemas mistnost prozkoumanou");
+            return;
         }
-    }
+        }
+
 
 }

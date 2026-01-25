@@ -11,7 +11,7 @@ public class Konec implements Command {
      */
     @Override
     public void vykonat(Hra hra, String s) {
-        System.out.println("Hra se vypina...");
+        System.out.print("Hra se vypina...");
         hra.setStavKonce(StavKonce.NEROZHODNUTO);
         hra.setJeKonec(true);
 

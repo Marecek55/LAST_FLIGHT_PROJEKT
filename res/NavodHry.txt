@@ -1,10 +1,10 @@
 Cil: Zachran syna a stihni letadlo do 50 minut.
 Pohyb: Pouzivej jdi [nazevLokace], kazdy presun stoji 1 minutu a 3 minuty se zranenim.
-Pruzkum: V mistnosti napis prozkoumej abys nasel predmety.
+Pruzkum: V mistnosti napis prozkoumej abys nasel predmety a lidi.
 Batoh: Mas misto jen na 3 veci inzulin nejde vyhodit.
 Veci: Seber predmet pres vezmi [nazevPredmetu] a odloz ho pres poloz [nazevPredmetu].
 Postavy: Mluv s lidmi a davej jim veci pres dej [Nazev Postavy Nazev Predmetu].
-Pasy: Najdi je v odpadcich v hale, jinak te vojak nepusti.
-Pacidlo: Je v kufru auta v garazi, otevre ti zamcene dvere.
+Pasy: Najdi je v hale, jinak te vojak nepusti.
+Pacidlo: Je v kufru auta v garazi otevre ti zamcene dvere.
 Zdravi: Ve tme v shopu te muze zranit zlodej.
 Souboj: U Gate 4 pouzij utok nebo uhni chyba stoji 10 minut

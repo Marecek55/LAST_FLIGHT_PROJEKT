@@ -17,15 +17,15 @@ public class Napoveda implements Command {
         switch (s){
             case "1":
                 System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 0, 2);
+                System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 2));
                 break;
                 case "2":
                     System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                    hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 0, 3);
+                    System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 3));
                     break;
                     case "3":
                         System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                        hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 0, 4);
+                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 4));
                         break;
                         default:
                             System.out.println("Spatne zadana uroven napovedy");

@@ -14,24 +14,40 @@ public class Napoveda implements Command {
     @Override
     public void vykonat(Hra hra, String s) {
 
-        switch (s){
-            case "1":
-                System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 2));
-                break;
-                case "2":
+            switch (s){
+                case "1":
                     System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                    System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 3));
+                    System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 2));
                     break;
-                    case "3":
+
+                case "2":
+                    if (hra.getAktualniMistnost().isJeProzkoumana()){
+                        System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
+                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 3));
+                        break;
+                    }else {
+                        System.out.println("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
+                        return;
+                    }
+                case "3":
+                    if (hra.getAktualniMistnost().isJeProzkoumana()){
                         System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
                         System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 4));
                         break;
-                        default:
-                            System.out.println("Spatne zadana uroven napovedy");
-                            break;
+                    }else {
+                        System.out.println("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
+                        return;
+                    }
+
+                default:
+                    System.out.println("Spatne zadana uroven napovedy");
+                    break;
+            }
+
         }
-    }
+        }
 
 
-}
+
+
+

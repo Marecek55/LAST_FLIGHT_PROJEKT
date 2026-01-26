@@ -1,5 +1,6 @@
 Cil: Zachran syna a stihni letadlo do 50 minut.
-Pohyb: Pouzivej jdi [nazevLokace], kazdy presun stoji 1 minutu a 3 minuty se zranenim.
+Pohyb: Pouzivej jdi [nazevLokace] kazdy presun stoji 1 minutu a 3 minuty se zranenim.
+Napoveda: Napis napoveda a [urovenNapovedy] aby jsi dostal informace cim vyssi cislo tim vetsi napoveda
 Pruzkum: V mistnosti napis prozkoumej abys nasel predmety a lidi.
 Batoh: Mas misto jen na 3 veci inzulin nejde vyhodit.
 Veci: Seber predmet pres vezmi [nazevPredmetu] a odloz ho pres poloz [nazevPredmetu].

@@ -32,6 +32,7 @@ public class Hra {
     private Inventar inventar;
     private Cas cas;
     private Unosce unosce;
+    private Souboj souboj;
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
@@ -70,8 +71,10 @@ public class Hra {
         inventar = new Inventar(4);
         inventar.pridatPredmet(data.najdiPredmet("inzulin"));
         cas = new Cas(new NormalniCas());
-        unosce  = new Unosce("Unosce", 100);
+        unosce  = new Unosce("Unosce", 3);
         pridaniPrikazu();
+        souboj = new Souboj();
+
     }
 
     /**
@@ -176,5 +179,13 @@ public class Hra {
 
     public void setUnosce(Unosce unosce) {
         this.unosce = unosce;
+    }
+
+    public Souboj getSouboj() {
+        return souboj;
+    }
+
+    public void setSouboj(Souboj souboj) {
+        this.souboj = souboj;
     }
 }

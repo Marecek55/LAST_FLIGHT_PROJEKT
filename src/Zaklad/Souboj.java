@@ -24,25 +24,20 @@ public class Souboj {
         akce.add(AkceUnosce.ODKRYTY);
         System.out.print(hra.getData().nacteniRadkuSouboru("Souboj" , 0, 5));
         while (!vyhralUnosce&&!vyhralHrac){
-            if (hra.getUnosce().getZivoty()==0) {
-                vyhralHrac = true;
-            }
-            if (hra.getCas().getZbyvajiciCas()<=0){
-                vyhralUnosce = true;
-            }
-            aktualniAkce = akce.get(rd.nextInt(0,4));
+
+            aktualniAkce = akce.get(rd.nextInt(akce.size()));
 
             hra.getUnosce().setAkce(aktualniAkce);
-            System.out.println("Akce unosc je " + aktualniAkce);
+            System.out.println("Akce unosce je " + aktualniAkce);
             System.out.print(">>");
             String prikaz = sc.nextLine();
             prikaz = prikaz.trim();
             if (prikaz.toLowerCase().equals("uhni")){
                 hra.getPrikazy().get(prikaz).vykonat(hra, "");
-                return;
+
             }else if (prikaz.toLowerCase().equals("utok")){
                 hra.getPrikazy().get(prikaz).vykonat(hra, "");
-                return;
+
 
             }else {
                 if (aktualniAkce.toString().toLowerCase().equals("utocici")){
@@ -52,6 +47,16 @@ public class Souboj {
                     System.out.println("Spatny prikaz ale utocici nastesti neutocil");
                 }
 
+            }
+            if (hra.getUnosce().getZivoty()==0) {
+                vyhralHrac = true;
+                System.out.println("VYHRA UTIKEJ ZA RODINOU");
+                return;
+            }
+            if (hra.getCas().getZbyvajiciCas()<=0){
+                vyhralUnosce = true;
+                System.out.println("DOSEL TI CAS UNOSCE TE ZMLATIL");
+                return;
             }
         }
 

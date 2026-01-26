@@ -33,6 +33,7 @@ public class Hra {
     private Cas cas;
     private Unosce unosce;
     private Souboj souboj;
+    private Bludiste bludiste;
 
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
@@ -74,6 +75,7 @@ public class Hra {
         unosce  = new Unosce("Unosce", 3);
         pridaniPrikazu();
         souboj = new Souboj();
+        bludiste = new Bludiste();
 
     }
 
@@ -95,6 +97,14 @@ public class Hra {
         prikazy.put("vezmi", new Vezmi());
         prikazy.put("pomoc", new Pomoc());
 
+    }
+
+    public Bludiste getBludiste() {
+        return bludiste;
+    }
+
+    public void setBludiste(Bludiste bludiste) {
+        this.bludiste = bludiste;
     }
 
     public Cas getCas() {

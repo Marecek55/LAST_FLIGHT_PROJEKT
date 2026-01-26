@@ -15,14 +15,13 @@ public class Jdi implements Command {
     public void vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().getDostupneVychody().contains(s.toLowerCase())){
             Mistnost cilova = hra.getData().najdiMistnost(s.toLowerCase());
+            if (!cilova.getNazev().toLowerCase().equals("tridirnazavazadel")){
                 if (!cilova.isJeZamcena()){
                     if (!cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                         hra.setAktualniMistnost(cilova);
                         cilova.setBylVNi(true);
                         System.out.print(hra.getAktualniMistnost().getPribeh());
                         hra.getCas().odecteniCasu();
-                        //TODO
-                        hra.getSouboj().souboj(hra);
                     }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                         hra.setAktualniMistnost(cilova);
                         hra.getCas().odecteniCasu();
@@ -38,6 +37,10 @@ public class Jdi implements Command {
                     System.out.println("Mistnost je zamcena");
                 }
 
+            }else {
+                hra.getBludiste().bludiste(hra);
+                return;
+            }
             }else {
             System.out.println("Mistnost neni sousedni");
             }

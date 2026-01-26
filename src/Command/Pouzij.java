@@ -35,6 +35,9 @@ public class Pouzij implements Command {
                     hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()+5);
                     hra.getCas().setTempoCasu(new NormalniCas());
                     System.out.println(hra.getCas().getZbyvajiciCas() + " minut zbyva");
+                } else if (predmet.getNazev().toLowerCase().equals("voda")) {
+                    System.out.println("Vypil jsi vodu a ulevilo se ti, ale mozna te to pozdeji zradi");
+                    System.out.println(hra.getCas().getZbyvajiciCas() + " minut zbyva");
                 }
             }
             hra.getInventar().odebratPredmet(predmet);

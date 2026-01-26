@@ -16,7 +16,9 @@ public class Uhni implements Command {
         if (hra.getUnosce().getAkce() != null){
             if (hra.getUnosce().getAkce().equals(AkceUnosce.UTOCICI)) {
                 System.out.println("Uhnul jsi utoku");
-            }else {
+            }else if (hra.getUnosce().getAkce().equals(AkceUnosce.KRYTY)){
+                System.out.println("Uhnul jsi krytemu unosci nic se nestalo");
+            } else {
                 System.out.println("Utocici zrovna neutocil MAS PENALIZACI 10 minut");
                 hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas() - 10);
             }

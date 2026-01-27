@@ -1,4 +1,16 @@
-NAPOVEDA
-Rozhlidni se
-Spojuje vice mistnosti
-Rozhodni se kam jit kazda nekam vede
+NAPOVEDA1
+NAPOVEDA:
+Rozhlidni se.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Rozhlidni se.
+Spojuje vice mistnosti.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Rozhlidni se. Spojuje vice mistnosti.
+Rozhodni se kam jit kazda nekam vede.
+KONEC
+
+ZACATEKMISTNOSTI

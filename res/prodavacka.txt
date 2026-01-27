@@ -1,1 +1,14 @@
-Ja jsem prodacvacke
+START1
+UF to jsem ale mela zizen
+moc ti dekuju za vodu
+Co pro tebe muzu udelat
+1.Odemkni mi sklad
+2.Nic dobrou chut at se ti dari
+KONEC
+
+VETEV1
+Dobre pojd do skladu uz jsem ti ho odemkla
+KONEC
+
+VETEV2
+Dekuji jsi mily

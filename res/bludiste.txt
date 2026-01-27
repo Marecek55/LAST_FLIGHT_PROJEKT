@@ -1,25 +1,54 @@
+START
 Vitej v tridirne zavazadel
 Existuje zde jen jedna spravna cesta
 Dosel si na zajimave rozcesti a vidis 3 cesty jakou zvolis
 1.doleva
 2.doprava
 3.rovne
+KONEC
+
+DOLEVA1
 Vyborne prosel jsi a uslysis stekot z chodby vlevo jakou cestou se vydas ted
 1.doleva
 2.doprava
 3.rovne
+KONEC
+
+DOPRAVA1
 Ale ne nasel jsi pouze detsky koutek musis se vratit zpatky cesta te stoji 5 minut
+KONEC
+
+ROVNE1
 Narazil jsi na opilou pani ktera krici: POMOOOOC zachrante se kdo muzete a vidis jak vyvbiha z mistnosti ktera
 je v plamenech tudy to nepujde vracis se na zacatek a presun te stoji 5 minut
+KONEC
+
+DOLEVA2
 Vydavas se smerem za stekotem a najednou te nekdo svali na zem je to vojensky pes odkopnes ho a vracis se nazpet
 cesta te stoji 5 minut
+KONEC
+
+ROVNE2
 Sel jsi rovne uz jsi cely zadychany ale slysis zvuk motoru letadel asi jdes spravne kam ale DAL
 1.doleva
 2.doprava
 3.rovne
+KONEC
+
+DOPRAVA2
 Presunes se podel steny do mistnosti napravo a v ni se propadnes podlahou do spodniho patra SAKRA reknes si
 a jdes zpet na zacatek vracis se 5 minut
+KONEC
+
+DOPRAVA3
 Postupujes a najednou uvidis konec tridirny zavazedel konec nekonecneho bludiste kufru BEZ DAL UZ MAS MALO CASU!
+KONEC
+
+DOLEVA3
 Jdes podel hromady kufru doleva a narazis na slepou ulicku tady to nepujde cesta zpet stoji 5 minut
+KONEC
+
+ROVNE3
 Jdes rovne primo za nosem uz si myslis ze jsi dorazil na konec ale najednou vstoupis do salonku kde jsou lide kteri se smirili se
 svym osudem a uzivaji si posledni chvile sveho zivota v baru vracis se zpatky na zacatek bude te to stat 5 minut
+KONEC

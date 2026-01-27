@@ -1,4 +1,16 @@
-NAPOVEDA
-Podivej se
-Prodavacka chce vodu
-Dej ji vodu otevres cestu do skladu
+NAPOVEDA1
+NAPOVEDA:
+Podivej se.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Podivej se.
+Prodavacka chce vodu.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Podivej se. Prodavacka chce vodu.
+Dej ji vodu otevres cestu do skladu.
+KONEC
+
+ZACATEKMISTNOSTI

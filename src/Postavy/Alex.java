@@ -6,9 +6,15 @@ public class Alex extends Postava {
     private boolean jeZraneny;
 
 
-    public Alex(String jmeno, boolean jeZraneny) {
+    public Alex(String jmeno) {
         super(jmeno);
-        this.jeZraneny = jeZraneny;
     }
 
+    public boolean isJeZraneny() {
+        return jeZraneny;
+    }
+
+    public void setJeZraneny(boolean jeZraneny) {
+        this.jeZraneny = jeZraneny;
+    }
 }

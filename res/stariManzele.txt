@@ -1,1 +1,13 @@
-Ja jsem manzele
+START1
+Zustali jsme na lavicce protoze jsme smireni se svym osudem
+ale ty umrit nemusis neco pro tebe mame
+Napis cislo nebo napis rozlouceni pro UKONCENI rozhovoru driv
+1.NE! Nic nechci jen me zdrzujete
+2.Dobre ukazte co mate
+KONEC
+
+VETEV1
+Jak chces ty nevychovance
+KONEC
+VETEV2
+Tady mas cokoladu na prilepsenou

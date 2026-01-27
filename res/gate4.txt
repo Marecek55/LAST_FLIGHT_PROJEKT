@@ -1,4 +1,16 @@
-NAPOVEDA
-Ceka te souboj
-Pouzivej prikazy
-Po vitězství se rozhodni
+NAPOVEDA1
+NAPOVEDA:
+Ceka te souboj.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Ceka te souboj.
+Pouzivej prikazy.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Ceka te souboj. Pouzivej prikazy.
+Po vitezstvi se rozhodni.
+KONEC
+
+ZACATEKMISTNOSTI

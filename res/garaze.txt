@@ -1,2 +1,16 @@
-V aute je pacidlo
-Otevres s nim dalsi cesty
+NAPOVEDA1
+NAPOVEDA:
+Prohledej garaz.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Prohledej garaz.
+V aute je pacidlo.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Prohledej garaz. V aute je pacidlo.
+Otevres s nim dalsi cesty.
+KONEC
+
+ZACATEKMISTNOSTI

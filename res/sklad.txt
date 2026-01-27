@@ -1,4 +1,16 @@
-NAPOVEDA
-Prohledej
-Najdes lekarnicku
-Pouzij ji vylecis zraneni
+NAPOVEDA1
+NAPOVEDA:
+Prohledej misto.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Prohledej misto.
+Najdes lekarnicku.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Prohledej misto. Najdes lekarnicku.
+Pouzij ji vylecis zraneni.
+KONEC
+
+ZACATEKMISTNOSTI

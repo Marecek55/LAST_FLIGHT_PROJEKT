@@ -1,1 +1,15 @@
-Ja jsem mechanik
+START1
+Co tady chces snazim se opravit pojistky
+jedine co by mi pomohlo jsou kleste mas je
+1.Ano mam je
+2.Ne nemam
+KONEC
+
+VETEV1
+Supeer vyborne alespon k necemu jsi dobry
+hned opravim pojistky a utikam k letadlu
+protoze tady je to masakr
+
+VETEV2
+No nic co se da delat zkusim to opravit bez nich
+ale nevim jestli to zvladnu

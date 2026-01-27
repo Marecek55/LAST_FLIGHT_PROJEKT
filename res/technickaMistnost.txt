@@ -1,4 +1,16 @@
-NAPOVEDA
-Koukej kolem
-Je tu mechanik
-Dej mu kleste opraví svetlo a projdes Duty Free
+NAPOVEDA1
+NAPOVEDA:
+Koukej kolem.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Koukej kolem.
+Je tu mechanik.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Koukej kolem. Je tu mechanik.
+Dej mu kleste opraví svetlo a projdes Duty Free.
+KONEC
+
+ZACATEKMISTNOSTI

@@ -1,5 +1,6 @@
 package Command;
 
+import Cas.CasSeZranenim;
 import Zaklad.Hra;
 import Zaklad.Mistnost;
 import Zaklad.NacitaniZeSouboru;
@@ -15,32 +16,39 @@ public class Jdi implements Command {
     public void vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().getDostupneVychody().contains(s.toLowerCase())){
             Mistnost cilova = hra.getData().najdiMistnost(s.toLowerCase());
-            if (!cilova.getNazev().toLowerCase().equals("tridirnazavazadel")){
-                if (!cilova.isJeZamcena()){
-                    if (!cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
-                        hra.setAktualniMistnost(cilova);
-                        cilova.setBylVNi(true);
-                        System.out.print(hra.getAktualniMistnost().getPribeh());
-                        hra.getCas().odecteniCasu();
-                    }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
-                        hra.setAktualniMistnost(cilova);
-                        hra.getCas().odecteniCasu();
-                    }
-                    else {
-                        System.out.println("V mistnosti uz nic neni muzes jit dal");
-                        hra.setAktualniMistnost(cilova);
-                        hra.getCas().odecteniCasu();
-                    }
 
+                if (!cilova.isJeZamcena()){
+                    if (!cilova.getNazev().toLowerCase().equals("tridirnazavazadel")){
+                        if (!cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
+                            hra.setAktualniMistnost(cilova);
+                            cilova.setBylVNi(true);
+                            System.out.print(hra.getAktualniMistnost().getPribeh());
+                            if (cilova.isJeTamTma()){
+                                hra.getAlex().setJeZraneny(true);
+                                hra.getCas().setTempoCasu(new CasSeZranenim());
+                            }
+                            hra.getCas().odecteniCasu();
+
+
+                        }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
+                            hra.setAktualniMistnost(cilova);
+                            hra.getCas().odecteniCasu();
+                        }
+                        else {
+                            System.out.println("V mistnosti uz nic neni muzes jit dal");
+                            hra.setAktualniMistnost(cilova);
+                            hra.getCas().odecteniCasu();
+                        }
+
+
+                    }else {
+                        hra.getBludiste().bludiste(hra);
+                    }
 
                 }else {
                     System.out.println("Mistnost je zamcena");
                 }
 
-            }else {
-                hra.getBludiste().bludiste(hra);
-                return;
-            }
             }else {
             System.out.println("Mistnost neni sousedni");
             }

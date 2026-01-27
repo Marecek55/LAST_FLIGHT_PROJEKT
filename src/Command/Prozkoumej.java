@@ -41,6 +41,12 @@ public class Prozkoumej implements Command {
                 System.out.println("Zadny predmet v mistnosti neni");
 
             }
+            if (hra.getAktualniMistnost().getDostupneVychody().size()>0) {
+            System.out.println("Dostupne vychody");
+            for (int i = 0; i < hra.getAktualniMistnost().getDostupneVychody().size(); i++) {
+                System.out.println(hra.getAktualniMistnost().getDostupneVychody().get(i));
+            }
+        }
             if (jsouTamLidi && jsouTamPredmety){
                 hra.getCas().odecteniCasu();
 
@@ -51,10 +57,6 @@ public class Prozkoumej implements Command {
                 hra.getCas().odecteniCasu();
             }
             mistnostUzJednouProzkoumal = true;
-//        }else {
-//            System.out.println("Mistnost uz si prozkoumal");
-//        }
-
 
 
     }

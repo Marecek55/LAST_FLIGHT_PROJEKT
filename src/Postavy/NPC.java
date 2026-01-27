@@ -12,7 +12,9 @@ public class  NPC extends Postava {
     private boolean chceMluvit;
     private boolean dostalToCoChtel;
     private Predmet ocekavanyPredmet;
+    private boolean jeDomluveno;
     private String mluv(){
+        //TODO
         return "";
     }
     public String typMluveniText;
@@ -27,6 +29,7 @@ public class  NPC extends Postava {
         if (ocekavanyPredmet != null){
             if (p.getNazev().toLowerCase().equals(ocekavanyPredmet.getNazev().toLowerCase())){
                 dostalToCoChtel = true;
+                chceMluvit = true;
                 hra.getInventar().odebratPredmet(p);
                 System.out.println("Dal jsi "  + jmeno + " predmet " + p.getNazev());
                 hra.getCas().odecteniCasu();
@@ -37,6 +40,18 @@ public class  NPC extends Postava {
             System.out.println("Toto dana postava " + jmeno + " nechce " + p.getNazev() );
         }
 
+    }
+
+    public void setTypMluveni(StrategieMluveni typMluveni) {
+        this.typMluveni = typMluveni;
+    }
+
+    public boolean isJeDomluveno() {
+        return jeDomluveno;
+    }
+
+    public void setJeDomluveno(boolean jeDomluveno) {
+        this.jeDomluveno = jeDomluveno;
     }
 
     public NPC(String jmeno) {

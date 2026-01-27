@@ -3,11 +3,11 @@ package Mluveni;
 public class PrijemneMluveni implements StrategieMluveni{
     @Override
     public String pozdrav() {
-        return "";
+        return "Ahojky";
     }
 
     @Override
     public String rozlouceni() {
-        return "";
+        return "Hodne stesti";
     }
 }

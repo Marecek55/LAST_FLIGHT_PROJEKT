@@ -16,6 +16,7 @@ import Command.InventarCommand;
 import Command.Vezmi;
 import Cas.NormalniCas;
 import Command.Pomoc;
+import Postavy.Alex;
 import Postavy.Unosce;
 
 
@@ -34,7 +35,8 @@ public class Hra {
     private Unosce unosce;
     private Souboj souboj;
     private Bludiste bludiste;
-
+    private Komunikace komunikace;
+    private Alex alex;
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
      * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc a vytvari se instance pro cas inventar unosce atd
@@ -60,11 +62,14 @@ public class Hra {
         data.nasypDoMistnostiPredmety(new String[] {"lekarnicka"}, new String[] {}, "sklad" );
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
         data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
-        for (int i = 0; i < data.npc.size(); i++) {
-            data.nacteniPribehuPostavAMistnosti(data.npc.get(i).getJmeno().toLowerCase(), true );
-        }
+//        for (int i = 0; i < data.npc.size(); i++) {
+//            data.nacteniPribehuPostavAMistnosti(data.npc.get(i).getJmeno().toLowerCase(), true );
+//        }
+//        for (int i = 0; i < data.mistnosti.size(); i++) {
+//            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev().toLowerCase(), false);
+//        }
         for (int i = 0; i < data.mistnosti.size(); i++) {
-            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev().toLowerCase(), false);
+            data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev().toLowerCase() , "ZACATEKMISTNOSTI", true);
         }
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());
@@ -76,6 +81,8 @@ public class Hra {
         pridaniPrikazu();
         souboj = new Souboj();
         bludiste = new Bludiste();
+        komunikace = new Komunikace();
+        alex = new Alex("Alex");
 
     }
 
@@ -97,6 +104,22 @@ public class Hra {
         prikazy.put("vezmi", new Vezmi());
         prikazy.put("pomoc", new Pomoc());
 
+    }
+
+    public Alex getAlex() {
+        return alex;
+    }
+
+    public void setAlex(Alex alex) {
+        this.alex = alex;
+    }
+
+    public Komunikace getKomunikace() {
+        return komunikace;
+    }
+
+    public void setKomunikace(Komunikace komunikace) {
+        this.komunikace = komunikace;
     }
 
     public Bludiste getBludiste() {

@@ -1,4 +1,16 @@
-NAPOVEDA
-Je tma
-Sleduj okoli
-Pouzij svetlo nebo baterku jinak te zlodej zrani
+NAPOVEDA1
+NAPOVEDA:
+Je tma.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Je tma.
+Sleduj okoli.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Je tma. Sleduj okoli.
+Pouzij svetlo nebo baterku jinak te zlodej zrani.
+KONEC
+
+ZACATEKMISTNOSTI

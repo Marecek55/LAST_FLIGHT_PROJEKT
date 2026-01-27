@@ -1,4 +1,18 @@
-NAPOVEDA
+NAPOVEDA1
+NAPOVEDA:
+Podivej se
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Podivej se
+Vojak te zastavi
+KONEC
+NAPOVEDA3
+NAPOVEDA:
 Podivej se
 Vojak te zastavi
 Ukaz pasy a muzes pokracovat
+KONEC
+
+
+ZACATEKMISTNOSTI

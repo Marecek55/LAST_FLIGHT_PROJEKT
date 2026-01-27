@@ -1,1 +1,15 @@
-Ja jsem vojak
+START1
+Rychle ke mne za chvili zavirame vstup
+Mate pas pane
+1.Ano mam tady
+2.Ne nenamm
+KONEC
+
+VETEV1
+Neni nahodou kradeny
+No to uz je stejne jedno pojdte a zachrante se
+KONEC
+
+VETEV2
+Okamzite utikejte najit svuj pas
+KONEC

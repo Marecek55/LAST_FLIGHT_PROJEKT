@@ -23,7 +23,7 @@
       "nazev": "pacidlo",
       "jdeVyhodit": true,
       "jeDulezity": true,
-      "jdePouzit": false
+      "jdePouzit": true
     },
     {
       "nazev": "baterka",
@@ -58,6 +58,7 @@
       "dialog": "sara.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
+
     },
     {
       "jmeno": "stariManzele",
@@ -65,6 +66,7 @@
       "dialog": "stariManzele.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
+
     },
     {
       "jmeno": "mechanik",
@@ -72,6 +74,7 @@
       "dialog": "mechanik.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
+
     },
     {
       "jmeno": "prodavacka",
@@ -79,6 +82,7 @@
       "dialog": "prodavacka.txt",
       "chceMluvit": false,
       "dostalToCoChtel": false
+
     },
     {
       "jmeno": "zlodej",
@@ -86,6 +90,7 @@
       "dialog": "zlodej.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
+
     },
     {
       "jmeno": "vojak",
@@ -93,6 +98,7 @@
       "dialog": "vojak.txt",
       "chceMluvit": true,
       "dostalToCoChtel": false
+
     }
   ],
 

@@ -17,13 +17,13 @@ public class Napoveda implements Command {
             switch (s){
                 case "1":
                     System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                    System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 2));
+                    System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA1" ,false));
                     break;
 
                 case "2":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
                         System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 3));
+                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , "NAPOVEDA2" ,false));
                         break;
                     }else {
                         System.out.println("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
@@ -32,7 +32,7 @@ public class Napoveda implements Command {
                 case "3":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
                         System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , 1, 4));
+                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , "NAPOVEDA3",false));
                         break;
                     }else {
                         System.out.println("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");

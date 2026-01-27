@@ -1,4 +1,16 @@
-NAPOVEDA
-Podivej se kolem
-Promluv si se starymi manzely
-Ziskas cokoladu a pasy, bez pasu nepujde dalsi cesta
+NAPOVEDA1
+NAPOVEDA:
+Podivej se kolem.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Podivej se kolem.
+Promluv si se starymi manzely.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Podivej se kolem. Promluv si se starymi manzely.
+Ziskas cokoladu a pasy, bez pasu nepujde dalsi cesta.
+KONEC
+
+ZACATEKMISTNOSTI

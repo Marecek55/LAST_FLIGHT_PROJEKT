@@ -1,4 +1,16 @@
-NAPOVEDA
-Je tu bludiste
-Kazda chyba stoji cas
-Premyslej kam jdes branou konci hra
+NAPOVEDA1
+NAPOVEDA:
+Je tu bludiste.
+KONEC
+NAPOVEDA2
+NAPOVEDA:
+Je tu bludiste.
+Kazda chyba stoji cas.
+KONEC
+NAPOVEDA3
+NAPOVEDA:
+Je tu bludiste. Kazda chyba stoji cas.
+Premyslej kam jdes branou konci hra.
+KONEC
+
+ZACATEKMISTNOSTI

@@ -135,76 +135,106 @@ public class NacitaniZeSouboru {
     }
 
     /**
-     * nacte pozadovany pocet raku z daneho souboru
+     * nacte pozadovany pocet raku z daneho souboru podle hledaneho slova
      * @param nazev nazev souboru
-     * @param odRadku od jakeho radku se ma nacitat
-     * @param doRadku do jakeho radku se ma nacitat
+     * @param hledaneSlovo od jakeho slova se ma nacitat
      * @return
      */
-    public String nacteniRadkuSouboru(String nazev , int odRadku , int doRadku) {
+    public String nacteniRadkuSouboru(String nazev , String hledaneSlovo, boolean jeToProMistnost) {
         String text = "";
-        int cisloRadku  = 1;
+        boolean nalezeno = false;
         try {
             BufferedReader br = new BufferedReader((new FileReader("res\\" + nazev+ ".txt")));
             String line = "";
             while ((line = br.readLine()) != null) {
-                if (cisloRadku>= odRadku && cisloRadku <= doRadku) {
-                    text = text + line + "\n";
+                String radek = line.trim();
+
+                if (nalezeno&&radek.equals("KONEC")){
+                    break;
                 }
-                cisloRadku++;
+                if (nalezeno) {
+                    text = text + radek + "\n";
+                }
+                if (radek.equals(hledaneSlovo)) {
+                    nalezeno = true;
+                }
 
             }
-
+            br.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+        if (jeToProMistnost) {
+            najdiMistnost(nazev).setPribeh(text);
+        }else {
+            najdiNPC(nazev).setDialog(text);
         }
         return text;
 
     }
 
 
-    /**
-     * Nacte pribeh mistnosti ze souboru a taky nacte dialogy npc
-     * @param nazev nazev mistnosti nebo npc
-     * @param jeToProNpc urci jestli jde o npc nebo ne aby se dobre pridal soubor
-     */
-    public void nacteniPribehuPostavAMistnosti(String nazev , boolean jeToProNpc) {
-        String nazevSouboru;
-        if (jeToProNpc) {
-            nazevSouboru = najdiNPC(nazev).getJmeno() ;
-        }else {
-            nazevSouboru =  najdiMistnost(nazev).getNazev();
-        }
-        int pocetRadku  = 0;
-        try {
-            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazevSouboru + ".txt")));
-            String line = "";
-            while ((line = br.readLine())!= null){
-                pocetRadku++;
+//    /**
+//     * Nacte pribeh mistnosti ze souboru a taky nacte dialogy npc
+//     * @param nazev nazev mistnosti nebo npc
+//     * @param jeToProNpc urci jestli jde o npc nebo ne aby se dobre pridal soubor
+//     */
+//    public void nacteniPribehuPostavAMistnosti(String nazev , boolean jeToProNpc) {
+//        String nazevSouboru;
+//        if (jeToProNpc) {
+//            nazevSouboru = najdiNPC(nazev).getJmeno() ;
+//        }else {
+//            nazevSouboru =  najdiMistnost(nazev).getNazev();
+//        }
+//        int pocetRadku  = 0;
+//        try {
+//            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazevSouboru + ".txt")));
+//            String line = "";
+//            while ((line = br.readLine())!= null){
+//                pocetRadku++;
+//
+//            }
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        String text = "";
+//        if (!jeToProNpc) {
+//           text = nacteniRadkuSouboru(nazevSouboru , "ZACATEKNPC");
+//        }else {
+//            text = nacteniRadkuSouboru(nazevSouboru , "ZACATEKMISTNOSTI");
+//        }
+//
+//
+//        if (jeToProNpc) {
+//            najdiNPC(nazev).setDialog(text);
+//        }else {
+//            najdiMistnost(nazev).setPribeh(text);
+//       }
+//
+//
+//    }
+    public Mistnost najdiSousedaCoMa(Mistnost aktualni){
+        ArrayList<Mistnost> mistnostiSousedni = new ArrayList<>();
+        Mistnost cilova = null;
+        for (int i = 0; i < aktualni.getDostupneVychody().size(); i++) {
+            String nazevVychodu = aktualni.getDostupneVychody().get(i);
 
+            for (int j = 0; j < mistnosti.size(); j++) {
+                if (nazevVychodu.equals(mistnosti.get(j).getNazev().toLowerCase())) {
+                    mistnostiSousedni.add(mistnosti.get(j));
+                }
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
-        String text = "";
-        if (!jeToProNpc) {
-           text = nacteniRadkuSouboru(nazevSouboru , 5, pocetRadku);
-        }else {
-            text = nacteniRadkuSouboru(nazevSouboru , 1, pocetRadku);
+        for (int i = 0; i < mistnostiSousedni.size(); i++) {
+            if (mistnostiSousedni.get(i).isJeZamcena()){
+                cilova = mistnostiSousedni.get(i);
+            }
         }
-
-
-        if (jeToProNpc) {
-            najdiNPC(nazev).setDialog(text);
-        }else {
-            najdiMistnost(nazev).setPribeh(text);
-        }
-
-
+        return cilova;
     }
 
 

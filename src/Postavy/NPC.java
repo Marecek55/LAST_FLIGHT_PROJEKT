@@ -4,6 +4,7 @@ import Mluveni.PrijemneMluveni;
 import Mluveni.SmutneMluveni;
 import Mluveni.StrategieMluveni;
 import Zaklad.Hra;
+import Zaklad.Mistnost;
 import Zaklad.Predmet;
 
 public class  NPC extends Postava {
@@ -13,12 +14,7 @@ public class  NPC extends Postava {
     private boolean dostalToCoChtel;
     private Predmet ocekavanyPredmet;
     private boolean jeDomluveno;
-    private String mluv(){
-        //TODO
-        return "";
-    }
     public String typMluveniText;
-
 
     /**
      * otestuje u prikazu dej jestli dana postava predmet chce nebo jestli chce vubec neco a kdyz ano tak to vykona
@@ -30,6 +26,19 @@ public class  NPC extends Postava {
             if (p.getNazev().toLowerCase().equals(ocekavanyPredmet.getNazev().toLowerCase())){
                 dostalToCoChtel = true;
                 chceMluvit = true;
+                if (jmeno.toLowerCase().equals("mechanik")){
+                    chceMluvit = false;
+                    Mistnost dutyFreePomocna = hra.getData().najdiMistnost("dutyFreeShop");
+                    dutyFreePomocna.setJeTamTma(false);
+                    System.out.println("Svetla jsou opravena");
+                } else if (jmeno.toLowerCase().equals("vojak")) {
+                    chceMluvit = false;
+                    Mistnost cilova =hra.getData().najdiSousedaCoMa(hra.getAktualniMistnost());
+                    cilova.setJeZamcena(false);
+                    System.out.println("Odemkl jsi tridirnu zavazadel");
+
+                }
+
                 hra.getInventar().odebratPredmet(p);
                 return "Dal jsi "  + jmeno + " predmet " + p.getNazev() + "\n"+hra.getCas().odecteniCasu();
             }else {

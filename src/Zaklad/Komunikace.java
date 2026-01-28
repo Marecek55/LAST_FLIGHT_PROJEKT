@@ -4,22 +4,31 @@ import Mluveni.PrijemneMluveni;
 import Mluveni.SmutneMluveni;
 import Postavy.NPC;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Komunikace {
     Scanner sc = new Scanner(System.in);
+
+    /**
+     * Zkracuje odpoved aby se neopakoval kod
+     * @return
+     */
     public String skenOhlidany(){
         odpoved = sc.nextLine();
         if (!odpoved.equals("1")||!odpoved.equals("2")){
             return "Spatne zadane";
         }
         return odpoved;
-
     }
     String odpoved;
     NPC pomocna  = null;
     Mistnost pomocnaMistnost = null;
+
+    /**
+     * spusti komunikaci podle postavy
+     * @param npc npc u ktere komunikuje
+     * @param hra odkaz na hru
+     */
     public void komunikace(NPC npc , Hra hra) {
         switch (npc.getJmeno().toLowerCase()) {
             case "starimanzele":
@@ -114,5 +123,25 @@ public class Komunikace {
         }
 
 
+    }
+
+    /**
+     * Vyber konce se spusti jak prijde do gate4
+     * @param hra      odkaz na hru
+     * @param aktualni odkaz na gate4
+     * @return
+     */
+
+    public String vyberKonce(Hra hra, Mistnost aktualni) {
+        skenOhlidany();
+        System.out.print(hra.getData().nacteniRadkuSouboru(aktualni.getNazev(), "VETEV" + odpoved,true));
+        if (odpoved.equals("1")) {
+            hra.setStavKonce(StavKonce.VYHRA);
+            hra.setJeKonec(true);
+        }else if (odpoved.equals("2")) {
+            hra.setStavKonce(StavKonce.SPATNYKONEC);
+            hra.setJeKonec(true);
+        }
+        return null;
     }
 }

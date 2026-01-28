@@ -18,7 +18,7 @@ public class Souboj {
     /**
      * Spousti souboj
      */
-    public void souboj(Hra hra) {
+    public String souboj(Hra hra) {
         akce.add(AkceUnosce.KRYTY);
         akce.add(AkceUnosce.UTOCICI);
         akce.add(AkceUnosce.ODKRYTY);
@@ -41,24 +41,25 @@ public class Souboj {
 
             }else {
                 if (aktualniAkce.toString().toLowerCase().equals("utocici")){
-                    System.out.println("Nevyhovujici prikaz unosce te prastil ztratil jsi 10 minut");
+
                     hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()-10);
+                    return "Nevyhovujici prikaz unosce te prastil ztratil jsi 10 minut";
                 }else{
-                    System.out.println("Spatny prikaz ale utocici nastesti neutocil");
+                    return "Spatny prikaz ale utocici nastesti neutocil";
+
                 }
 
             }
             if (hra.getUnosce().getZivoty()==0) {
                 vyhralHrac = true;
-                System.out.println("VYHRA UTIKEJ ZA RODINOU");
-                return;
+                return "VYHRA UTIKEJ ZA RODINOU";
             }
             if (hra.getCas().getZbyvajiciCas()<=0){
                 vyhralUnosce = true;
-                System.out.println("DOSEL TI CAS UNOSCE TE ZMLATIL");
-                return;
+                return "DOSEL TI CAS UNOSCE TE ZMLATIL";
             }
         }
+        return "Souboj se nespustil";
 
 
 

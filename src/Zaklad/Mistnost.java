@@ -58,6 +58,7 @@ public  class Mistnost {
         return jeCelaHotova;
     }
 
+
     public void setJeCelaHotova(boolean jeCelaHotova) {
         this.jeCelaHotova = jeCelaHotova;
     }

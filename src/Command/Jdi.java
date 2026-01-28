@@ -28,7 +28,10 @@ public class Jdi implements Command {
                                 System.out.println("AUUUU zranil te zlodej ve tme ztracis ted 3krat vic casu");
                             }
                             System.out.println(hra.getCas().odecteniCasu());
-                            return hra.getAktualniMistnost().getPribeh();
+                            if (cilova.getNazev().toLowerCase().equals("gate4")){
+                                return hra.getKomunikace().vyberKonce(hra, hra.getAktualniMistnost());
+                            }
+                            return hra.getAktualniMistnost().getPribeh().trim();
 
 
                         }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){

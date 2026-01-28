@@ -14,7 +14,7 @@ public class Pomoc implements Command {
     @Override
     public String vykonat(Hra hra, String s) {
         zpravaReturnu = "POMOC NEBOLI NAVOD NA HRU ";
-        zpravaReturnu = zpravaReturnu + hra.getData().nacteniRadkuSouboru("navodHry" ,"START", null);
+        zpravaReturnu = zpravaReturnu + hra.getData().nacteniRadkuSouboru("navodHry" ,"START", null).trim();
         return zpravaReturnu;
     }
 

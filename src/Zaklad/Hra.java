@@ -39,7 +39,8 @@ public class Hra {
     private Alex alex;
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
-     * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc a vytvari se instance pro cas inventar unosce atd
+     * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc a vytvari se instance pro tridy ktere
+     * do hry patri aby k nim commandy meli pristup
      */
 
     public Hra() {
@@ -62,12 +63,6 @@ public class Hra {
         data.nasypDoMistnostiPredmety(new String[] {"lekarnicka"}, new String[] {}, "sklad" );
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
         data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
-//        for (int i = 0; i < data.npc.size(); i++) {
-//            data.nacteniPribehuPostavAMistnosti(data.npc.get(i).getJmeno().toLowerCase(), true );
-//        }
-//        for (int i = 0; i < data.mistnosti.size(); i++) {
-//            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev().toLowerCase(), false);
-//        }
         for (int i = 0; i < data.mistnosti.size(); i++) {
             data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev(), "ZACATEKMISTNOSTI", true);
         }

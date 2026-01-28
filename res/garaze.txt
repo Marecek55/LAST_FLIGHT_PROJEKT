@@ -14,3 +14,5 @@ Otevres s nim dalsi cesty.
 KONEC
 
 ZACATEKMISTNOSTI
+asd
+KONEC

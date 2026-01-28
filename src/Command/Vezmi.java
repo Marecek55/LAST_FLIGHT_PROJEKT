@@ -26,6 +26,9 @@ public class Vezmi implements Command {
             if (p == null) {
                 return "Predmet neni v mistnosti";
             }else {
+                if (hra.getInventar().getListPredmetu().size() >= hra.getInventar().getKapacita()) {
+                    return "MAS PLNOU KAPACITU! Musis nejdriv neco polozit.";
+                }
                 hra.getInventar().pridatPredmet(p);
                 System.out.println(hra.getCas().odecteniCasu());
                 predmetyPomocne.remove(p);

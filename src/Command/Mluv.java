@@ -17,7 +17,6 @@ public class Mluv implements Command {
         if (hra.getAktualniMistnost().isJeProzkoumana()){
             NPC p = null;
             try {
-               NPC hledany = hra.getData().najdiNPC(s.toLowerCase());
                 if (hra.getAktualniMistnost().getNpcVMistnosti().contains(hra.getData().najdiNPC(s.toLowerCase()))){
                     p = hra.getData().najdiNPC(s.toLowerCase());
                     if (p.isChceMluvit()) {

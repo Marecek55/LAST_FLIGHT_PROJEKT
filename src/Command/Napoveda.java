@@ -17,12 +17,12 @@ public class Napoveda implements Command {
             switch (s){
                 case "1":
                     zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
-                zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA1" ,null);
+                zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA1" ,null).trim();
                 return zpravaReturnu;
                 case "2":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
                         zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
-                        zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA2" ,null);
+                        zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA2" ,null).trim();
                         return zpravaReturnu;
                     }else {
                         return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
@@ -30,7 +30,7 @@ public class Napoveda implements Command {
                 case "3":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
                         zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
-                        zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA3" ,null);
+                        zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA3" ,null).trim();
                         return zpravaReturnu;
                     }else {
                         return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";

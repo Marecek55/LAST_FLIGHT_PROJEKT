@@ -7,9 +7,9 @@ public class Cas {
     /**
      * odecita cas podle tempa
      */
-    public void odecteniCasu() {
+    public String odecteniCasu() {
         zbyvajiciCas = tempoCasu.spocteniCasu(zbyvajiciCas);
-        System.out.println("Zbyvajici cas je " + zbyvajiciCas + " minut");
+        return "Zbyvajici cas je " + zbyvajiciCas + " minut";
     }
 
     public Cas(StrategieCasu tempoCasu) {

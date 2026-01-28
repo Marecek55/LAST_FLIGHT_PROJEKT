@@ -10,21 +10,24 @@ public class Utok implements Command {
      * @param s Druha cast inputu uzivatele
      */
     @Override
-    public void vykonat(Hra hra, String s) {
+    public String vykonat(Hra hra, String s) {
         if (hra.getUnosce().getAkce() != null){
-            if (hra.getUnosce().getAkce().equals(AkceUnosce.ODKRYTY)){
-                System.out.println("Prastil jsi unosce primo do obliceje");
+            AkceUnosce akce = hra.getUnosce().getAkce();
+            if (akce.equals(AkceUnosce.ODKRYTY)){
                 hra.getUnosce().setZivoty(hra.getUnosce().getZivoty() - 1);
+                return "Prastil jsi unosce primo do obliceje";
 
-            }else if (hra.getUnosce().getAkce().equals(AkceUnosce.KRYTY)){
-                System.out.println("Unosce byl " + hra.getUnosce().getAkce() + " nic jsi  mu nezpusobil");
-            } else if (hra.getUnosce().getAkce().equals(AkceUnosce.UTOCICI)) {
-                System.out.println("Unosce byl " + hra.getUnosce().getAkce() + " nic jsi  mu nezpusobil a dostavas penalizaci 10 minut");
+            }else if (akce.equals(AkceUnosce.KRYTY)){
+                return "Unosce byl " + akce + " nic jsi  mu nezpusobil";
+            } else if (akce.equals(AkceUnosce.UTOCICI)) {
                 hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas() - 10);
+                return "Unosce byl " + akce + " nic jsi  mu nezpusobil a dostavas penalizaci 10 minut";
+            }else {
+                return "Zadna akce";
             }
 
         }else {
-            System.out.println("Nejsi v souboji");
+            return "Nejsi v souboji";
         }
         }
 

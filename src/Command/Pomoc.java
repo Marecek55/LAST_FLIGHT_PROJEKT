@@ -10,10 +10,12 @@ public class Pomoc implements Command {
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
      */
+    String zpravaReturnu  = "";
     @Override
-    public void vykonat(Hra hra, String s) {
-        System.out.print("POMOC NEBOLI NAVOD NA HRU \n");
-        System.out.print(hra.getData().nacteniRadkuSouboru("NavodHry" ,"START", false));
+    public String vykonat(Hra hra, String s) {
+        zpravaReturnu = "POMOC NEBOLI NAVOD NA HRU ";
+        zpravaReturnu = zpravaReturnu + hra.getData().nacteniRadkuSouboru("navodHry" ,"START", null);
+        return zpravaReturnu;
     }
 
 }

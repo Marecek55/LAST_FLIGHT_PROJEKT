@@ -11,8 +11,9 @@ public class Pouzij implements Command {
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
      */
+    String  zpravaReturnu = "";
     @Override
-    public void vykonat(Hra hra, String s) {
+    public String vykonat(Hra hra, String s) {
         Predmet predmet =null;
         boolean bylPouzit = false;
         boolean jeVInventari = false;
@@ -27,44 +28,47 @@ public class Pouzij implements Command {
             if (predmet.isJdePouzit()){
                 bylPouzit = true;
                 if (predmet.getNazev().toLowerCase().equals("cokolada")){
-                    System.out.println("Pouzil jsi " + predmet.getNazev());
-                    System.out.println("Snedl jsi cokoladu mas bonus k casu 10 minut");
+                    zpravaReturnu = "Pouzil jsi " + predmet.getNazev()+ "\nSnedl jsi cokoladu mas bonus k casu 10 minut";
                     hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()+10);
-                    System.out.println(hra.getCas().getZbyvajiciCas() + " minut zbyva");
+                    zpravaReturnu = "\n" +hra.getCas().getZbyvajiciCas() + " minut zbyva";
+                    return zpravaReturnu;
                 }else if (predmet.getNazev().toLowerCase().equals("lekarnicka")){
-                    System.out.println("Pouzil jsi " + predmet.getNazev());
-                    System.out.println("Vylecil jsi se mas bonus k casu 5 minut a obnovene zdravi");
+                    zpravaReturnu = "Pouzil jsi " + predmet.getNazev()+ "\nVylecil jsi se mas bonus k casu 5 minut a obnovene zdravi";
                     hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()+5);
                     hra.getCas().setTempoCasu(new NormalniCas());
-                    System.out.println(hra.getCas().getZbyvajiciCas() + " minut zbyva");
+                    zpravaReturnu = "\n"+hra.getCas().getZbyvajiciCas() + " minut zbyva";
+                    return zpravaReturnu;
                 } else if (predmet.getNazev().toLowerCase().equals("voda")) {
-                    System.out.println("Pouzil jsi " + predmet.getNazev());
-                    System.out.println("Vypil jsi vodu a ulevilo se ti, ale mozna te to pozdeji zradi");
-                    System.out.println(hra.getCas().getZbyvajiciCas() + " minut zbyva");
+                    zpravaReturnu = "Pouzil jsi " + predmet.getNazev();
+                    zpravaReturnu+= "\nVypil jsi vodu a ulevilo se ti, ale mozna te to pozdeji zradi";
+                    zpravaReturnu+= "\n"+ hra.getCas().getZbyvajiciCas() + " minut zbyva";
+                    return zpravaReturnu;
                 } else if (predmet.getNazev().toLowerCase().equals("pacidlo")) {
                     Mistnost pomocna =hra.getData().najdiSousedaCoMa(hra.getAktualniMistnost());
                     if (pomocna != null){
-                        System.out.println("Pouzil jsi " + predmet.getNazev());
+                        zpravaReturnu = "Pouzil jsi " + predmet.getNazev();
                         pomocna.setJeZamcena(false);
-                        System.out.println("Odmekl jsi " + pomocna.getNazev());
+                        zpravaReturnu = zpravaReturnu + "\nOdmekl jsi"+ pomocna.getNazev();
+                        return zpravaReturnu;
                     }else {
-                        System.out.println("Neni tady nic na co by jsi mohl pouzit pacidlo");
-                        return;
+                        return "Neni tady nic na co by jsi mohl pouzit pacidlo";
                     }
 
                 }
             }
             if (!predmet.getNazev().equals("pacidlo")){
                 hra.getInventar().odebratPredmet(predmet);
+                return "";
             }
 
         }
         if (!jeVInventari) {
-            System.out.println("Predmet nemas u sebe");
+            return "Predmet nemas u sebe";
         }
         if (!bylPouzit&& jeVInventari) {
-            System.out.println("Predmet nejde pouzit");
+            return "Predmet nejde pouzit";
         }
+        return "Predmet nemas u sebe";
 
     }
 

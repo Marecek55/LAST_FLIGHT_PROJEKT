@@ -39,8 +39,8 @@ public class Dej implements Command {
             if (zadalSpravnePredmet) {
                 cilovyPredmet = hra.getData().najdiPredmet(hra.getTretiCastPrikazu());
                 if (hra.getInventar().predmetJeVInventari(cilovyPredmet)) {
-                    cilovaPostava.prijmutiPredmetu(cilovyPredmet, hra);
-                    return "prijmul predmet";
+                    System.out.println(cilovaPostava.prijmutiPredmetu(cilovyPredmet, hra));
+                    return "Dal jsi ruku zpet";
                 } else {
                     return "Predmet nemas v inventari";
                 }
@@ -50,6 +50,7 @@ public class Dej implements Command {
         }else {
             return "Nemas mistnost prozkoumanou";
         }
+
 
 
 

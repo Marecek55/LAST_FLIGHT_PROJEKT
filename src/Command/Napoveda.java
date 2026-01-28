@@ -10,36 +10,34 @@ public class Napoveda implements Command {
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
      */
+    String zpravaReturnu  = "";
 
     @Override
     public String vykonat(Hra hra, String s) {
-
             switch (s){
                 case "1":
-                    System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                    System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA1" ,false));
-                    break;
-
+                    zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
+                zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA1" ,null);
+                return zpravaReturnu;
                 case "2":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
-                        System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , "NAPOVEDA2" ,false));
-                        break;
+                        zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
+                        zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA2" ,null);
+                        return zpravaReturnu;
                     }else {
                         return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
                     }
                 case "3":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
-                        System.out.println("Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s);
-                        System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , "NAPOVEDA3",false));
-                        break;
+                        zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
+                        zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA3" ,null);
+                        return zpravaReturnu;
                     }else {
                         return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
                     }
-
                 default:
-                    System.out.println("Spatne zadana uroven napovedy");
-                    break;
+                    return "Spatne zadana uroven napovedy";
+
             }
 
         }

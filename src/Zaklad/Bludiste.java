@@ -9,7 +9,8 @@ public class Bludiste {
     Scanner sc = new Scanner(System.in);
     int urovenBludiste = 1;
     boolean vyselZbludiste = false;
-    public void bludiste(Hra hra ){
+    String zpravaReturnu = "";
+    public String bludiste(Hra hra ){
 
         System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "START",false));
         while (!vyselZbludiste) {
@@ -17,66 +18,69 @@ public class Bludiste {
             switch(odpoved){
                 case "doleva":
                     if (urovenBludiste == 1){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "DOLEVA1",false));
-                        hra.getCas().odecteniCasu();
+                        zpravaReturnu = hra.getData().nacteniRadkuSouboru("Bludiste", "DOLEVA1",false);
+                        zpravaReturnu = zpravaReturnu+ "\n"+hra.getCas().odecteniCasu();
                         urovenBludiste = 2;
+                        return zpravaReturnu;
                     }else if (urovenBludiste == 2){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "DOLEVA2",false));
                         hra.getCas().setTempoCasu(new CasBloudeni());
-                        hra.getCas().odecteniCasu();
+                        System.out.println(hra.getCas().odecteniCasu());
                         urovenBludiste = 1;
                         hra.getCas().setTempoCasu(new NormalniCas());
+                        return hra.getData().nacteniRadkuSouboru("Bludiste", "DOLEVA2",false);
 
                     }else if (urovenBludiste == 3){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "DOLEVA3",false));
                         hra.getCas().setTempoCasu(new CasBloudeni());
-                        hra.getCas().odecteniCasu();
+                        System.out.println(hra.getCas().odecteniCasu());
                         hra.getCas().setTempoCasu(new NormalniCas());
                         urovenBludiste = 1;
+                        return hra.getData().nacteniRadkuSouboru("Bludiste", "DOLEVA3",false);
                     }
                     break;
                 case "doprava":
                     if (urovenBludiste == 1){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "DOPRAVA1",false));
                         hra.getCas().setTempoCasu(new CasBloudeni());
-                        hra.getCas().odecteniCasu();
+                        System.out.println(hra.getCas().odecteniCasu());
                         urovenBludiste = 1;
                         hra.getCas().setTempoCasu(new NormalniCas());
+                        return hra.getData().nacteniRadkuSouboru("Bludiste", "DOPRAVA1",false);
 
                     }else if (urovenBludiste == 2){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "DOPRAVA2",false));
                         hra.getCas().setTempoCasu(new CasBloudeni());
-                        hra.getCas().odecteniCasu();
+                        System.out.println(hra.getCas().odecteniCasu());
                         urovenBludiste = 1;
                         hra.getCas().setTempoCasu(new NormalniCas());
+                        return hra.getData().nacteniRadkuSouboru("Bludiste", "DOPRAVA2",false);
 
                     }else if (urovenBludiste == 3){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "DOPRAVA3",false));
-                        hra.getCas().odecteniCasu();
+                        zpravaReturnu = hra.getData().nacteniRadkuSouboru("Bludiste", "DOPRAVA3",false);
+                        zpravaReturnu =  zpravaReturnu+ "\n" +hra.getCas().odecteniCasu();
                         vyselZbludiste = true;
-                        return;
+                        return zpravaReturnu;
                     }
                     break;
                 case "rovne":
                     if (urovenBludiste == 1){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "ROVNE1",false));
                         hra.getCas().setTempoCasu(new CasBloudeni());
                         hra.getCas().odecteniCasu();
                         urovenBludiste = 1;
                         hra.getCas().setTempoCasu(new NormalniCas());
+                        return hra.getData().nacteniRadkuSouboru("Bludiste", "ROVNE1",false);
                     }else if (urovenBludiste == 2){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "ROVNE2",false));
-                        hra.getCas().odecteniCasu();
+                        zpravaReturnu = hra.getData().nacteniRadkuSouboru("Bludiste", "ROVNE2",false);
+                        zpravaReturnu = zpravaReturnu + "\n"+hra.getCas().odecteniCasu();
                         urovenBludiste = 3;
+                        return zpravaReturnu;
                     }else if (urovenBludiste == 3){
-                        System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "ROVNE3",false));
                         hra.getCas().setTempoCasu(new CasBloudeni());
                         hra.getCas().odecteniCasu();
                         urovenBludiste = 1;
                         hra.getCas().setTempoCasu(new NormalniCas());
+                        return hra.getData().nacteniRadkuSouboru("Bludiste", "ROVNE3",false);
                     }
                     break;
             }
         }
+        return "Cyklus se nespustil";
     }
 }

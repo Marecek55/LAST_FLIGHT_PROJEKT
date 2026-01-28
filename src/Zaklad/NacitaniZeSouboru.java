@@ -140,7 +140,7 @@ public class NacitaniZeSouboru {
      * @param hledaneSlovo od jakeho slova se ma nacitat
      * @return
      */
-    public String nacteniRadkuSouboru(String nazev , String hledaneSlovo, boolean jeToProMistnost) {
+    public String nacteniRadkuSouboru(String nazev , String hledaneSlovo, Boolean jeToProMistnost) {
         String text = "";
         boolean nalezeno = false;
         try {
@@ -166,12 +166,16 @@ public class NacitaniZeSouboru {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (jeToProMistnost) {
-            najdiMistnost(nazev).setPribeh(text);
-        }else {
-            najdiNPC(nazev).setDialog(text);
+        if (jeToProMistnost!= null){
+            if (jeToProMistnost) {
+                najdiMistnost(nazev).setPribeh(text);
+            }else {
+                najdiNPC(nazev).setDialog(text);
+            }
+
         }
         return text;
+
 
     }
 

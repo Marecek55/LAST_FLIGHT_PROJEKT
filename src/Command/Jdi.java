@@ -22,25 +22,23 @@ public class Jdi implements Command {
                         if (!cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                             hra.setAktualniMistnost(cilova);
                             cilova.setBylVNi(true);
-
-
                             if (cilova.isJeTamTma()){
                                 hra.getAlex().setJeZraneny(true);
                                 hra.getCas().setTempoCasu(new CasSeZranenim());
-                                return "Jsi zranen";
+                                System.out.println("AUUUU zranil te zlodej ve tme ztracis ted 3krat vic casu");
                             }
-                            hra.getCas().odecteniCasu();
+                            System.out.println(hra.getCas().odecteniCasu());
                             return hra.getAktualniMistnost().getPribeh();
 
 
                         }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                             hra.setAktualniMistnost(cilova);
-                            hra.getCas().odecteniCasu();
+                            System.out.println(hra.getCas().odecteniCasu());
                             return "Jdes do "+cilova.getNazev();
                         }
                         else {
                             hra.setAktualniMistnost(cilova);
-                            hra.getCas().odecteniCasu();
+                            System.out.println(hra.getCas().odecteniCasu());;
                             return "V mistnosti uz nic neni muzes jit dal";
                         }
 
@@ -57,6 +55,7 @@ public class Jdi implements Command {
             }else {
             return "Mistnost neni sousedni";
             }
+
 
         }
     }

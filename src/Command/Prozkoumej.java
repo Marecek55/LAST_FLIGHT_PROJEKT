@@ -1,6 +1,11 @@
 package Command;
 
+import Postavy.NPC;
 import Zaklad.Hra;
+import Zaklad.Mistnost;
+import Zaklad.Predmet;
+
+import java.util.ArrayList;
 
 public class Prozkoumej implements Command {
     boolean mistnostUzJednouProzkoumal = false;
@@ -9,54 +14,54 @@ public class Prozkoumej implements Command {
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
      */
+    String zpravaReturnu = "";
     @Override
-    public void vykonat(Hra hra, String s) {
-//        if (!mistnostUzJednouProzkoumal){
-            System.out.println("----PROZKOUMAVANI----");
-
+    public String vykonat(Hra hra, String s) {
+        ArrayList<String> mistnostiPomocne = hra.getAktualniMistnost().getDostupneVychody();
+        ArrayList<NPC> npcPomocne = hra.getAktualniMistnost().getNpcVMistnosti();
+        ArrayList<Predmet> predmetyPomocne = hra.getAktualniMistnost().getPredmetyVMistnosti();
+            zpravaReturnu = ("----PROZKOUMAVANI----\n");
             boolean jsouTamLidi = false;
             boolean jsouTamPredmety = false;
 
-            if (hra.getAktualniMistnost().getNpcVMistnosti().size()>0){
-                System.out.println("Lide v mistnosti:");
-                for (int i = 0; i < hra.getAktualniMistnost().getNpcVMistnosti().size(); i++) {
-                    System.out.println(hra.getAktualniMistnost().getNpcVMistnosti().get(i).getJmeno());
+            if (npcPomocne.size()>0){
+                zpravaReturnu  += "Lide v mistnosti:";
+                for (int i = 0; i < npcPomocne.size(); i++) {
+                    zpravaReturnu += npcPomocne.get(i).getJmeno() + ", ";
                 }
+                zpravaReturnu += "\n";
                 hra.getAktualniMistnost().setJeProzkoumana(true);
-
                 jsouTamLidi = true;
-            }else {
-                System.out.println("Nikdo v mistnosti neni");
-            }
-            if (hra.getAktualniMistnost().getPredmetyVMistnosti().size()>0){
-                System.out.println("Predmety v mistnosti");
-                for (int i = 0; i < hra.getAktualniMistnost().getPredmetyVMistnosti().size(); i++) {
-                    System.out.println(hra.getAktualniMistnost().getPredmetyVMistnosti().get(i).getNazev());
-                }
-                hra.getAktualniMistnost().setJeProzkoumana(true);
 
+
+            }else {
+                zpravaReturnu+= "Nikdo v mistnosti neni\n";
+            }
+            if (predmetyPomocne.size()>0){
+                zpravaReturnu += "Predmety v mistnosti: ";
+                for (int i = 0; i < predmetyPomocne.size(); i++) {
+                    zpravaReturnu += predmetyPomocne.get(i).getNazev() + " ";
+                }
+                zpravaReturnu += "\n";
+                hra.getAktualniMistnost().setJeProzkoumana(true);
                 jsouTamPredmety = true;
 
             }else {
-                System.out.println("Zadny predmet v mistnosti neni");
+                zpravaReturnu += "Zadny predmet v mistnosti neni\n";
 
             }
-            if (hra.getAktualniMistnost().getDostupneVychody().size()>0) {
-            System.out.println("Dostupne vychody");
-            for (int i = 0; i < hra.getAktualniMistnost().getDostupneVychody().size(); i++) {
-                System.out.println(hra.getAktualniMistnost().getDostupneVychody().get(i));
+            if (mistnostiPomocne.size()>0) {
+            zpravaReturnu+= "Dostupne vychody: ";
+            for (int i = 0; i < mistnostiPomocne.size(); i++) {
+               zpravaReturnu +=mistnostiPomocne.get(i)+ ", ";
             }
         }
-            if (jsouTamLidi && jsouTamPredmety){
-                hra.getCas().odecteniCasu();
-
-            }else if (jsouTamLidi&& !jsouTamPredmety){
-                hra.getCas().odecteniCasu();
-
-            }else if (jsouTamPredmety && !jsouTamLidi){
-                hra.getCas().odecteniCasu();
+            if (jsouTamLidi||jsouTamPredmety) {
+                zpravaReturnu += "\n" + hra.getCas().odecteniCasu();
             }
-            mistnostUzJednouProzkoumal = true;
+        mistnostUzJednouProzkoumal = true;
+            return zpravaReturnu;
+
 
 
     }

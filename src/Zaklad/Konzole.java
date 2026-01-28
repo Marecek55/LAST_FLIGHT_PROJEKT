@@ -25,7 +25,7 @@ public class Konzole {
                 hra.setTretiCastPrikazu(rozdeleni[2]);
             }
             if (hra.getPrikazy().containsKey(nazevPrikazu)) {
-                hra.getPrikazy().get(nazevPrikazu).vykonat(hra,upresneniPrikazu);
+                System.out.println(hra.getPrikazy().get(nazevPrikazu).vykonat(hra,upresneniPrikazu));
 
             } else {
                 System.out.println(">> Nedefinovany prikaz");

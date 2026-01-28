@@ -3,6 +3,8 @@ package Command;
 import Zaklad.Hra;
 import Zaklad.Predmet;
 
+import java.util.ArrayList;
+
 public class Vezmi implements Command {
     /**
      * Vezme predmet z mistnosti do inventare
@@ -10,30 +12,29 @@ public class Vezmi implements Command {
      * @param s Druha cast inputu uzivatele
      */
     @Override
-    public void vykonat(Hra hra, String s) {
+    public String vykonat(Hra hra, String s) {
+        ArrayList<Predmet> predmetyPomocne= hra.getAktualniMistnost().getPredmetyVMistnosti();
         if (hra.getAktualniMistnost().isJeProzkoumana()){
             Predmet p = null;
-            for (int i = 0; i < hra.getAktualniMistnost().getPredmetyVMistnosti().size(); i++) {
-                if (hra.getAktualniMistnost().getPredmetyVMistnosti().get(i).getNazev().toLowerCase().equals(s.toLowerCase())) {
-                    p = hra.getAktualniMistnost().getPredmetyVMistnosti().get(i);
+            for (int i = 0; i < predmetyPomocne.size(); i++) {
+                if (predmetyPomocne.get(i).getNazev().toLowerCase().equals(s.toLowerCase())) {
+                    p = predmetyPomocne.get(i);
                     break;
                 }
 
             }
             if (p == null) {
-                System.out.println("Predmet neni v mistnosti");
-                return;
+                return "Predmet neni v mistnosti";
             }else {
-                System.out.println("Vzal jsi " + p.getNazev());
                 hra.getInventar().pridatPredmet(p);
-                hra.getCas().odecteniCasu();
-                hra.getAktualniMistnost().getPredmetyVMistnosti().remove(p);
+                System.out.println(hra.getCas().odecteniCasu());
+                predmetyPomocne.remove(p);
+                return "Vzal jsi " + p.getNazev();
 
 
             }
         }else {
-            System.out.println("Nemas mistnost prozkoumanou");
-            return;
+            return "Nemas mistnost prozkoumanou";
         }
         }
 

@@ -16,22 +16,27 @@ public class Mluv implements Command {
     public String vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().isJeProzkoumana()){
             NPC p = null;
+            try {
+               NPC hledany = hra.getData().najdiNPC(s.toLowerCase());
                 if (hra.getAktualniMistnost().getNpcVMistnosti().contains(hra.getData().najdiNPC(s.toLowerCase()))){
                     p = hra.getData().najdiNPC(s.toLowerCase());
                     if (p.isChceMluvit()) {
                         System.out.println(p.getTypMluveni().pozdrav());
                         hra.getKomunikace().komunikace(p, hra);
                         System.out.println(p.getTypMluveni().rozlouceni());
-                        hra.getCas().odecteniCasu();
-                        return "Odchazis";
-                }
+                        return hra.getCas().odecteniCasu();
+                    }
                     else {
                         return "Tento clovek s tebou ted nechce mluvit";
                     }
 
-        } else {
+                } else {
                     return "Tento clovek neni v mistnosti";
                 }
+            }catch (Exception e){
+                return "Tento clovek neni v mistnosti";
+            }
+
 
 
         }else {

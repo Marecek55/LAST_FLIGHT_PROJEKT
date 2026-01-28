@@ -47,8 +47,8 @@ public class Jdi implements Command {
 
 
                     }else {
-                        hra.getBludiste().bludiste(hra);
-                        return "Jsi v tridirne";
+
+                        return  hra.getBludiste().bludiste(hra);
                     }
 
                 }else {

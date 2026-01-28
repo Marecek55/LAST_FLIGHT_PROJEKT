@@ -13,7 +13,7 @@ public class Bludiste {
     public String bludiste(Hra hra ){
 
         System.out.print(hra.getData().nacteniRadkuSouboru("Bludiste", "START",null));
-        while (!vyselZbludiste) {
+
             String odpoved = sc.nextLine();
             switch(odpoved){
                 case "doleva":
@@ -80,7 +80,6 @@ public class Bludiste {
                     }
                     break;
             }
-        }
         return "Cyklus se nespustil";
     }
 }

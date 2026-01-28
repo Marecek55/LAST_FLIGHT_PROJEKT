@@ -10,10 +10,10 @@ public class Konec implements Command {
      * @param s druha cast inputu uzivatele
      */
     @Override
-    public void vykonat(Hra hra, String s) {
-        System.out.print("Hra se vypina...");
+    public String vykonat(Hra hra, String s) {
         hra.setStavKonce(StavKonce.NEROZHODNUTO);
         hra.setJeKonec(true);
+        return "Hra se vypina...";
 
 
     }

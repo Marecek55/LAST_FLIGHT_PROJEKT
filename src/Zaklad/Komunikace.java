@@ -3,10 +3,20 @@ import Mluveni.NastvaneMluveni;
 import Mluveni.PrijemneMluveni;
 import Mluveni.SmutneMluveni;
 import Postavy.NPC;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Komunikace {
     Scanner sc = new Scanner(System.in);
+    public String skenOhlidany(){
+        odpoved = sc.nextLine();
+        if (!odpoved.equals("1")||!odpoved.equals("2")){
+            return "Spatne zadane";
+        }
+        return odpoved;
+
+    }
     String odpoved;
     NPC pomocna  = null;
     Mistnost pomocnaMistnost = null;
@@ -14,7 +24,7 @@ public class Komunikace {
         switch (npc.getJmeno().toLowerCase()) {
             case "starimanzele":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1", false));
-                odpoved = sc.nextLine();
+                skenOhlidany();
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "VETEV" + odpoved,false));
                 Predmet p = hra.getData().najdiPredmet("cokolada");
                 if (odpoved.equals("1")) {
@@ -37,7 +47,7 @@ public class Komunikace {
                 break;
             case "mechanik":
                     System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1", false));
-                     odpoved = sc.nextLine();
+                       skenOhlidany();
                     if (odpoved.equals("1") && !hra.getInventar().predmetJeVInventari(hra.getData().najdiPredmet("kleste"))) {
                         System.out.println("Nemas kleste");
                         return;
@@ -57,7 +67,7 @@ public class Komunikace {
                 break;
             case "prodavacka":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1",false));
-                odpoved = sc.nextLine();
+                skenOhlidany();
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "VETEV" + odpoved,false));
                 if (odpoved.equals("1")) {
                     npc.setTypMluveni(new PrijemneMluveni());
@@ -71,7 +81,7 @@ public class Komunikace {
                 break;
             case "vojak":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1",false));
-                odpoved = sc.nextLine();
+                skenOhlidany();
                 if (odpoved.equals("1") && !hra.getInventar().predmetJeVInventari(hra.getData().najdiPredmet("pasy"))) {
                     System.out.println("Nemas Pasy");
                     return;

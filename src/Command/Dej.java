@@ -4,6 +4,8 @@ import Postavy.NPC;
 import Zaklad.Hra;
 import Zaklad.Predmet;
 
+import java.util.ArrayList;
+
 
 public class Dej implements Command {
     /**
@@ -12,22 +14,21 @@ public class Dej implements Command {
      * @param s Druha cast inputu uzivatele
      */
     @Override
-    public void vykonat(Hra hra, String s) {
+    public String vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().isJeProzkoumana()){
             NPC cilovaPostava = null;
             Predmet cilovyPredmet = null;
-            for (int i = 0; i < hra.getAktualniMistnost().getNpcVMistnosti().size(); i++) {
-                if (hra.getAktualniMistnost().getNpcVMistnosti().get(i).getJmeno().toLowerCase().equals(s.toLowerCase())) {
-                    cilovaPostava = hra.getAktualniMistnost().getNpcVMistnosti().get(i);
+            ArrayList <NPC>npcVMistnosti = hra.getAktualniMistnost().getNpcVMistnosti();
+            for (int i = 0; i < npcVMistnosti.size(); i++) {
+                if (npcVMistnosti.get(i).getJmeno().toLowerCase().equals(s.toLowerCase())) {
+                    cilovaPostava = npcVMistnosti.get(i);
                 }
             }
             if (cilovaPostava == null) {
-                System.out.println("Postava neni v mistnosti");
-                return;
+                return "Postava neni v mistnosti";
             }
             if (hra.getTretiCastPrikazu()== null){
-                System.out.println("Musis zadat predmet ktery chces dat");
-                return;
+                return "Musis zadat predmet ktery chces dat";
             }
             boolean zadalSpravnePredmet = false;
             for (int i = 0; i < hra.getData().predmety.size(); i++) {
@@ -39,15 +40,15 @@ public class Dej implements Command {
                 cilovyPredmet = hra.getData().najdiPredmet(hra.getTretiCastPrikazu());
                 if (hra.getInventar().predmetJeVInventari(cilovyPredmet)) {
                     cilovaPostava.prijmutiPredmetu(cilovyPredmet, hra);
+                    return "prijmul predmet";
                 } else {
-                    System.out.println("Predmet nemas v inventari");
+                    return "Predmet nemas v inventari";
                 }
             }else {
-                System.out.println("Zadal jsi neexistujici predmet");
+                return "Zadal jsi neexistujici predmet";
             }
         }else {
-            System.out.println("Nemas mistnost prozkoumanou");
-            return;
+            return "Nemas mistnost prozkoumanou";
         }
 
 

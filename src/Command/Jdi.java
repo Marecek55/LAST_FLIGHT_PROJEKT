@@ -13,7 +13,7 @@ public class Jdi implements Command {
      * @param s Druha cast inputu uzivatele
      */
     @Override
-    public void vykonat(Hra hra, String s) {
+    public String vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().getDostupneVychody().contains(s.toLowerCase())){
             Mistnost cilova = hra.getData().najdiMistnost(s.toLowerCase());
 
@@ -22,35 +22,40 @@ public class Jdi implements Command {
                         if (!cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                             hra.setAktualniMistnost(cilova);
                             cilova.setBylVNi(true);
-                            System.out.print(hra.getAktualniMistnost().getPribeh());
+
+
                             if (cilova.isJeTamTma()){
                                 hra.getAlex().setJeZraneny(true);
                                 hra.getCas().setTempoCasu(new CasSeZranenim());
+                                return "Jsi zranen";
                             }
                             hra.getCas().odecteniCasu();
+                            return hra.getAktualniMistnost().getPribeh();
 
 
                         }else if (cilova.isBylVNi()&&!cilova.isJeCelaHotova()){
                             hra.setAktualniMistnost(cilova);
                             hra.getCas().odecteniCasu();
+                            return "Jdes do "+cilova.getNazev();
                         }
                         else {
-                            System.out.println("V mistnosti uz nic neni muzes jit dal");
                             hra.setAktualniMistnost(cilova);
                             hra.getCas().odecteniCasu();
+                            return "V mistnosti uz nic neni muzes jit dal";
                         }
 
 
                     }else {
                         hra.getBludiste().bludiste(hra);
+                        return "Jsi v tridirne";
                     }
 
                 }else {
-                    System.out.println("Mistnost je zamcena");
+                    return "Mistnost je zamcena";
                 }
 
             }else {
-            System.out.println("Mistnost neni sousedni");
+            return "Mistnost neni sousedni";
             }
 
         }

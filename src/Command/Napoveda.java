@@ -12,7 +12,7 @@ public class Napoveda implements Command {
      */
 
     @Override
-    public void vykonat(Hra hra, String s) {
+    public String vykonat(Hra hra, String s) {
 
             switch (s){
                 case "1":
@@ -26,8 +26,7 @@ public class Napoveda implements Command {
                         System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , "NAPOVEDA2" ,false));
                         break;
                     }else {
-                        System.out.println("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
-                        return;
+                        return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
                     }
                 case "3":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
@@ -35,8 +34,7 @@ public class Napoveda implements Command {
                         System.out.print(hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() , "NAPOVEDA3",false));
                         break;
                     }else {
-                        System.out.println("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
-                        return;
+                        return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
                     }
 
                 default:

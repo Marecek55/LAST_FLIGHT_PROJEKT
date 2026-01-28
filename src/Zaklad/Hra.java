@@ -69,7 +69,7 @@ public class Hra {
 //            data.nacteniPribehuPostavAMistnosti(data.mistnosti.get(i).getNazev().toLowerCase(), false);
 //        }
         for (int i = 0; i < data.mistnosti.size(); i++) {
-            data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev().toLowerCase() , "ZACATEKMISTNOSTI", true);
+            data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev(), "ZACATEKMISTNOSTI", true);
         }
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());

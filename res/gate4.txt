@@ -14,8 +14,25 @@ Po vitezstvi se rozhodni.
 KONEC
 
 ZACATEKMISTNOSTI
-VETEV1
-UTEKL JSI DO LETADLA A POSTRILELI TE
+Je to tu finalni setkani ted uz musis dokoncit svou misi
+TAK POJD PRO MNE ZAVOLA UNOSCE
+Jestli chces sveho syna zpet tak pojd bojovat
+kdo vyhraje odleti letadlem plati
+tak pojd dam ti co proto
 KONEC
+
+VETEV1
+Vidis jak vojak miri zbrani na saru a tobiho
+utikas je kryt a kulka se ti zabodne primo do srdce
+a za Sarou a Tobim letuska zavre dvere
+umiras ale vis ze jsi padlo pro svou rodinu
+RODINA JE ZACHRANENA!
+KONEC
+
 VETEV2
-JSI HRDINA POMALU UMIRAS ALE RODINA JE ZACHRANENA
+Utikas se svou rodinou smerem ke dverim
+v Gatu uz ale jsou i nepratelsti
+vojaci a zacnou strilet trefi tebe i saru
+a tobiho zajmou
+RODINA NEBYLA ZACHRANENA!
+KONEC

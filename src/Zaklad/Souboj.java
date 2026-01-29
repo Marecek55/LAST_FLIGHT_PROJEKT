@@ -13,7 +13,6 @@ public class Souboj {
     boolean vyhralHrac = false;
     boolean vyhralUnosce= false;
     AkceUnosce aktualniAkce;
-    Scanner sc = new Scanner(System.in);
 
     /**
      * Spousti souboj
@@ -30,7 +29,7 @@ public class Souboj {
             hra.getUnosce().setAkce(aktualniAkce);
             System.out.println("Akce unosce je " + aktualniAkce);
             System.out.print(">>");
-            String prikaz = sc.nextLine();
+            String prikaz = hra.getKonzole().getSc().nextLine();
             prikaz = prikaz.trim();
             if (prikaz.toLowerCase().equals("uhni")){
                 System.out.println(hra.getPrikazy().get(prikaz).vykonat(hra, ""));

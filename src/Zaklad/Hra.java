@@ -81,9 +81,11 @@ public class Hra {
         komunikace = new Komunikace();
         alex = new Alex("Alex");
         konzole = new Konzole();
+        System.out.print(aktualniMistnost.getPribeh());
+        aktualniMistnost.setBylVNi(true);
 
-        setAktualniMistnost(getData().najdiMistnost("checkpoint"));
-        getInventar().pridatPredmet(getData().najdiPredmet("pasy"));
+//        setAktualniMistnost(getData().najdiMistnost("checkpoint"));
+//        getInventar().pridatPredmet(getData().najdiPredmet("pasy"));
 
     }
 

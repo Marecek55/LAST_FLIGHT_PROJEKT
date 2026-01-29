@@ -14,5 +14,7 @@ Otevres s nim dalsi cesty.
 KONEC
 
 ZACATEKMISTNOSTI
-asd
+Tohle je podzemni mistnost pod letistem.
+Nikdo tu neni vypada to tu opustene zkus se tu
+porozhlednout
 KONEC

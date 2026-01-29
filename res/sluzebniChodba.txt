@@ -14,3 +14,7 @@ Rozhodni se kam jit kazda nekam vede.
 KONEC
 
 ZACATEKMISTNOSTI
+Jsi ve sluzebni chodbe.
+Je tu hodne dveri ale uz jsi unosci na stope
+na nic necekej
+KONEC

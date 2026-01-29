@@ -39,6 +39,7 @@ public class Jdi implements Command {
                             cilova.setBylVNi(true);
                             return cilova.getPribeh().trim();
 
+
                         }else {
                             return "Vratil jsi se do " + cilova.getNazev();
 

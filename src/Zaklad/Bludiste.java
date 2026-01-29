@@ -3,7 +3,6 @@ package Zaklad;
 import Cas.CasBloudeni;
 import Cas.NormalniCas;
 
-import java.util.Scanner;
 
 
 public class Bludiste {
@@ -19,9 +18,6 @@ public class Bludiste {
             return "Tudy uz jsi prosel cesta mezi kufry je volna. Jdes do tridirny zavazadel";
         }
 
-        if (urovenBludiste<3) {
-            System.out.print(hra.getData().nacteniRadkuSouboru("bludiste", "START", null));
-        }
         while (!vyselZbludiste) {
             if (hra.getCas().getZbyvajiciCas() <= 0) {
                 hra.setJeKonec(true);
@@ -38,7 +34,7 @@ public class Bludiste {
                         zpravaReturnu = hra.getData().nacteniRadkuSouboru("bludiste", "DOLEVA1", null);
                         zpravaReturnu = zpravaReturnu + "\n" + hra.getCas().odecteniCasu();
                         urovenBludiste = 2;
-                        System.out.println(zpravaReturnu);
+                        System.out.print(zpravaReturnu);
                     } else {
                         vratNaZacatek(hra, "DOLEVA" + urovenBludiste);
                     }

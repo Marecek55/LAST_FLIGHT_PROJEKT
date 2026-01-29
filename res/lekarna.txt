@@ -14,3 +14,7 @@ Dej ji vodu otevres cestu do skladu.
 KONEC
 
 ZACATEKMISTNOSTI
+Vejdes a ucitis vuni klasicke lekarny
+Je to cela modra mistnost s zelenym
+krizem na zdi
+KONEC

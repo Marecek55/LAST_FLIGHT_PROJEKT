@@ -7,7 +7,7 @@ import Postavy.NPC;
 import java.util.Scanner;
 
 public class Komunikace {
-    Scanner sc = new Scanner(System.in);
+    Scanner sc;
 
     /**
      * Zkracuje odpoved aby se neopakoval kod a pouziva rekurzi aby zadal odpoved znova
@@ -31,6 +31,7 @@ public class Komunikace {
      * @param hra odkaz na hru
      */
     public void komunikace(NPC npc , Hra hra) {
+        sc = hra.getKonzole().getSc();
         switch (npc.getJmeno().toLowerCase()) {
             case "starimanzele":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1", false));

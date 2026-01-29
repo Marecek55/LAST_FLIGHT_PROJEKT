@@ -10,8 +10,8 @@ public class Souboj {
     Random rd = new Random();
     ArrayList<AkceUnosce> akce  =new ArrayList<>();
 
-    boolean vyhralHrac;
-    boolean vyhralUnosce;
+    boolean vyhralHrac = false;
+    boolean vyhralUnosce= false;
     AkceUnosce aktualniAkce;
     Scanner sc = new Scanner(System.in);
 
@@ -22,7 +22,7 @@ public class Souboj {
         akce.add(AkceUnosce.KRYTY);
         akce.add(AkceUnosce.UTOCICI);
         akce.add(AkceUnosce.ODKRYTY);
-        System.out.print(hra.getData().nacteniRadkuSouboru("Souboj" , "SOUBOJ", false));
+        System.out.print(hra.getData().nacteniRadkuSouboru("Souboj" , "SOUBOJ", null));
         while (!vyhralUnosce&&!vyhralHrac){
 
             aktualniAkce = akce.get(rd.nextInt(akce.size()));
@@ -33,33 +33,40 @@ public class Souboj {
             String prikaz = sc.nextLine();
             prikaz = prikaz.trim();
             if (prikaz.toLowerCase().equals("uhni")){
-                hra.getPrikazy().get(prikaz).vykonat(hra, "");
+                System.out.println(hra.getPrikazy().get(prikaz).vykonat(hra, ""));
 
             }else if (prikaz.toLowerCase().equals("utok")){
-                hra.getPrikazy().get(prikaz).vykonat(hra, "");
+                System.out.println(hra.getPrikazy().get(prikaz).vykonat(hra, ""));
 
 
             }else {
                 if (aktualniAkce.toString().toLowerCase().equals("utocici")){
 
                     hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()-10);
-                    return "Nevyhovujici prikaz unosce te prastil ztratil jsi 10 minut";
+                    System.out.println("Nevyhovujici prikaz unosce te prastil ztratil jsi 10 minut");
                 }else{
-                    return "Spatny prikaz ale utocici nastesti neutocil";
+                    System.out.println("Spatny prikaz ale utocici nastesti neutocil");
 
                 }
 
             }
-            if (hra.getUnosce().getZivoty()==0) {
+            if (hra.getUnosce().getZivoty()<=0) {
                 vyhralHrac = true;
-                return "VYHRA UTIKEJ ZA RODINOU";
             }
             if (hra.getCas().getZbyvajiciCas()<=0){
                 vyhralUnosce = true;
-                return "DOSEL TI CAS UNOSCE TE ZMLATIL";
+            }
+            if (!vyhralHrac && !vyhralUnosce) {
+                System.out.println("Zivoty unosce " + hra.getUnosce().getZivoty());
+                System.out.println(hra.getCas().odecteniCasu());
             }
         }
-        return "Souboj se nespustil";
+        if (vyhralHrac) {
+            return "VYHRA UTIKEJ ZA RODINOU!";
+        } else {
+            hra.setJeKonec(true);
+            return "DOSEL TI CAS, UNOSCE TE ZMLATIL. KONEC HRY.";
+        }
 
 
 

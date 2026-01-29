@@ -4,4 +4,4 @@ Budes muset psat prikazy uhni nebo utok a musis se rozhodnout
 jaky spravny prikaz napsat Unosce ma tri typy akci
 KRYT, UTOK, a Stav kde je odkryty prave v tomto stavu musis
 vyvolat akci utok a obracene souboj je na tahy Hodne stesti!
-KONE
+KONEC

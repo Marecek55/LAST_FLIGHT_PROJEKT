@@ -52,6 +52,7 @@ public class Hra {
         for (int i = 0; i < data.npc.size(); i++) {
             data.npc.get(i).setTypMluveni(data.npc.get(i).getTypMluveniText());
         }
+
         data.nactiPozadovanyPredmet("mechanik", "kleste");
         data.nactiPozadovanyPredmet("vojak", "pasy");
         data.nactiPozadovanyPredmet("prodavacka", "voda");
@@ -65,7 +66,7 @@ public class Hra {
         data.nasypDoMistnostiPredmety(new String[] {}, new String[] {"zlodej"}, "dutyFreeShop" );
         data.nasypDoMistnostiPredmety(new String[] {""}, new String[] {"vojak"}, "checkpoint" );
         for (int i = 0; i < data.mistnosti.size(); i++) {
-            data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev(), "ZACATEKMISTNOSTI", true);
+            data.mistnosti.get(i).setPribeh(data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev(), "ZACATEKMISTNOSTI", true));
         }
         System.out.println("Predmetu je : " + data.predmety.size());
         System.out.println("NPC je nactenych: " + data.npc.size());
@@ -80,6 +81,7 @@ public class Hra {
         komunikace = new Komunikace();
         alex = new Alex("Alex");
         konzole = new Konzole();
+
         setAktualniMistnost(getData().najdiMistnost("checkpoint"));
         getInventar().pridatPredmet(getData().najdiPredmet("pasy"));
 

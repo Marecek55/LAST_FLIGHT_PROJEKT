@@ -10,13 +10,14 @@ public class Komunikace {
     Scanner sc = new Scanner(System.in);
 
     /**
-     * Zkracuje odpoved aby se neopakoval kod
+     * Zkracuje odpoved aby se neopakoval kod a pouziva rekurzi aby zadal odpoved znova
      * @return
      */
     public String skenOhlidany(){
-        odpoved = sc.nextLine().toLowerCase();
-        if (!odpoved.equals("1")||!odpoved.equals("2")){
-            return "Spatne zadane";
+        System.out.print(">>");
+        odpoved = sc.nextLine().toLowerCase().trim();
+        if (!odpoved.equals("1")&&!odpoved.equals("2")){
+            return skenOhlidany();
         }
         return odpoved;
     }
@@ -109,12 +110,6 @@ public class Komunikace {
                     return;
                 }
                 break;
-            case "unosce":
-                System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1",false));
-                System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "VETEV" + odpoved,false));
-                hra.getSouboj().souboj(hra);
-                npc.setChceMluvit(false);
-                break;
 
                 default:
 
@@ -133,15 +128,19 @@ public class Komunikace {
      */
 
     public String vyberKonce(Hra hra, Mistnost aktualni) {
+        System.out.println("\nRozhodni se rychle:");
+        System.out.println("1. Vezmi rodinu a utec do letadla");
+        System.out.println("2. Zneskodni unosce navzdy");
         skenOhlidany();
-        System.out.print(hra.getData().nacteniRadkuSouboru(aktualni.getNazev(), "VETEV" + odpoved,true));
+       String textKonce  = hra.getData().nacteniRadkuSouboru(aktualni.getNazev(), "VETEV" + odpoved,true);
         if (odpoved.equals("1")) {
             hra.setStavKonce(StavKonce.VYHRA);
-            hra.setJeKonec(true);
+
         }else if (odpoved.equals("2")) {
             hra.setStavKonce(StavKonce.SPATNYKONEC);
-            hra.setJeKonec(true);
+
         }
-        return null;
+        hra.setJeKonec(true);
+        return textKonce;
     }
 }

@@ -1,5 +1,7 @@
 package Zaklad;
 import Postavy.NPC;
+import Postavy.Postava;
+
 import java.util.ArrayList;
 
 public  class Mistnost {

@@ -37,6 +37,7 @@ public class Hra {
     private Bludiste bludiste;
     private Komunikace komunikace;
     private Alex alex;
+    private Konzole konzole;
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
      * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc a vytvari se instance pro tridy ktere
@@ -78,6 +79,9 @@ public class Hra {
         bludiste = new Bludiste();
         komunikace = new Komunikace();
         alex = new Alex("Alex");
+        konzole = new Konzole();
+        setAktualniMistnost(getData().najdiMistnost("checkpoint"));
+        getInventar().pridatPredmet(getData().najdiPredmet("pasy"));
 
     }
 
@@ -181,6 +185,13 @@ public class Hra {
         this.prikazy = prikazy;
     }
 
+    public Konzole getKonzole() {
+        return konzole;
+    }
+
+    public void setKonzole(Konzole konzole) {
+        this.konzole = konzole;
+    }
 
     public void konec(StavKonce stavKonce) {
     }

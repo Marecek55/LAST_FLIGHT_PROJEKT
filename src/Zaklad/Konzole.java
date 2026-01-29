@@ -6,7 +6,11 @@ public class Konzole {
     private Hra hra;
 
 
-    Scanner sc = new Scanner(System.in);
+     private Scanner sc;
+
+    public Konzole() {
+        sc= new Scanner(System.in);
+    }
 
     /**
      * Rozdeli prikaz od uzivatele na dve casti a zavola ho
@@ -44,4 +48,11 @@ public class Konzole {
             } while (!hra.isJeKonec());
     }
 
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
 }

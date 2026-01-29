@@ -14,7 +14,7 @@ public class Komunikace {
      * @return
      */
     public String skenOhlidany(){
-        odpoved = sc.nextLine();
+        odpoved = sc.nextLine().toLowerCase();
         if (!odpoved.equals("1")||!odpoved.equals("2")){
             return "Spatne zadane";
         }

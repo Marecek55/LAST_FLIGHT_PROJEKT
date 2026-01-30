@@ -23,10 +23,7 @@ public class Souboj {
         akce.add(AkceUnosce.ODKRYTY);
         System.out.print(hra.getData().nacteniRadkuSouboru("Souboj" , "SOUBOJ", null));
         while (!vyhralUnosce&&!vyhralHrac){
-            if (hra.getCas().getZbyvajiciCas() <= 0) {
-                vyhralUnosce = true;
-                break;
-            }
+
             aktualniAkce = akce.get(rd.nextInt(akce.size()));
 
             hra.getUnosce().setAkce(aktualniAkce);

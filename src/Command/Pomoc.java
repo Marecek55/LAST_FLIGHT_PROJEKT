@@ -13,7 +13,7 @@ public class Pomoc implements Command {
     String zpravaReturnu  = "";
     @Override
     public String vykonat(Hra hra, String s) {
-        zpravaReturnu = "POMOC NEBOLI NAVOD NA HRU ";
+        zpravaReturnu = hra.getFialova("POMOC NEBOLI NAVOD NA HRU")+"\n";
         zpravaReturnu = zpravaReturnu + hra.getData().nacteniRadkuSouboru("navodHry" ,"START", null).trim();
         return zpravaReturnu;
     }

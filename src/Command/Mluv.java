@@ -23,23 +23,23 @@ public class Mluv implements Command {
                         System.out.println(p.getTypMluveni().pozdrav());
                         hra.getKomunikace().komunikace(p, hra);
                         System.out.println(p.getTypMluveni().rozlouceni());
-                        return hra.getCas().odecteniCasu();
+                        return hra.getCas().odecteniCasu(hra);
                     }
                     else {
-                        return "Tento clovek s tebou ted nechce mluvit";
+                        return hra.getCervena("Tento clovek s tebou ted nechce mluvit");
                     }
 
                 } else {
-                    return "Tento clovek neni v mistnosti";
+                    return hra.getCervena("Tento clovek neni v mistnosti");
                 }
             }catch (Exception e){
-                return "Tento clovek neni v mistnosti";
+                return hra.getCervena("Tento clovek neni v mistnosti");
             }
 
 
 
         }else {
-            return "Nemas mistnost prozkoumanou";
+            return hra.getModra("Nemas mistnost prozkoumanou");
         }
 
         }

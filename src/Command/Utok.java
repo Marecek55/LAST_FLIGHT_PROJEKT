@@ -15,19 +15,19 @@ public class Utok implements Command {
             AkceUnosce akce = hra.getUnosce().getAkce();
             if (akce.equals(AkceUnosce.ODKRYTY)){
                 hra.getUnosce().setZivoty(hra.getUnosce().getZivoty() - 1);
-                return "Prastil jsi unosce primo do obliceje";
+                return hra.getZelena("Prastil jsi unosce primo do obliceje");
 
             }else if (akce.equals(AkceUnosce.KRYTY)){
-                return "Unosce byl " + akce + " nic jsi  mu nezpusobil";
+                return hra.getZluta("Unosce byl " + akce + " nic jsi  mu nezpusobil");
             } else if (akce.equals(AkceUnosce.UTOCICI)) {
                 hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas() - 10);
-                return "Unosce byl " + akce + " nic jsi  mu nezpusobil a dostavas penalizaci 10 minut";
+                return hra.getCervena("Unosce byl " + akce + " nic jsi  mu nezpusobil a dostavas penalizaci 10 minut");
             }else {
-                return "Zadna akce";
+                return hra.getCervena("Zadna akce");
             }
 
         }else {
-            return "Nejsi v souboji";
+            return hra.getCervena("Nejsi v souboji");
         }
         }
 

@@ -13,7 +13,7 @@ public class Konec implements Command {
     public String vykonat(Hra hra, String s) {
         hra.setStavKonce(StavKonce.NEROZHODNUTO);
         hra.setJeKonec(true);
-        return "Hra se vypina...";
+        return hra.getCervena("Hra se vypina...");
 
 
     }

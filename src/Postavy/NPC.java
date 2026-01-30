@@ -35,17 +35,17 @@ public class  NPC extends Postava {
                     chceMluvit = false;
                     Mistnost cilova =hra.getData().najdiSousedaCoMa(hra.getAktualniMistnost());
                     cilova.setJeZamcena(false);
-                    System.out.println("Odemkl jsi tridirnu zavazadel");
+                    System.out.println(hra.getModra("Odemkl jsi tridirnu zavazadel"));
 
                 }
 
                 hra.getInventar().odebratPredmet(p);
-                return "Dal jsi "  + jmeno + " predmet " + p.getNazev() + "\n"+hra.getCas().odecteniCasu();
+                return hra.getModra("Dal jsi ")  + jmeno + " predmet " + p.getNazev() + "\n"+hra.getCas().odecteniCasu(hra);
             }else {
-               return "Toto dana postava " + jmeno + " nechce " + p.getNazev();
+               return hra.getCervena("Toto dana postava " + jmeno + " nechce " + p.getNazev());
             }
         }else {
-            return "Toto dana postava " + jmeno + " nechce " + p.getNazev();
+            return hra.getCervena("Toto dana postava " + jmeno + " nechce " + p.getNazev());
         }
 
     }

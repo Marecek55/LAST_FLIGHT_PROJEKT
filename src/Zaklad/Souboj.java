@@ -23,11 +23,14 @@ public class Souboj {
         akce.add(AkceUnosce.ODKRYTY);
         System.out.print(hra.getData().nacteniRadkuSouboru("Souboj" , "SOUBOJ", null));
         while (!vyhralUnosce&&!vyhralHrac){
-
+            if (hra.getCas().getZbyvajiciCas() <= 0) {
+                vyhralUnosce = true;
+                break;
+            }
             aktualniAkce = akce.get(rd.nextInt(akce.size()));
 
             hra.getUnosce().setAkce(aktualniAkce);
-            System.out.println("Akce unosce je " + aktualniAkce);
+            System.out.println(hra.getFialova("Akce unosce je ") + aktualniAkce);
             System.out.print(">>");
             String prikaz = hra.getKonzole().getSc().nextLine();
             prikaz = prikaz.trim();
@@ -42,9 +45,9 @@ public class Souboj {
                 if (aktualniAkce.toString().toLowerCase().equals("utocici")){
 
                     hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()-10);
-                    System.out.println("Nevyhovujici prikaz unosce te prastil ztratil jsi 10 minut");
+                    System.out.println(hra.getCervena("Nevyhovujici prikaz unosce te prastil ztratil jsi 10 minut"));
                 }else{
-                    System.out.println("Spatny prikaz ale utocici nastesti neutocil");
+                    System.out.println(hra.getZluta("Spatny prikaz ale utocici nastesti neutocil"));
 
                 }
 
@@ -57,14 +60,14 @@ public class Souboj {
             }
             if (!vyhralHrac && !vyhralUnosce) {
                 System.out.println("Zivoty unosce " + hra.getUnosce().getZivoty());
-                System.out.println(hra.getCas().odecteniCasu());
+                System.out.println(hra.getCas().odecteniCasu(hra));
             }
         }
         if (vyhralHrac) {
-            return "VYHRA UTIKEJ ZA RODINOU!";
+            return hra.getZelena("VYHRA UTIKEJ ZA RODINOU!");
         } else {
             hra.setJeKonec(true);
-            return "DOSEL TI CAS, UNOSCE TE ZMLATIL. KONEC HRY.";
+            return hra.getCervena("DOSEL TI CAS, UNOSCE TE ZMLATIL. KONEC HRY");
         }
 
 

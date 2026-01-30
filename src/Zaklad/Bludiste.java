@@ -11,7 +11,11 @@ public class Bludiste {
     boolean vyselZbludiste = false;
     String zpravaReturnu = "";
 
-
+    /**
+     * Spusti bludiste kde si uzivatel vybira jakym smerem jit
+     * @param hra hra pro nastavovani dalsich veci
+     * @return
+     */
     public String bludiste(Hra hra) {
         hra.setAktualniMistnost(hra.getData().najdiMistnost("tridirnaZavazadel"));
         if (vyselZbludiste) {
@@ -21,7 +25,7 @@ public class Bludiste {
         while (!vyselZbludiste) {
             if (hra.getCas().getZbyvajiciCas() <= 0) {
                 hra.setJeKonec(true);
-                return "V bludisti ti dosel cas a nestihl jsi letadlo...";
+                return hra.getCervena("V bludisti ti dosel cas a nestihl jsi letadlo...");
             }
             if (urovenBludiste == 1) {
                 System.out.print(hra.getData().nacteniRadkuSouboru("bludiste", "START", null).trim()+"\n");
@@ -32,7 +36,7 @@ public class Bludiste {
                 case "doleva":
                     if (urovenBludiste == 1) {
                         zpravaReturnu = hra.getData().nacteniRadkuSouboru("bludiste", "DOLEVA1", null);
-                        zpravaReturnu = zpravaReturnu + "\n" + hra.getCas().odecteniCasu();
+                        zpravaReturnu = zpravaReturnu +  hra.getCas().odecteniCasu(hra)+"\n";
                         urovenBludiste = 2;
                         System.out.print(zpravaReturnu);
                     } else {
@@ -42,7 +46,7 @@ public class Bludiste {
                 case "doprava":
                     if (urovenBludiste == 3) {
                         zpravaReturnu = hra.getData().nacteniRadkuSouboru("bludiste", "DOPRAVA3", null);
-                        zpravaReturnu = zpravaReturnu + "\n" + hra.getCas().odecteniCasu();
+                        zpravaReturnu = zpravaReturnu + hra.getCas().odecteniCasu(hra);
                         hra.setAktualniMistnost(hra.getData().najdiMistnost("tridirnaZavazadel"));
                         vyselZbludiste = true;
                     } else {
@@ -52,7 +56,7 @@ public class Bludiste {
                 case "rovne":
                     if (urovenBludiste == 2) {
                         zpravaReturnu = hra.getData().nacteniRadkuSouboru("bludiste", "ROVNE2", null);
-                        zpravaReturnu = zpravaReturnu + "\n" + hra.getCas().odecteniCasu();
+                        zpravaReturnu = zpravaReturnu + hra.getCas().odecteniCasu(hra);
                         urovenBludiste = 3;
                         System.out.println(zpravaReturnu);
                     } else {
@@ -60,16 +64,22 @@ public class Bludiste {
                     }
                     break;
                 default:
-                    System.out.println("Musis zadat rovne doleva nebo doprava");
+                    System.out.println(hra.getFialova("Musis zadat rovne doleva nebo doprava"));
             }
         }
 
         return zpravaReturnu;
     }
+
+    /**
+     * Vraci uzivatele na zacatek bludiste kdyz zabloudi napise spatny smer
+     * @param hra
+     * @param slovo nazev smeru od ktereho se vypise pribeh slepe cesty
+     */
     private void vratNaZacatek(Hra hra, String slovo) {
         hra.getCas().setTempoCasu(new CasBloudeni());
         System.out.print(hra.getData().nacteniRadkuSouboru("bludiste", slovo, null).trim());
-        System.out.println("Zabloudil jsi vracis se! "+ hra.getCas().odecteniCasu());
+        System.out.println(hra.getCervena("\n"+"Zabloudil jsi vracis se! ")+ hra.getCas().odecteniCasu(hra));
         hra.getCas().setTempoCasu(new NormalniCas());
         urovenBludiste = 1;
     }

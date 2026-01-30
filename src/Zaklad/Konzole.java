@@ -32,7 +32,7 @@ public class Konzole {
                 System.out.println(hra.getPrikazy().get(nazevPrikazu).vykonat(hra,upresneniPrikazu));
 
             } else {
-                System.out.println(">> Nedefinovany prikaz");
+                System.out.println(hra.getCervena(">> Nedefinovany prikaz"));
             }
         }
 
@@ -44,6 +44,7 @@ public class Konzole {
         hra = new Hra();
             do {
                 provadeniPrikazu();
+                System.out.println("----------------------------------------------------------------------------------------------------------------");
 
             } while (!hra.isJeKonec());
     }

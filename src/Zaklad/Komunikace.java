@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Komunikace {
     Scanner sc;
 
+
     /**
      * Zkracuje odpoved aby se neopakoval kod a pouziva rekurzi aby zadal odpoved znova
      * @return
@@ -16,14 +17,24 @@ public class Komunikace {
     public String skenOhlidany(){
         System.out.print(">>");
         odpoved = sc.nextLine().toLowerCase().trim();
-        if (!odpoved.equals("1")&&!odpoved.equals("2")){
-            return skenOhlidany();
+        if (!jeUKonce){
+            if (!odpoved.equals("1")&&!odpoved.equals("2")&&!odpoved.equals("rozlouceni")){
+                return skenOhlidany();
+            }
+            return odpoved;
+        }else {
+            if (!odpoved.equals("1")&&!odpoved.equals("2")){
+                return skenOhlidany();
+            }
+            return odpoved;
         }
-        return odpoved;
+
+
     }
     String odpoved;
     NPC pomocna  = null;
     Mistnost pomocnaMistnost = null;
+    boolean jeUKonce = false;
 
     /**
      * spusti komunikaci podle postavy
@@ -36,6 +47,9 @@ public class Komunikace {
             case "starimanzele":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1", false));
                 skenOhlidany();
+                if (odpoved.equals("rozlouceni")){
+                    return;
+                }
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "VETEV" + odpoved,false));
                 Predmet p = hra.getData().najdiPredmet("cokolada");
                 if (odpoved.equals("1")) {
@@ -47,9 +61,7 @@ public class Komunikace {
                     npc.setChceMluvit(false);
                     return;
                 }
-                if (odpoved.toLowerCase().equals("rozlouceni")) {
-                    return;
-                }
+
 
                 break;
             case "sara":
@@ -59,6 +71,9 @@ public class Komunikace {
             case "mechanik":
                     System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1", false));
                        skenOhlidany();
+                if (odpoved.equals("rozlouceni")){
+                    return;
+                }
                     if (odpoved.equals("1") && !hra.getInventar().predmetJeVInventari(hra.getData().najdiPredmet("kleste"))) {
                         System.out.println("Nemas kleste");
                         return;
@@ -79,13 +94,17 @@ public class Komunikace {
             case "prodavacka":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1",false));
                 skenOhlidany();
+                if (odpoved.equals("rozlouceni")){
+                return;
+            }
+
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "VETEV" + odpoved,false));
                 if (odpoved.equals("1")) {
                     npc.setTypMluveni(new PrijemneMluveni());
                     npc.setChceMluvit(false);
                     pomocnaMistnost =hra.getData().najdiSousedaCoMa(hra.getAktualniMistnost());
                     pomocnaMistnost.setJeZamcena(false);
-                    System.out.println("Odmekl jsi " + pomocnaMistnost.getNazev());
+                    System.out.println(hra.getModra("Odmekl jsi ") + pomocnaMistnost.getNazev());
                 } else if (odpoved.equals("2")) {
                     return;
                 }
@@ -93,8 +112,11 @@ public class Komunikace {
             case "vojak":
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "START1",false));
                 skenOhlidany();
+                if (odpoved.equals("rozlouceni")){
+                    return;
+                }
                 if (odpoved.equals("1") && !hra.getInventar().predmetJeVInventari(hra.getData().najdiPredmet("pasy"))) {
-                    System.out.println("Nemas Pasy");
+                    System.out.println(hra.getCervena("Nemas Pasy"));
                     return;
                 }
                 System.out.print(hra.getData().nacteniRadkuSouboru(npc.getJmeno(), "VETEV" + odpoved,false));
@@ -103,7 +125,7 @@ public class Komunikace {
                     hra.getInventar().odebratPredmet(hra.getData().najdiPredmet("pasy"));
                     pomocnaMistnost =hra.getData().najdiSousedaCoMa(hra.getAktualniMistnost());
                     pomocnaMistnost.setJeZamcena(false);
-                    System.out.println("Odmekl jsi " + pomocnaMistnost.getNazev());
+                    System.out.println(hra.getModra("Odmekl jsi ") + pomocnaMistnost.getNazev());
                     npc.setChceMluvit(false);
 
 
@@ -122,16 +144,20 @@ public class Komunikace {
     }
 
     /**
-     * Vyber konce se spusti jak prijde do gate4
+     * Vyber konce se spusti jak prijde do gate4 a necha ho vybrat jak hru zakonci
      * @param hra      odkaz na hru
      * @param aktualni odkaz na gate4
      * @return
      */
 
     public String vyberKonce(Hra hra, Mistnost aktualni) {
-        System.out.println("\nRozhodni se rychle:");
+        if (this.sc == null) {
+            this.sc = hra.getKonzole().getSc();
+        }
+        System.out.println(hra.getCervena("\nRozhodni se rychle:"));
         System.out.println("1. Vezmi rodinu a utec do letadla");
         System.out.println("2. Zneskodni unosce navzdy");
+        jeUKonce = true;
         skenOhlidany();
        String textKonce  = hra.getData().nacteniRadkuSouboru(aktualni.getNazev(), "VETEV" + odpoved,true);
         if (odpoved.equals("1")) {

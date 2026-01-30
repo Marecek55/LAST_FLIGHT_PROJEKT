@@ -5,10 +5,13 @@ Napoveda: Napis napoveda a [urovenNapovedy] aby jsi dostal informace cim vyssi c
 Pruzkum: V mistnosti napis prozkoumej abys nasel predmety a lidi a mistnosti kam jde jit.
 Batoh: Mas misto jen na 3 veci inzulin nejde zobrazis si ho pres inventar.
 Veci: Seber predmet pres vezmi [nazevPredmetu] a odloz ho pres poloz [nazevPredmetu].
-Postavy: Mluv s lidmi a davej jim veci pres dej [Nazev Postavy Nazev Predmetu].
+Postavy: Davej lidem veci pres dej [Nazev Postavy Nazev Predmetu].
+Mluva: Mluv s lidmi pres mluv [jmeno Postavy]
 Pasy: Najdi je v hale jinak te vojak nepusti.
 Pacidlo: Je v kufru auta v garazi otevre ti zamcene dvere.
 Zdravi: Ve tme v shopu te muze zranit zlodej.
+Pouzivani: pouzijes nejaky z predmetu pomoci pouzij [nazev predmetu]
 Souboj: U Gate 4 pouzij utok nebo uhni chyba stoji 10 minut
 Bludiste: v bludisti coz je tridirnaZavazadel stoji chyba 5 minut
+Konec: prikazem konec ukoncis hru drive
 KONEC

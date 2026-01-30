@@ -24,15 +24,15 @@ public class Vezmi implements Command {
 
             }
             if (p == null) {
-                return "Predmet neni v mistnosti";
+                return hra.getCervena("Predmet neni v mistnosti");
             }else {
                 if (hra.getInventar().getListPredmetu().size() >= hra.getInventar().getKapacita()) {
-                    return "MAS PLNOU KAPACITU! Musis nejdriv neco polozit.";
+                    return hra.getCervena("MAS PLNOU KAPACITU! Musis nejdriv neco polozit");
                 }
                 hra.getInventar().pridatPredmet(p);
-                System.out.println(hra.getCas().odecteniCasu());
+                System.out.println(hra.getCas().odecteniCasu(hra));
                 predmetyPomocne.remove(p);
-                return "Vzal jsi " + p.getNazev();
+                return hra.getModra("Vzal jsi ") + p.getNazev();
 
 
             }

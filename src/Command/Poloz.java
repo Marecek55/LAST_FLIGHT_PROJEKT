@@ -18,30 +18,30 @@ public class Poloz implements Command {
             }
         }
         if (p == null) {
-            return "Takovy predmet neni";
+            return hra.getCervena("Takovy predmet neni");
         }
         boolean nasel = false;
         if (p.isJdeVyhodit()){
             for (int i = 0; i < hra.getInventar().getListPredmetu().size(); i++) {
                 if (s.toLowerCase().equals(hra.getInventar().getListPredmetu().get(i).getNazev())) {
                     hra.getInventar().odebratPredmet(p);
-                    String zpravaReturnu = "Vyhodil jsi " + p.getNazev();
+                    String zpravaReturnu = hra.getModra("Vyhodil jsi ") + p.getNazev();
                     if (p.isJeDulezity()) {
-                        zpravaReturnu = zpravaReturnu + "\nVYHODIL JSI DULEZITY PREDMET MUZES";
+                        zpravaReturnu = zpravaReturnu + hra.getCervena("\nVYHODIL JSI DULEZITY PREDMET MUZES");
                     }
                     hra.getAktualniMistnost().pridatPredmetDoMistnosti(p);
-                    System.out.println(hra.getCas().odecteniCasu());
+                    System.out.println(hra.getCas().odecteniCasu(hra));
                     nasel = true;
                     return zpravaReturnu;
                 }
             }
             if (!nasel){
-                return "Predmet neni v inventari";
+                return hra.getCervena("Predmet neni v inventari");
             }
         }else {
-            return "Tento predmet nejde vyhodit";
+            return hra.getCervena("Tento predmet nejde vyhodit");
         }
-        return "Takovy predmet neni";
+        return hra.getCervena("Takovy predmet neni");
 
     }
 

@@ -20,12 +20,12 @@ public class Prozkoumej implements Command {
         ArrayList<String> mistnostiPomocne = hra.getAktualniMistnost().getDostupneVychody();
         ArrayList<NPC> npcPomocne = hra.getAktualniMistnost().getNpcVMistnosti();
         ArrayList<Predmet> predmetyPomocne = hra.getAktualniMistnost().getPredmetyVMistnosti();
-            zpravaReturnu = ("----PROZKOUMAVANI----\n");
+            zpravaReturnu = hra.getFialova("----PROZKOUMAVANI----\n");
             boolean jsouTamLidi = false;
             boolean jsouTamPredmety = false;
 
             if (npcPomocne.size()>0){
-                zpravaReturnu  += "Lide v mistnosti:";
+                zpravaReturnu  += hra.getModra("Lide v mistnosti:");
                 for (int i = 0; i < npcPomocne.size(); i++) {
                     zpravaReturnu += npcPomocne.get(i).getJmeno() + ", ";
                 }
@@ -35,10 +35,10 @@ public class Prozkoumej implements Command {
 
 
             }else {
-                zpravaReturnu+= "Nikdo v mistnosti neni\n";
+                zpravaReturnu+= hra.getZluta("Nikdo v mistnosti neni\n");
             }
             if (predmetyPomocne.size()>0){
-                zpravaReturnu += "Predmety v mistnosti: ";
+                zpravaReturnu += hra.getModra("Predmety v mistnosti: ");
                 for (int i = 0; i < predmetyPomocne.size(); i++) {
                     zpravaReturnu += predmetyPomocne.get(i).getNazev() + " ";
                 }
@@ -47,17 +47,17 @@ public class Prozkoumej implements Command {
                 jsouTamPredmety = true;
 
             }else {
-                zpravaReturnu += "Zadny predmet v mistnosti neni\n";
+                zpravaReturnu += hra.getZluta("Zadny predmet v mistnosti neni\n");
 
             }
             if (mistnostiPomocne.size()>0) {
-            zpravaReturnu+= "Dostupne vychody: ";
+            zpravaReturnu+= hra.getModra("Dostupne vychody: ");
             for (int i = 0; i < mistnostiPomocne.size(); i++) {
                zpravaReturnu +=mistnostiPomocne.get(i)+ ", ";
             }
         }
             if (jsouTamLidi||jsouTamPredmety) {
-                zpravaReturnu += "\n" + hra.getCas().odecteniCasu();
+                zpravaReturnu += "\n" + hra.getCas().odecteniCasu(hra);
             }
         mistnostUzJednouProzkoumal = true;
             return zpravaReturnu;

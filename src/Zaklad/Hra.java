@@ -68,9 +68,6 @@ public class Hra {
         for (int i = 0; i < data.mistnosti.size(); i++) {
             data.mistnosti.get(i).setPribeh(data.nacteniRadkuSouboru(data.mistnosti.get(i).getNazev(), "ZACATEKMISTNOSTI", true));
         }
-        System.out.println("Predmetu je : " + data.predmety.size());
-        System.out.println("NPC je nactenych: " + data.npc.size());
-        System.out.println("Mistnosti je : " + data.mistnosti.size());
         inventar = new Inventar(4);
         inventar.pridatPredmet(data.najdiPredmet("inzulin"));
         cas = new Cas(new NormalniCas());
@@ -82,10 +79,10 @@ public class Hra {
         alex = new Alex("Alex");
         konzole = new Konzole();
         System.out.print(aktualniMistnost.getPribeh());
+        System.out.println("KDYZ SI NEBUDES VEDET RADY NAPIS"+ getTyrkysova(" POMOC") );
+        setAktualniMistnost(getData().najdiMistnost("tridirnazavazadel"));
         aktualniMistnost.setBylVNi(true);
 
-//        setAktualniMistnost(getData().najdiMistnost("checkpoint"));
-//        getInventar().pridatPredmet(getData().najdiPredmet("pasy"));
 
     }
 
@@ -107,6 +104,37 @@ public class Hra {
         prikazy.put("vezmi", new Vezmi());
         prikazy.put("pomoc", new Pomoc());
 
+    }
+
+    static final String CERVENA = "\u001B[31m";
+    static final String ZELENA = "\u001B[32m";
+    public static final String ZLUTA = "\u001B[33m";
+    public static final String MODRA = "\u001B[34m";
+    public static final String FIALOVA = "\u001B[35m";
+    public static final String TYRKYSOVA = "\u001B[36m";
+    public static final String BILA = "\u001B[37m";
+    public static final String RESET = "\u001B[0m";
+
+    public String getCervena(String text){
+        return CERVENA + text + RESET;
+    }
+    public String getZelena(String text){
+        return ZELENA + text + RESET;
+    }
+    public String getZluta(String text){
+        return ZLUTA + text + RESET;
+    }
+    public String getModra(String text){
+        return MODRA + text + RESET;
+    }
+    public String getFialova(String text){
+        return FIALOVA + text + RESET;
+    }
+    public String getTyrkysova(String text){
+        return TYRKYSOVA + text + RESET;
+    }
+    public String getBila(String text){
+        return BILA + text + RESET;
     }
 
     public Alex getAlex() {

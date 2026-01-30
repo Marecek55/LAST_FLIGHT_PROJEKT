@@ -21,19 +21,23 @@ public class Jdi implements Command {
                         return hra.getBludiste().bludiste(hra);
                     }
                     hra.setAktualniMistnost(cilova);
+                    if (hra.getInventar().predmetJeVInventari(hra.getData().najdiPredmet("baterka"))){
+                        cilova.setJeTamTma(false);
+                    }
                     if (cilova.isJeTamTma()){
+
                         hra.getAlex().setJeZraneny(true);
                         hra.getCas().setTempoCasu(new CasSeZranenim());
-                        System.out.println("AUUUU zranil te zlodej ve tme ztracis ted 3krat vic casu");
+                        System.out.println(hra.getCervena("AUUUU zranil te zlodej ve tme ztracis ted 3krat vic casu"));
                     }
-                    System.out.println(hra.getCas().odecteniCasu());
+                    System.out.println(hra.getCas().odecteniCasu(hra));
                     if (cilova.getNazev().toLowerCase().equals("gate4")){
                         System.out.println(hra.getData().nacteniRadkuSouboru("gate4", "ZACATEKMISTNOSTI", true));
                         System.out.println(hra.getSouboj().souboj(hra));
                         if (!hra.isJeKonec()) {
                             return hra.getKomunikace().vyberKonce(hra, hra.getAktualniMistnost());
                         }
-                        return "Konec hry.";
+                        return hra.getCervena("Konec hry.");
                     }
                         if (!cilova.isBylVNi()){
                             cilova.setBylVNi(true);
@@ -41,15 +45,15 @@ public class Jdi implements Command {
 
 
                         }else {
-                            return "Vratil jsi se do " + cilova.getNazev();
+                            return hra.getModra("Vratil jsi se do ") + cilova.getNazev();
 
                         }
 
                 }else {
-                    return "Mistnost je zamcena";
+                    return hra.getCervena("Mistnost je zamcena");
                 }
             }else {
-            return "Mistnost neni sousedni";
+            return hra.getCervena("Mistnost neni sousedni");
             }
 
 

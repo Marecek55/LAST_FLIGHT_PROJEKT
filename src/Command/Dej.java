@@ -25,10 +25,10 @@ public class Dej implements Command {
                 }
             }
             if (cilovaPostava == null) {
-                return "Postava neni v mistnosti";
+                return hra.getCervena("Postava neni v mistnosti");
             }
             if (hra.getTretiCastPrikazu()== null){
-                return "Musis zadat predmet ktery chces dat";
+                hra.getCervena("Musis zadat predmet ktery chces dat");
             }
             boolean zadalSpravnePredmet = false;
             for (int i = 0; i < hra.getData().predmety.size(); i++) {
@@ -40,15 +40,18 @@ public class Dej implements Command {
                 cilovyPredmet = hra.getData().najdiPredmet(hra.getTretiCastPrikazu());
                 if (hra.getInventar().predmetJeVInventari(cilovyPredmet)) {
                     System.out.println(cilovaPostava.prijmutiPredmetu(cilovyPredmet, hra));
-                    return "Dal jsi ruku zpet";
+                    return hra.getTyrkysova("Dal jsi ruku zpet");
+
                 } else {
-                    return "Predmet nemas v inventari";
+                    return hra.getCervena("Predmet nemas v inventari");
                 }
             }else {
-                return "Zadal jsi neexistujici predmet";
+
+                return  hra.getCervena("Zadal jsi neexistujici predmet");
             }
         }else {
-            return "Nemas mistnost prozkoumanou";
+
+            return hra.getCervena("Nemas mistnost prozkoumanou");
         }
 
 

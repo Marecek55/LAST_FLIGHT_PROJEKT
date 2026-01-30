@@ -17,15 +17,15 @@ public class Uhni implements Command {
         if (hra.getUnosce().getAkce() != null){
             AkceUnosce akce = hra.getUnosce().getAkce();
             if (akce.equals(AkceUnosce.UTOCICI)) {
-                return "Uhnul jsi utoku";
+                return hra.getZelena("Uhnul jsi utoku");
             }else if (akce.equals(AkceUnosce.KRYTY)){
-                return "Uhnul jsi krytemu unosci nic se nestalo";
+                return hra.getZluta("Uhnul jsi krytemu unosci nic se nestalo");
             } else {
                 hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas() - 10);
-                return "Utocici zrovna neutocil MAS PENALIZACI 10 minut";
+                return hra.getCervena("Utocici zrovna neutocil MAS PENALIZACI 10 minut");
             }
         }else {
-            return "Nejsi v souboji";
+            return hra.getCervena("Nejsi v souboji");
 
         }
     }

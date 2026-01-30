@@ -16,27 +16,27 @@ public class Napoveda implements Command {
     public String vykonat(Hra hra, String s) {
             switch (s){
                 case "1":
-                    zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
+                    zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + hra.getModra(s)+"\n";
                 zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA1" ,null).trim();
                 return zpravaReturnu;
                 case "2":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
-                        zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
+                        zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " +hra.getModra(s)+"\n";
                         zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA2" ,null).trim();
                         return zpravaReturnu;
                     }else {
-                        return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
+                        return hra.getCervena("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
                     }
                 case "3":
                     if (hra.getAktualniMistnost().isJeProzkoumana()){
-                        zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + s;
+                        zpravaReturnu = "Napoveda pro mistnost " +hra.getAktualniMistnost().getNazev() + " Uroven napovedy " + hra.getModra(s) + "\n";
                         zpravaReturnu = zpravaReturnu + " " +hra.getData().nacteniRadkuSouboru(hra.getAktualniMistnost().getNazev() ,"NAPOVEDA3" ,null).trim();
                         return zpravaReturnu;
                     }else {
-                        return "Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu";
+                        return hra.getCervena("Nemas mistnost prozkoumanou natolik aby si mohl zobrazit napovedu");
                     }
                 default:
-                    return "Spatne zadana uroven napovedy";
+                    return hra.getCervena("Spatne zadana uroven napovedy");
 
             }
 

@@ -13,11 +13,10 @@ public class InventarCommand implements Command {
      */
     @Override
     public String vykonat(Hra hra, String s) {
-        System.out.println("-----TOTO JE TVUJ INVENTAR-----");
-
-                System.out.println("V inventari mas");
+        System.out.println(hra.getFialova("-----TOTO JE TVUJ INVENTAR-----"));
                 hra.getInventar().zobrazeniInventare();
-                return "Zaviras inventar";
+                System.out.println("Zbyva ti " + hra.getCas().getZbyvajiciCas() +  " minut");
+                return hra.getTyrkysova("Zaviras inventar");
 
     }
 

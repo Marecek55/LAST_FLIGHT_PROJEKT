@@ -33,9 +33,6 @@ public class Cas {
         this.zbyvajiciCas = zbyvajiciCas;
     }
 
-    public StrategieCasu getTempoCasu() {
-        return tempoCasu;
-    }
 
     public void setTempoCasu(StrategieCasu tempoCasu) {
         this.tempoCasu = tempoCasu;

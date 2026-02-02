@@ -15,7 +15,9 @@ public class Souboj {
     AkceUnosce aktualniAkce;
 
     /**
-     * Spousti souboj
+     * Spousti souboj a celou jeho logiku. Probiha po kolech
+     * a jsou tam 3 varianty akce unosce na ktere musi hrac
+     * spravne zareagovat
      */
     public String souboj(Hra hra) {
         akce.add(AkceUnosce.KRYTY);
@@ -64,7 +66,7 @@ public class Souboj {
             return hra.getZelena("VYHRA UTIKEJ ZA RODINOU!");
         } else {
             hra.setJeKonec(true);
-            return hra.getCervena("DOSEL TI CAS, UNOSCE TE ZMLATIL. KONEC HRY");
+            return hra.getCervena("DOSEL TI CAS UNOSCE TE ZMLATIL.");
         }
 
 

@@ -180,7 +180,11 @@ public class NacitaniZeSouboru {
 
     }
 
-
+    /**
+     * Najde sousedni mistnost ktera je zamcena
+     * @param aktualni
+     * @return
+     */
     public Mistnost najdiSousedaCoMa(Mistnost aktualni){
         ArrayList<Mistnost> mistnostiSousedni = new ArrayList<>();
         Mistnost cilova = null;

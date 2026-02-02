@@ -6,6 +6,10 @@ public interface StrategieMluveni {
      * @return
      */
     public String pozdrav();
+    /**
+     * Rozlouceni vypise rozlouceni podle nalady npc
+     * @return
+     */
     public String rozlouceni();
 
 

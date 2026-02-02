@@ -22,7 +22,7 @@ public class Uhni implements Command {
                 return hra.getZluta("Uhnul jsi krytemu unosci nic se nestalo");
             } else {
                 hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas() - 10);
-                return hra.getCervena("Utocici zrovna neutocil MAS PENALIZACI 10 minut");
+                return hra.getCervena("Utocici zrovna neutocil a tak si PROPASNUL sanci MAS PENALIZACI 10 minut");
             }
         }else {
             return hra.getCervena("Nejsi v souboji");

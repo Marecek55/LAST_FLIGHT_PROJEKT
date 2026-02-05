@@ -80,7 +80,6 @@ public class Hra {
         konzole = new Konzole();
         System.out.print(aktualniMistnost.getPribeh());
         System.out.println("KDYZ SI NEBUDES VEDET RADY NAPIS"+ getTyrkysova(" POMOC") );
-        setAktualniMistnost(getData().najdiMistnost("tridirnazavazadel"));
         aktualniMistnost.setBylVNi(true);
 
 

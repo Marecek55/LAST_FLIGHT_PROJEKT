@@ -4,7 +4,9 @@ import Cas.CasSeZranenim;
 import Zaklad.Hra;
 import Zaklad.Mistnost;
 import Zaklad.NacitaniZeSouboru;
-
+/**
+ * Trida ktera vykonava command Jdi
+ */
 public class Jdi implements Command {
     /**
      * Zkontroluje jestli uz tam byl a jestli uz v ni vse prosel a pak jestli je zamcena a podle toho ho pusti do mistnosti kterou

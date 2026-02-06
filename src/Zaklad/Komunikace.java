@@ -5,7 +5,9 @@ import Mluveni.SmutneMluveni;
 import Postavy.NPC;
 
 import java.util.Scanner;
-
+/**
+ * Trida ktera spravuje dialogy u vsech postav
+ */
 public class Komunikace {
     Scanner sc;
 
@@ -32,7 +34,6 @@ public class Komunikace {
 
     }
     String odpoved;
-    NPC pomocna  = null;
     Mistnost pomocnaMistnost = null;
     boolean jeUKonce = false;
 

@@ -1,7 +1,9 @@
 package Zaklad;
 
 import java.util.Scanner;
-
+/**
+ * Trida Konzole spousti hru a rozdeluje prikazy
+ */
 public class Konzole {
     private Hra hra;
 

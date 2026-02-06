@@ -2,7 +2,9 @@ package Command;
 
 import Zaklad.Hra;
 import Zaklad.Predmet;
-
+/**
+ * Trida ktera vykonava command Poloz
+ */
 public class Poloz implements Command {
     /**
      * Polozi predmet do mistnosti ve ktere je

@@ -2,7 +2,9 @@ package Command;
 
 import Zaklad.Hra;
 import Zaklad.StavKonce;
-
+/**
+ * Trida ktera vykonava command Konec
+ */
 public class Konec implements Command {
     /**
      * Ukonci hru

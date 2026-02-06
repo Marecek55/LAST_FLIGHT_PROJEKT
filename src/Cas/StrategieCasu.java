@@ -1,8 +1,10 @@
 package Cas;
-
+/**
+ * Interface strategie casu
+ */
 public interface StrategieCasu {
     /**
-     *  Odecte tolik casu v jake situaci je zrovna hrac
+     *  Urci kolik casu odecte podle toho v jake Strategii casu je zrovna hrac
      * @param zaklad
      * @return
      */

@@ -3,7 +3,9 @@ package Zaklad;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * Trida ktera spousit souboj
+ */
 public class Souboj {
     private boolean vyhra;
     private AkceUnosce akceUnosce;

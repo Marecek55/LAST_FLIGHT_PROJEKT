@@ -3,7 +3,9 @@ package Command;
 import Postavy.Unosce;
 import Zaklad.AkceUnosce;
 import Zaklad.Hra;
-
+/**
+ * Trida ktera vykonava command Uhni
+ */
 public class Uhni implements Command {
     /**
      * Pokud unosce utoci uhne utoku

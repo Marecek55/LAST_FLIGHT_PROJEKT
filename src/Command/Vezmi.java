@@ -4,7 +4,9 @@ import Zaklad.Hra;
 import Zaklad.Predmet;
 
 import java.util.ArrayList;
-
+/**
+ * Trida ktera vykonava command Vezmi
+ */
 public class Vezmi implements Command {
     /**
      * Vezme predmet z mistnosti do inventare

@@ -6,7 +6,9 @@ import Zaklad.Mistnost;
 import Zaklad.Predmet;
 
 import java.util.ArrayList;
-
+/**
+ * Trida ktera vykonava command Prozkoumej
+ */
 public class Prozkoumej implements Command {
     boolean mistnostUzJednouProzkoumal = false;
     /**

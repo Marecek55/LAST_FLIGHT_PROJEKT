@@ -1,7 +1,10 @@
 package Zaklad;
 
 import java.util.ArrayList;
-
+/**
+ * Trida Inventar spravuje inventar a jeho chod tzn vyhazovani prijimani kontrola plnosti
+ * kontrola jestli je predmet v inventari
+ */
 public class Inventar {
     private int kapacita = 4;
     private ArrayList<Predmet> listPredmetu;

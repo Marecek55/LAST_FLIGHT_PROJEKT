@@ -1,5 +1,7 @@
 package Mluveni;
-
+/**
+ * Trida ktera inicializuje smutny pozdrav
+ */
 public class SmutneMluveni implements StrategieMluveni{
     /**
      * Vypise pozdrav smutneho npc

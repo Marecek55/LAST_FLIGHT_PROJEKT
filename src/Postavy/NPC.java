@@ -6,7 +6,9 @@ import Mluveni.StrategieMluveni;
 import Zaklad.Hra;
 import Zaklad.Mistnost;
 import Zaklad.Predmet;
-
+/**
+ * Trida NPC ma metodu pro prijmuti predmetu a nastavi se typ mluveni na interface
+ */
 public class  NPC extends Postava {
     private  transient StrategieMluveni typMluveni;
     private String dialog;

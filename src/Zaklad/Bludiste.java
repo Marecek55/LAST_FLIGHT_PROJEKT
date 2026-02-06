@@ -4,7 +4,9 @@ import Cas.CasBloudeni;
 import Cas.NormalniCas;
 
 
-
+/**
+ * Trida ktera spousti bludiste a vsechny jeho urovne
+ */
 public class Bludiste {
 
     int urovenBludiste = 1;

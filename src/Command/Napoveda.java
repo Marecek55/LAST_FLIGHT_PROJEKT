@@ -1,9 +1,9 @@
 package Command;
 
 import Zaklad.Hra;
-
-import java.util.Scanner;
-
+/**
+ * Trida ktera vykonava command Napoveda
+ */
 public class Napoveda implements Command {
     /**
      * Poskytne hracovi moznost vyberu ze 3 stupnu napovedy pro kazdou mistnost

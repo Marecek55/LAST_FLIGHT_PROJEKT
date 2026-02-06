@@ -1,5 +1,7 @@
 package Zaklad;
-
+/**
+ * Trida Predmet nastavuje vsechny vlastnosti predmetu
+ */
 public class Predmet {
     private String nazev;
     private boolean jdeVyhodit;
@@ -15,20 +17,6 @@ public class Predmet {
 
     public void setNazev(String nazev) {
         this.nazev = nazev;
-    }
-
-    /**
-     * prevede true a false na ano ne aby bylo lepe citelne
-     * @return
-     */
-
-    public String isJdeVyhoditText() {
-        if (jdeVyhodit) {
-            return "Ano";
-        }else {
-            return "Ne";
-        }
-
     }
 
     public boolean isJdeVyhodit() {

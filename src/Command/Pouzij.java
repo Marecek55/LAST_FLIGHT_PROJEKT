@@ -4,7 +4,9 @@ import Cas.NormalniCas;
 import Zaklad.Hra;
 import Zaklad.Mistnost;
 import Zaklad.Predmet;
-
+/**
+ * Trida ktera vykonava command Pouzij
+ */
 public class Pouzij implements Command {
     /**
      * Pouzije predmet jako cokolada nebo lekarnicka na sebe pro nejaky ucinek

@@ -6,7 +6,9 @@ import Zaklad.Predmet;
 
 import java.util.ArrayList;
 
-
+/**
+ * Trida ktera vykonava command Dej
+ */
 public class Dej implements Command {
     /**
      * Poda predmet npc z mistnosti a metoda kontroluje i vsechny mozne chyby uzivatele

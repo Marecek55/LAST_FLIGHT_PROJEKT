@@ -3,7 +3,9 @@ import Postavy.NPC;
 import Postavy.Postava;
 
 import java.util.ArrayList;
-
+/**
+ * Trida nastavuje vsechny vlastnosti mistnosti
+ */
 public  class Mistnost {
     private String nazev;
     private ArrayList<Predmet> predmetyVMistnosti;
@@ -17,7 +19,7 @@ public  class Mistnost {
     private boolean jeProzkoumana;
 
 
-    public Mistnost() {
+    public Mistnost(String nazev) {
     }
 
     public boolean isJeProzkoumana() {

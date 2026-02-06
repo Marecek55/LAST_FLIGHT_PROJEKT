@@ -1,7 +1,9 @@
 package Postavy;
 
 import Zaklad.Inventar;
-
+/**
+ * Trida Alexe hlavni postavy upravuje jeho stav zraneni
+ */
 public class Alex extends Postava {
     private boolean jeZraneny;
 

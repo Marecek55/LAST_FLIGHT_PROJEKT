@@ -7,7 +7,9 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-
+/**
+ * Trida trida nacita vsechny veci z json a txt souboru bud podle slova v txt nebo cely soubor
+ */
 public class NacitaniZeSouboru {
     public ArrayList<Predmet> predmety;
     public ArrayList<NPC> npc;

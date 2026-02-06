@@ -1,7 +1,9 @@
 package Postavy;
 
 import Zaklad.AkceUnosce;
-
+/**
+ * Trida ktera nastavuje akce unosce a jeho zivoty
+ */
 public class Unosce extends Postava{
     private int zivoty;
     private AkceUnosce akce;

@@ -1,7 +1,9 @@
 package Command;
 
 import Zaklad.Hra;
-
+/**
+ * Trida ktera vykonava commandy
+ */
 public interface Command {
     /**
      * Vykona command

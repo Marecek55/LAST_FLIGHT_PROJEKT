@@ -2,8 +2,9 @@ package Command;
 
 import Zaklad.Hra;
 
-import java.util.Scanner;
-
+/**
+ * Trida ktera vykonava command Pomoc
+ */
 public class Pomoc implements Command {
     /**
      * Vypise mu ze souboru navod na hru

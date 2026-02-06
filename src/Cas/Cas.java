@@ -2,6 +2,9 @@ package Cas;
 
 import Zaklad.Hra;
 
+/**
+ * V teto tride se hlida a odecita cas
+ */
 public class Cas {
     private int zbyvajiciCas = 50;
     private StrategieCasu tempoCasu;

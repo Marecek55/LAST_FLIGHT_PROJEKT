@@ -2,7 +2,9 @@ package Command;
 
 import Zaklad.AkceUnosce;
 import Zaklad.Hra;
-
+/**
+ * Trida ktera vykonava command Utok
+ */
 public class Utok implements Command {
     /**
      * Pokud je unosce odkryty ubere  mu zivoty

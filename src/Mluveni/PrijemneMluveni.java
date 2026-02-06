@@ -1,5 +1,7 @@
 package Mluveni;
-
+/**
+ * Trida ktera inicializuje prijemny pozdrav
+ */
 public class PrijemneMluveni implements StrategieMluveni{
     /**
      * Vypise pozdrav stastneho npc

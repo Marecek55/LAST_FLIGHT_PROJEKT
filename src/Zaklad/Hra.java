@@ -21,7 +21,9 @@ import Postavy.Unosce;
 
 
 import java.util.HashMap;
-
+/**
+ * Ve tride hra se vse spojuje hra ma jako vlastnosti vsechny potrebne tridy a nacita vsechny listy a data a pridavaji se do ni prikazy a barvy
+ */
 public class Hra {
     private StavKonce stavKonce;
     private String nazev;

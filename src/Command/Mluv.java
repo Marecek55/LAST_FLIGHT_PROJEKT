@@ -1,11 +1,11 @@
 package Command;
 
 import Postavy.NPC;
-import Postavy.Postava;
 import Zaklad.Hra;
 
-import java.util.Scanner;
-
+/**
+ * Trida ktera vykonava command Mluv
+ */
 public class Mluv implements Command {
     /**
      * Mluvi s postavou v dane mistnosti

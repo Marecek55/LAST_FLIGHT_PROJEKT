@@ -1,10 +1,11 @@
 package Command;
 
 import Zaklad.Hra;
-import Zaklad.Predmet;
 
-import java.util.Scanner;
 
+/**
+ * Trida ktera vykonava command Inventar
+ */
 public class InventarCommand implements Command {
     /**
      * Zobrazi inventar a veci v mem

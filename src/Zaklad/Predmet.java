@@ -8,6 +8,7 @@ public class Predmet {
     private boolean jeDulezity;
     private boolean jdePouzit;
 
+
     public Predmet() {
     }
 

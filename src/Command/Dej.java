@@ -30,7 +30,7 @@ public class Dej implements Command {
                 return hra.getCervena("Postava neni v mistnosti");
             }
             if (hra.getTretiCastPrikazu()== null){
-                hra.getCervena("Musis zadat predmet ktery chces dat");
+                return hra.getCervena("Musis zadat predmet ktery chces dat");
             }
             boolean zadalSpravnePredmet = false;
             for (int i = 0; i < hra.getData().predmety.size(); i++) {

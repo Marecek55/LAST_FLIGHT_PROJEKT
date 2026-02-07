@@ -24,6 +24,10 @@ public class Cas {
 
     }
 
+    public StrategieCasu getTempoCasu() {
+        return tempoCasu;
+    }
+
     public Cas(StrategieCasu tempoCasu) {
         this.tempoCasu = tempoCasu;
     }

@@ -5,12 +5,16 @@ import Zaklad.Predmet;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Trida ktera testuje tridu vezmi
+ */
 class VezmiTest {
     Hra hra;
     Vezmi vezmi;
     Predmet predmet;
-
+    /**
+     * Metoda ktera nastavi veci pred kazdym testem
+     */
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
         hra = new Hra();
@@ -22,7 +26,9 @@ class VezmiTest {
 
 
     }
-
+    /**
+     * Metoda ktera kontroluje ze se predmet prida do inventare
+     */
     @Test
     void vykonat() {
         vezmi.vykonat(hra, "kleste");

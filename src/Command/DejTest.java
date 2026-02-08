@@ -9,12 +9,17 @@ import org.junit.jupiter.api.BeforeEach;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Trida testuje tridu dej
+ */
 class DejTest {
     NPC npc = new NPC("StariManzele");
     Predmet predmet = new Predmet();
     Hra hra = new Hra();
     Dej dej = new Dej();
+    /**
+     * Metoda ktera nastavi veci pred kazdym testem
+     */
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
@@ -30,7 +35,10 @@ class DejTest {
         hra.setTretiCastPrikazu("cokolada");
 
     }
-
+    /**
+     * Metoda kotroluje jestli npc dostal to co chtel a jestli se odstrani predmet z inventare
+     * a jestli se vypise spravne a skonci tak
+     */
 
     @org.junit.jupiter.api.Test
     void vykonat() {

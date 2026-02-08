@@ -6,12 +6,16 @@ import Zaklad.Predmet;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Trida ktera testuje tridu Pouzij
+ */
 class PouzijTest {
     Predmet predmet;
     Pouzij pouzij;
     Hra hra;
-
+    /**
+     * Metoda ktera nastavi veci pred kazdym testem
+     */
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
         hra = new Hra();
@@ -19,6 +23,9 @@ class PouzijTest {
 
 
     }
+    /**
+     * Metoda ktera otestuje nasledky pouziti cokolady lekarnicky vody a pacidla
+     */
     @Test
     void vykonat() {
         hra.getCas().setZbyvajiciCas(50);

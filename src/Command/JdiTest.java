@@ -8,7 +8,9 @@ import Zaklad.NacitaniZeSouboru;
 import Zaklad.Predmet;
 
 import java.util.ArrayList;
-
+/**
+ * Trida ktera testuje tricu Jdi
+ */
 import static org.junit.jupiter.api.Assertions.*;
 class JdiTest {
     public ArrayList<Mistnost> mistnosti = new ArrayList<>();
@@ -16,7 +18,9 @@ class JdiTest {
     Mistnost mistnost;
     Mistnost cilova;
     Jdi jdi;
-
+    /**
+     * Metoda ktera nastavi veci pred kazdym testem
+     */
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
         ArrayList<String> sousedi =  new ArrayList<>();
@@ -33,7 +37,9 @@ class JdiTest {
         hra.setAktualniMistnost(mistnost);
     }
 
-
+    /**
+     * Metoda ktera testuje jestli spravne presel do dalsi mistnosti
+     */
     @org.junit.jupiter.api.Test
     void vykonat() {
         jdi.vykonat(hra, "b");

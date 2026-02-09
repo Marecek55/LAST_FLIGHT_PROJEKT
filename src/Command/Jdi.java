@@ -22,6 +22,10 @@ public class Jdi implements Command {
                     if (cilova.getNazev().toLowerCase().equals("tridirnazavazadel") && !hra.getBludiste().isVyselZbludiste()){
                         return hra.getBludiste().bludiste(hra);
                     }
+                    if (cilova.getNazev().toLowerCase().equals("garaze")&& !hra.getMiniHra().isDohrano()){
+                        hra.getMiniHra().skorapky(hra);
+                        hra.getMiniHra().setDohranoPomocne(true);
+                    }
                     hra.setAktualniMistnost(cilova);
                     if (hra.getInventar().predmetJeVInventari(hra.getData().najdiPredmet("baterka"))){
                         cilova.setJeTamTma(false);
@@ -32,7 +36,12 @@ public class Jdi implements Command {
                         hra.getCas().setTempoCasu(new CasSeZranenim());
                         System.out.println(hra.getCervena("AUUUU zranil te zlodej ve tme ztracis ted 3krat vic casu"));
                     }
-                    System.out.println(hra.getCas().odecteniCasu(hra));
+                    if (!hra.getMiniHra().isDohranoPomocne()){
+                        System.out.println(hra.getCas().odecteniCasu(hra));
+                    }
+                    hra.getMiniHra().setDohranoPomocne(false);
+
+
                     if (cilova.getNazev().toLowerCase().equals("gate4")){
                         System.out.println(hra.getData().nacteniRadkuSouboru("gate4", "ZACATEKMISTNOSTI", true));
                         System.out.println(hra.getSouboj().souboj(hra));
@@ -41,14 +50,12 @@ public class Jdi implements Command {
                         }
                         return hra.getCervena("Konec hry.");
                     }
-                        if (!cilova.isBylVNi()){
+                        if (!cilova.isBylVNi()) {
                             cilova.setBylVNi(true);
                             return cilova.getPribeh().trim();
 
-
                         }else {
                             return hra.getModra("Vratil jsi se do ") + cilova.getNazev();
-
                         }
 
                 }else {

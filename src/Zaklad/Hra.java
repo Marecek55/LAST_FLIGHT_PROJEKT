@@ -18,6 +18,7 @@ import Cas.NormalniCas;
 import Command.Pomoc;
 import Postavy.Alex;
 import Postavy.Unosce;
+import miniHra.MiniHra;
 
 
 import java.util.HashMap;
@@ -40,6 +41,7 @@ public class Hra {
     private Komunikace komunikace;
     private Alex alex;
     private Konzole konzole;
+    private MiniHra miniHra;
     /**
      * V konstruktoru hry se vola nacitani hry nastavi se aktualni mistnost na prvni mistnost a nastavi se typ mluveni u npc
      * taky se nactou pomoci metod data do mistnosti a pribeh mistnosti a dialogy npc a vytvari se instance pro tridy ktere
@@ -80,6 +82,7 @@ public class Hra {
         komunikace = new Komunikace();
         alex = new Alex("Alex");
         konzole = new Konzole();
+        miniHra  = new MiniHra();
         System.out.print(aktualniMistnost.getPribeh());
         System.out.println("KDYZ SI NEBUDES VEDET RADY NAPIS"+ getTyrkysova(" POMOC") );
         aktualniMistnost.setBylVNi(true);
@@ -259,5 +262,13 @@ public class Hra {
 
     public void setSouboj(Souboj souboj) {
         this.souboj = souboj;
+    }
+
+    public MiniHra getMiniHra() {
+        return miniHra;
+    }
+
+    public void setMiniHra(MiniHra miniHra) {
+        this.miniHra = miniHra;
     }
 }

@@ -146,7 +146,7 @@ public class NacitaniZeSouboru {
         String text = "";
         boolean nalezeno = false;
         try {
-            BufferedReader br = new BufferedReader((new FileReader("res/" + nazev+ ".txt")));
+            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazev+ ".txt")));
             String line = "";
             while ((line = br.readLine()) != null) {
                 String radek = line.trim();

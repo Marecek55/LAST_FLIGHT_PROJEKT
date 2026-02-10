@@ -65,12 +65,12 @@ public class Pouzij implements Command {
 
             }
             if (!jeVInventari) {
-                return "Predmet nemas u sebe";
+                return hra.getCervena("Predmet nemas u sebe");
             }
             if (!bylPouzit&& jeVInventari) {
-                return "Predmet nejde pouzit";
+                return hra.getCervena("Predmet nejde pouzit");
             }
-            return "Predmet nemas u sebe";
+            return hra.getCervena("Predmet nemas u sebe");
 
 
     }

@@ -36,10 +36,8 @@ public class Jdi implements Command {
                         hra.getCas().setTempoCasu(new CasSeZranenim());
                         System.out.println(hra.getCervena("AUUUU zranil te zlodej ve tme ztracis ted 3krat vic casu"));
                     }
-                    if (!hra.getMiniHra().isDohranoPomocne()){
                         System.out.println(hra.getCas().odecteniCasu(hra));
-                    }
-                    hra.getMiniHra().setDohranoPomocne(false);
+
 
 
                     if (cilova.getNazev().toLowerCase().equals("gate4")){

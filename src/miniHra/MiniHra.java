@@ -18,10 +18,6 @@ public class MiniHra extends JPanel {
    boolean zadalspravne = false;
     int odpoved = 0;
 
-    public boolean isDohrano() {
-        return dohrano;
-    }
-
 
 
     /**
@@ -91,14 +87,15 @@ public class MiniHra extends JPanel {
 
             }
         }while (!zadalspravne);
-       JFrame okno = new JFrame();
+        JDialog okno = new JDialog();
+        okno.setModal(true);
        okno.setSize(500 ,500);
        okno.setBackground(Color.black);
        okno.setLayout(new BorderLayout());
        okno.add(this, BorderLayout.CENTER);
         Random rd = new Random();
         micekPozice = rd.nextInt(1,4);
-       okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        okno.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
        JPanel panelNaTlacitka = new JPanel();
        JButton tlacitko1 = new JButton("1");
        tlacitko1.setSize(30, 20);
@@ -130,13 +127,14 @@ public class MiniHra extends JPanel {
      * @param okno
      * @param cislo
      */
-    public void pomocnaMetoda(Hra hra, JFrame okno, int cislo){
+    public void pomocnaMetoda(Hra hra, JDialog okno, int cislo){
        dohrano = true;
-
+       dohranoPomocne = true;
         this.paintImmediately(0, 0, getWidth(), getHeight());
             if (micekPozice == cislo) {
                 JOptionPane.showMessageDialog(this, "SUPEEER VYHRAVAS " + odpoved*2 +" Casu ");
                 hra.getCas().setZbyvajiciCas(hra.getCas().getZbyvajiciCas()+ odpoved*2);
+
 
             }else{
                 JOptionPane.showMessageDialog(this, "ALE NEE ZTRACIS " + odpoved +" Casu ");
@@ -144,7 +142,6 @@ public class MiniHra extends JPanel {
 
 
             }
-        System.out.println(hra.getCas().odecteniCasu(hra));
             okno.dispose();
     }
 
@@ -154,5 +151,37 @@ public class MiniHra extends JPanel {
 
     public void setDohranoPomocne(boolean dohranoPomocne) {
         this.dohranoPomocne = dohranoPomocne;
+    }
+
+    public void setDohrano(boolean dohrano) {
+        this.dohrano = dohrano;
+    }
+
+    public int getMicekPozice() {
+        return micekPozice;
+    }
+
+    public void setMicekPozice(int micekPozice) {
+        this.micekPozice = micekPozice;
+    }
+
+    public boolean isZadalspravne() {
+        return zadalspravne;
+    }
+
+    public void setZadalspravne(boolean zadalspravne) {
+        this.zadalspravne = zadalspravne;
+    }
+
+    public int getOdpoved() {
+        return odpoved;
+    }
+
+    public void setOdpoved(int odpoved) {
+        this.odpoved = odpoved;
+    }
+
+    public boolean isDohrano() {
+        return dohrano;
     }
 }

@@ -8,13 +8,16 @@ import java.util.ArrayList;
 
 /**
  * Trida ktera vykonava command Dej
+ * @author MAREK KULHÁNEK
  */
 public class Dej implements Command {
     /**
      * Poda predmet npc z mistnosti a metoda kontroluje i vsechny mozne chyby uzivatele
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
+
     @Override
     public String vykonat(Hra hra, String s) {
         if (hra.getAktualniMistnost().isJeProzkoumana()){

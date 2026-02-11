@@ -6,14 +6,17 @@ import Zaklad.Mistnost;
 import Zaklad.Predmet;
 /**
  * Trida ktera vykonava command Pouzij
+ * @author MAREK KULHÁNEK
  */
 public class Pouzij implements Command {
+
+    String  zpravaReturnu = "";
     /**
      * Pouzije predmet jako cokolada nebo lekarnicka na sebe pro nejaky ucinek
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
-    String  zpravaReturnu = "";
     @Override
     public String vykonat(Hra hra, String s) {
         Predmet predmet =null;

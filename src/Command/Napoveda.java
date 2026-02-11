@@ -3,15 +3,17 @@ package Command;
 import Zaklad.Hra;
 /**
  * Trida ktera vykonava command Napoveda
+ * @author MAREK KULHÁNEK
  */
 public class Napoveda implements Command {
+
+    String zpravaReturnu  = "";
     /**
      * Poskytne hracovi moznost vyberu ze 3 stupnu napovedy pro kazdou mistnost
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
-    String zpravaReturnu  = "";
-
     @Override
     public String vykonat(Hra hra, String s) {
             switch (s){

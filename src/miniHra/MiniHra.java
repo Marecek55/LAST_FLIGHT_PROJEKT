@@ -9,7 +9,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Tato trida spousti miniHru Skorabky
+ * Tato trida spousti miniHru Skorapky
+ * @author MAREK KULHÁNEK
  */
 public class MiniHra extends JPanel {
    boolean dohrano = false;
@@ -29,7 +30,6 @@ public class MiniHra extends JPanel {
        super.paintComponent(g);
        g.setColor(Color.BLUE);
        if (!dohrano) {
-
            g.fillRect(50 ,170 , 100, 250);
            g.fillRect(200 ,  170, 100, 250);
            g.fillRect(350 , 170, 100, 250);
@@ -67,15 +67,17 @@ public class MiniHra extends JPanel {
 
     /**
      * Tato metoda spousti hru skorapky
-     * @param hra
+     * @param hra instance aby se dali ovladat veci v ni
      */
     public void skorapky(Hra hra){
         System.out.print(hra.getData().nacteniRadkuSouboru("skorapky", "START", null));
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = hra.getKonzole().getSc();
 
         do {
             try {
+                System.out.print(">>");
                  odpoved = sc.nextInt();
+                 sc.nextLine();
                  if (hra.getCas().getZbyvajiciCas()>=odpoved && odpoved >= 0) {
                      zadalspravne = true;
                  }else {
@@ -83,7 +85,7 @@ public class MiniHra extends JPanel {
                  }
             }catch (InputMismatchException e){
                 System.out.println("Spatne zadane musis zadat cislo");
-                sc.next();
+                sc.nextLine();
 
             }
         }while (!zadalspravne);
@@ -123,9 +125,9 @@ public class MiniHra extends JPanel {
 
     /**
      * Tato metoda pomaha a zkracuje metodu pro vsechny tri tlacitka
-     * @param hra
-     * @param okno
-     * @param cislo
+     * @param hra aby se mohli ovladat veci  v ni
+     * @param okno okno Jdialog s kterym se pak pracuje
+     * @param cislo cislo tlacitka
      */
     public void pomocnaMetoda(Hra hra, JDialog okno, int cislo){
        dohrano = true;

@@ -5,12 +5,14 @@ import Zaklad.Hra;
 
 /**
  * Trida ktera vykonava command Mluv
+ * @author MAREK KULHÁNEK
  */
 public class Mluv implements Command {
     /**
      * Mluvi s postavou v dane mistnosti
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
     @Override
     public String vykonat(Hra hra, String s) {

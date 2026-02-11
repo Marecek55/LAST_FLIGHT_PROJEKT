@@ -1,11 +1,12 @@
 package Mluveni;
 /**
  * Trida ktera inicializuje smutny pozdrav
+ * @author MAREK KULHÁNEK
  */
 public class SmutneMluveni implements StrategieMluveni{
     /**
      * Vypise pozdrav smutneho npc
-     * @return
+     * @return vraci pozdrav
      */
     @Override
     public String pozdrav() {
@@ -13,7 +14,7 @@ public class SmutneMluveni implements StrategieMluveni{
     }
     /**
      * Vypise rozlouceni stastneho npc
-     * @return
+     * @return vraci rozlouceni
      */
     @Override
     public String rozlouceni() {

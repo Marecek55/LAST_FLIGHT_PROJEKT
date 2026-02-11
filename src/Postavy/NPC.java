@@ -8,6 +8,7 @@ import Zaklad.Mistnost;
 import Zaklad.Predmet;
 /**
  * Trida NPC ma metodu pro prijmuti predmetu a nastavi se typ mluveni na interface
+ * @author MAREK KULHÁNEK
  */
 public class  NPC extends Postava {
     private  transient StrategieMluveni typMluveni;
@@ -18,10 +19,12 @@ public class  NPC extends Postava {
     private boolean jeDomluveno;
     public String typMluveniText;
 
+
     /**
      * otestuje u prikazu dej jestli dana postava predmet chce nebo jestli chce vubec neco a kdyz ano tak to vykona
-     * @param p
-     * @param hra
+     * @param p predmet ktery se ma prijmout
+     * @param hra aby se mohli ovladat veci ze hry
+     * @return vraci reakci npc na predmet co mu hrac zkusil dat
      */
     public String prijmutiPredmetu(Predmet p, Hra hra){
         if (ocekavanyPredmet != null){

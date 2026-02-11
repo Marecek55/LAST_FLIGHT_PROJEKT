@@ -5,12 +5,14 @@ import Zaklad.Hra;
 
 /**
  * Trida ktera vykonava command Inventar
+ * @author MAREK KULHÁNEK
  */
 public class InventarCommand implements Command {
     /**
      * Zobrazi inventar a veci v mem
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
     @Override
     public String vykonat(Hra hra, String s) {

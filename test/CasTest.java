@@ -1,5 +1,3 @@
-package Cas;
-
 import Zaklad.Hra;
 import org.junit.jupiter.api.Test;
 

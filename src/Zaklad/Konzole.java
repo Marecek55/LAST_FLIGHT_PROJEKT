@@ -3,6 +3,7 @@ package Zaklad;
 import java.util.Scanner;
 /**
  * Trida Konzole spousti hru a rozdeluje prikazy
+ * @author MAREK KULHÁNEK
  */
 public class Konzole {
     private Hra hra;

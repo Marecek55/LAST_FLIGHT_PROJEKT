@@ -3,6 +3,7 @@ package Postavy;
 import Zaklad.Inventar;
 /**
  * Trida Alexe hlavni postavy upravuje jeho stav zraneni
+ * @author MAREK KULHÁNEK
  */
 public class Alex extends Postava {
     private boolean jeZraneny;

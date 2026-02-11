@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 /**
  * Trida ktera spousit souboj
+ * @author MAREK KULHÁNEK
  */
 public class Souboj {
     private boolean vyhra;
@@ -16,10 +17,13 @@ public class Souboj {
     boolean vyhralUnosce= false;
     AkceUnosce aktualniAkce;
 
+
     /**
      * Spousti souboj a celou jeho logiku. Probiha po kolech
      * a jsou tam 3 varianty akce unosce na ktere musi hrac
      * spravne zareagovat
+     * @param hra instance hry aby mela metoda pristup ke hre
+     * @return vraci vysledek souboje
      */
     public String souboj(Hra hra) {
         akce.add(AkceUnosce.KRYTY);

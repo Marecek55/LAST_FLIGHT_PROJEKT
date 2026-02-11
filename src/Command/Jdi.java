@@ -6,6 +6,7 @@ import Zaklad.Mistnost;
 import Zaklad.NacitaniZeSouboru;
 /**
  * Trida ktera vykonava command Jdi
+ * @author MAREK KULHÁNEK
  */
 public class Jdi implements Command {
     /**
@@ -13,6 +14,7 @@ public class Jdi implements Command {
      * napsal pokud s ni sousedi ta mistnost ve ktere je
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
     @Override
     public String vykonat(Hra hra, String s) {

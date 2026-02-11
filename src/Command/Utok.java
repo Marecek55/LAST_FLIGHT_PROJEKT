@@ -4,12 +4,14 @@ import Zaklad.AkceUnosce;
 import Zaklad.Hra;
 /**
  * Trida ktera vykonava command Utok
+ * @author MAREK KULHÁNEK
  */
 public class Utok implements Command {
     /**
      * Pokud je unosce odkryty ubere  mu zivoty
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
     @Override
     public String vykonat(Hra hra, String s) {

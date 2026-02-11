@@ -1,5 +1,4 @@
-package Command;
-
+import Command.Vezmi;
 import Zaklad.Hra;
 import Zaklad.Predmet;
 import org.junit.jupiter.api.Test;

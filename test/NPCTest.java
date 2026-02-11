@@ -1,7 +1,5 @@
-package Postavy;
-
-import Command.Vezmi;
 import Mluveni.PrijemneMluveni;
+import Postavy.NPC;
 import Zaklad.Hra;
 import org.junit.jupiter.api.Test;
 

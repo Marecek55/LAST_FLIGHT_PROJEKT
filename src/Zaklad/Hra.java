@@ -24,6 +24,7 @@ import miniHra.MiniHra;
 import java.util.HashMap;
 /**
  * Ve tride hra se vse spojuje hra ma jako vlastnosti vsechny potrebne tridy a nacita vsechny listy a data a pridavaji se do ni prikazy a barvy
+ * @author MAREK KULHÁNEK
  */
 public class Hra {
     private StavKonce stavKonce;

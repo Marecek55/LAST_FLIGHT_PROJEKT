@@ -1,12 +1,7 @@
-package Command;
-
+import Command.Dej;
 import Postavy.NPC;
 import Zaklad.Hra;
-import Zaklad.Mistnost;
 import Zaklad.Predmet;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 /**

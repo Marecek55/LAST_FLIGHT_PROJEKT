@@ -4,12 +4,14 @@ import Zaklad.Hra;
 import Zaklad.Predmet;
 /**
  * Trida ktera vykonava command Poloz
+ * @author MAREK KULHÁNEK
  */
 public class Poloz implements Command {
     /**
      * Polozi predmet do mistnosti ve ktere je
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatel
+     * @return vypis
      */
     @Override
     public String vykonat(Hra hra, String s) {

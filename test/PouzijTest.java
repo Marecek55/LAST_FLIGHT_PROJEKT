@@ -1,5 +1,4 @@
-package Command;
-
+import Command.Pouzij;
 import Zaklad.Hra;
 import Zaklad.Mistnost;
 import Zaklad.Predmet;

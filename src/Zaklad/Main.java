@@ -2,7 +2,7 @@ package Zaklad;
 
 /**
  * Trida Main inicializuje konzoli a spousti jeji metodu
- * AUTOR HRY: MAREK KULHÁNEK
+ * @author MAREK KULHÁNEK
  */
 public class Main {
     public static void main(String[] args) {

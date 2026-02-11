@@ -1,6 +1,7 @@
 package Zaklad;
 /**
  * Trida Predmet nastavuje vsechny vlastnosti predmetu
+ * @author MAREK KULHÁNEK
  */
 public class Predmet {
     private String nazev;

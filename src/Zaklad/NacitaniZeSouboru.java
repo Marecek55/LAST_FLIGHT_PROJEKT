@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Trida trida nacita vsechny veci z json a txt souboru bud podle slova v txt nebo cely soubor
+ * @author MAREK KULHÁNEK
  */
 public class NacitaniZeSouboru {
     public ArrayList<Predmet> predmety;
@@ -18,7 +19,7 @@ public class NacitaniZeSouboru {
     /**
      * Nacte pomoci cesty do jednotlivych objektu data z json souboru do jednotlivych listu
      * @param cestaSlozky cesta k jsonu
-     * @return
+     * @return vraci naimportovanou tridu
      */
 
     public static NacitaniZeSouboru nactiDataZeSlozky(String cestaSlozky) {
@@ -97,7 +98,7 @@ public class NacitaniZeSouboru {
     /**
      * Hleda mistnost v listu nactenych mistnosti
      * @param nazev nazev mistnosti kterou chceme najit
-     * @return
+     * @return vraci mistnost
      */
     public  Mistnost najdiMistnost(String nazev) {
         for (int i = 0; i < mistnosti.size(); i++) {
@@ -110,8 +111,8 @@ public class NacitaniZeSouboru {
 
     /**
      * Najde npc podle nazvu z listu nactenych npc
-     * @param nazev
-     * @return
+     * @param nazev nazev NPC
+     * @return vraci NPC ktery se nasel
      */
     public NPC najdiNPC(String nazev) {
         for (int i = 0; i < npc.size(); i++) {
@@ -124,8 +125,8 @@ public class NacitaniZeSouboru {
 
     /**
      * najde predmet podle nazvu z listu nactenych predmetu
-     * @param nazev
-     * @return
+     * @param nazev nazev predmetu
+     * @return vraci predmet ktery se nasel
      */
     public Predmet najdiPredmet(String nazev) {
         for (int i = 0; i < predmety.size(); i++) {
@@ -140,13 +141,13 @@ public class NacitaniZeSouboru {
      * nacte pozadovany pocet raku z daneho souboru podle hledaneho slova
      * @param nazev nazev souboru
      * @param hledaneSlovo od jakeho slova se ma nacitat
-     * @return
+     * @return vraci radky souboru
      */
     public String nacteniRadkuSouboru(String nazev , String hledaneSlovo, Boolean jeToProMistnost) {
         String text = "";
         boolean nalezeno = false;
         try {
-            BufferedReader br = new BufferedReader((new FileReader("res\\" + nazev+ ".txt")));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/" + nazev + ".txt")));
             String line = "";
             while ((line = br.readLine()) != null) {
                 String radek = line.trim();
@@ -184,8 +185,8 @@ public class NacitaniZeSouboru {
 
     /**
      * Najde sousedni mistnost ktera je zamcena
-     * @param aktualni
-     * @return
+     * @param aktualni aktualni mistnost
+     * @return vraci mistnost ktera je zamcena
      */
     public Mistnost najdiSousedaCoMa(Mistnost aktualni){
         ArrayList<Mistnost> mistnostiSousedni = new ArrayList<>();

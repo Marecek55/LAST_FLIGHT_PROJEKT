@@ -6,12 +6,14 @@ import Zaklad.Predmet;
 import java.util.ArrayList;
 /**
  * Trida ktera vykonava command Vezmi
+ * @author MAREK KULHÁNEK
  */
 public class Vezmi implements Command {
     /**
      * Vezme predmet z mistnosti do inventare
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
     @Override
     public String vykonat(Hra hra, String s) {

@@ -7,6 +7,7 @@ import Postavy.NPC;
 import java.util.Scanner;
 /**
  * Trida ktera spravuje dialogy u vsech postav
+ * @author MAREK KULHÁNEK
  */
 public class Komunikace {
     Scanner sc;
@@ -14,7 +15,7 @@ public class Komunikace {
 
     /**
      * Zkracuje odpoved aby se neopakoval kod a pouziva rekurzi aby zadal odpoved znova
-     * @return
+     * @return odpoved uzivatele
      */
     public String skenOhlidany(){
         System.out.print(">>");
@@ -148,7 +149,7 @@ public class Komunikace {
      * Vyber konce se spusti jak prijde do gate4 a necha ho vybrat jak hru zakonci
      * @param hra      odkaz na hru
      * @param aktualni odkaz na gate4
-     * @return
+     * @return vraci text konce
      */
 
     public String vyberKonce(Hra hra, Mistnost aktualni) {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 /**
  * Trida Inventar spravuje inventar a jeho chod tzn vyhazovani prijimani kontrola plnosti
  * kontrola jestli je predmet v inventari
+ * @author MAREK KULHÁNEK
  */
 public class Inventar {
     private int kapacita = 4;
@@ -11,7 +12,7 @@ public class Inventar {
 
     /**
      * overuje jestli je inventar plny
-     * @return
+     * @return vraci jestli je plny
      */
     public boolean isJePlny(){
         return listPredmetu.size() >= kapacita;
@@ -45,7 +46,7 @@ public class Inventar {
     /**
      * kontroluje jestli je dany predmet v inventari
      * @param predmet predmet
-     * @return
+     * @return je nebo neni v inventari
      */
     public boolean predmetJeVInventari(Predmet predmet){
         if (listPredmetu.contains(predmet)){

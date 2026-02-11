@@ -1,11 +1,12 @@
 package Mluveni;
 /**
  * Trida ktera inicializuje prijemny pozdrav
+ * @author MAREK KULHÁNEK
  */
 public class PrijemneMluveni implements StrategieMluveni{
     /**
      * Vypise pozdrav stastneho npc
-     * @return
+     * @return vraci pozdrav
      */
     @Override
     public String pozdrav() {
@@ -13,7 +14,7 @@ public class PrijemneMluveni implements StrategieMluveni{
     }
     /**
      * Vypise rozlouceni stastneho npc
-     * @return
+     * @return vraci rozlouceni
      */
     @Override
     public String rozlouceni() {

@@ -8,15 +8,18 @@ import Zaklad.Predmet;
 import java.util.ArrayList;
 /**
  * Trida ktera vykonava command Prozkoumej
+ * @author MAREK KULHÁNEK
  */
 public class Prozkoumej implements Command {
     boolean mistnostUzJednouProzkoumal = false;
+
+    String zpravaReturnu = "";
     /**
      * Prozkouma mistnost a ukaze mu predmety a lidi v ni
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
-    String zpravaReturnu = "";
     @Override
     public String vykonat(Hra hra, String s) {
         ArrayList<String> mistnostiPomocne = hra.getAktualniMistnost().getDostupneVychody();

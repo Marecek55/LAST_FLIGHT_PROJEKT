@@ -1,11 +1,6 @@
-package Command;
-
-import Postavy.Alex;
-import Postavy.Postava;
+import Command.Jdi;
 import Zaklad.Hra;
 import Zaklad.Mistnost;
-import Zaklad.NacitaniZeSouboru;
-import Zaklad.Predmet;
 
 import java.util.ArrayList;
 /**

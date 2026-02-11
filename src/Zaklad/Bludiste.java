@@ -6,6 +6,7 @@ import Cas.NormalniCas;
 
 /**
  * Trida ktera spousti bludiste a vsechny jeho urovne
+ * @author MAREK KULHÁNEK
  */
 public class Bludiste {
 
@@ -16,7 +17,7 @@ public class Bludiste {
     /**
      * Spusti bludiste kde si uzivatel vybira jakym smerem jit
      * @param hra hra pro nastavovani dalsich veci
-     * @return
+     * @return vraci vysledny text bludiste
      */
     public String bludiste(Hra hra) {
         hra.setAktualniMistnost(hra.getData().najdiMistnost("tridirnaZavazadel"));
@@ -75,7 +76,7 @@ public class Bludiste {
 
     /**
      * Vraci uzivatele na zacatek bludiste kdyz zabloudi napise spatny smer
-     * @param hra
+     * @param hra aby se dali ovladat veci ve hre
      * @param slovo nazev smeru od ktereho se vypise pribeh slepe cesty
      */
     private void vratNaZacatek(Hra hra, String slovo) {

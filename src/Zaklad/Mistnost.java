@@ -5,6 +5,7 @@ import Postavy.Postava;
 import java.util.ArrayList;
 /**
  * Trida nastavuje vsechny vlastnosti mistnosti
+ * @author MAREK KULHÁNEK
  */
 public  class Mistnost {
     private String nazev;

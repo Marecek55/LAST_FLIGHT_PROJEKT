@@ -5,12 +5,14 @@ import Zaklad.AkceUnosce;
 import Zaklad.Hra;
 /**
  * Trida ktera vykonava command Uhni
+ * @author MAREK KULHÁNEK
  */
 public class Uhni implements Command {
     /**
      * Pokud unosce utoci uhne utoku
      * @param hra instance hry aby se dala ovladat aktualni mistnost
      * @param s Druha cast inputu uzivatele
+     * @return vypis
      */
 
     @Override

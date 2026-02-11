@@ -23,18 +23,19 @@ KONEC
 
 VETEV1
 Pichnes tobimu v rychlosti inzulin
-Vidis jak vojak miri zbrani na saru a tobiho
-utikas je kryt a kulka se ti zabodne primo do srdce
-a za Sarou a Tobim letuska zavre dvere
-umiras ale vis ze jsi padlo pro svou rodinu
-RODINA JE ZACHRANENA!
-KONEC
-
-VETEV2
-Pichnes tobimu v rychlosti inzulin
 Utikas se svou rodinou smerem ke dverim
 v Gatu uz ale jsou i nepratelsti
 vojaci a zacnou strilet trefi tebe i saru
 a tobiho zajmou
 RODINA NEBYLA ZACHRANENA!
 KONEC
+
+VETEV2
+Pichnes tobimu v rychlosti inzulin
+Vidis jak vojak miri zbrani na saru a tobiho
+utikas je kryt a kulka se ti zabodne primo do srdce
+a za Sarou a Tobim letuska zavre dvere
+umiras ale vis ze jsi padl pro svou rodinu
+RODINA JE ZACHRANENA!
+KONEC
+

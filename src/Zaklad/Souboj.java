@@ -29,7 +29,7 @@ public class Souboj {
         akce.add(AkceUnosce.KRYTY);
         akce.add(AkceUnosce.UTOCICI);
         akce.add(AkceUnosce.ODKRYTY);
-        System.out.print(hra.getData().nacteniRadkuSouboru("Souboj" , "SOUBOJ", null));
+        System.out.print(hra.getData().nacteniRadkuSouboru("souboj" , "SOUBOJ", null));
         while (!vyhralUnosce&&!vyhralHrac){
 
             aktualniAkce = akce.get(rd.nextInt(akce.size()));

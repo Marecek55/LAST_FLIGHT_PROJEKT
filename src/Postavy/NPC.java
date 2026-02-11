@@ -47,10 +47,10 @@ public class  NPC extends Postava {
                 hra.getInventar().odebratPredmet(p);
                 return hra.getModra("Dal jsi ")  + jmeno + " predmet " + p.getNazev() + "\n"+hra.getCas().odecteniCasu(hra);
             }else {
-               return hra.getCervena(jmeno  +" nechce "  + p.getNazev());
+               return hra.getCervena("Tato dana postava " + jmeno + " nechce " + p.getNazev());
             }
         }else {
-            return hra.getCervena("Toto dana postava " + jmeno + " nechce " + p.getNazev());
+            return hra.getCervena("Tato dana postava " + jmeno + " nechce " + p.getNazev());
         }
 
     }

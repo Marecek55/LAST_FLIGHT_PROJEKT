@@ -31,7 +31,7 @@ public class Poloz implements Command {
                     hra.getInventar().odebratPredmet(p);
                     String zpravaReturnu = hra.getModra("Vyhodil jsi ") + p.getNazev();
                     if (p.isJeDulezity()) {
-                        zpravaReturnu = zpravaReturnu + hra.getCervena("\nVYHODIL JSI DULEZITY PREDMET MUZES");
+                        zpravaReturnu = zpravaReturnu + hra.getCervena("\nVYHODIL JSI DULEZITY PREDMET MUZES HO ZNOVU VZIT PRIKAZEM VEZMI");
                     }
                     hra.getAktualniMistnost().pridatPredmetDoMistnosti(p);
                     System.out.println(hra.getCas().odecteniCasu(hra));

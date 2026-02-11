@@ -45,7 +45,7 @@ public class Prozkoumej implements Command {
             if (predmetyPomocne.size()>0){
                 zpravaReturnu += hra.getModra("Predmety v mistnosti: ");
                 for (int i = 0; i < predmetyPomocne.size(); i++) {
-                    zpravaReturnu += predmetyPomocne.get(i).getNazev() + " ";
+                    zpravaReturnu += predmetyPomocne.get(i).getNazev() + ", ";
                 }
                 zpravaReturnu += "\n";
                 hra.getAktualniMistnost().setJeProzkoumana(true);

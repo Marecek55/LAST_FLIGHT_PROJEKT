@@ -114,6 +114,8 @@ public class Komunikace {
                     pomocnaMistnost.setJeZamcena(false);
                     System.out.println(hra.getModra("Odmekl jsi ") + pomocnaMistnost.getNazev());
                 } else if (odpoved.equals("2")) {
+                    npc.setChceMluvit(false);
+                    npc.setTypMluveni(new PrijemneMluveni());
                     return;
                 }
                 break;
